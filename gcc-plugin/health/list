@@ -1,0 +1,124 @@
+# mark_description "Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.235 Build 20190416";
+# mark_description "-lm -DTORONTO -S -c -o list";
+	.file "list.c"
+	.text
+..TXTST0:
+.L_2__routine_start_addList_0:
+# -- Begin  addList
+	.text
+# mark_begin;
+       .align    16,0x90
+	.globl addList
+# --- addList(struct List *, struct Patient *)
+addList:
+# parameter 1: %rdi
+# parameter 2: %rsi
+..B1.1:                         # Preds ..B1.0
+                                # Execution count [1.00e+00]
+	.cfi_startproc
+..___tag_value_addList.1:
+..L2:
+                                                          #12.58
+        pushq     %r12                                          #12.58
+	.cfi_def_cfa_offset 16
+	.cfi_offset 12, -16
+        pushq     %rbp                                          #12.58
+	.cfi_def_cfa_offset 24
+	.cfi_offset 6, -24
+        pushq     %rsi                                          #12.58
+	.cfi_def_cfa_offset 32
+        movq      %rsi, %r12                                    #12.58
+        testq     %rdi, %rdi                                    #15.18
+        je        ..B1.5        # Prob 1%                       #15.18
+                                # LOE rbx rbp rdi r12 r13 r14 r15
+..B1.3:                         # Preds ..B1.1 ..B1.3
+                                # Execution count [5.47e+00]
+        movq      %rdi, %rbp                                    #16.5
+        movq      (%rdi), %rdi                                  #17.12
+        testq     %rdi, %rdi                                    #15.18
+        jne       ..B1.3        # Prob 82%                      #15.18
+                                # LOE rbx rbp rdi r12 r13 r14 r15
+..B1.5:                         # Preds ..B1.3 ..B1.1
+                                # Execution count [1.00e+00]
+        movl      $24, %edi                                     #19.25
+#       malloc(size_t)
+        call      malloc                                        #19.25
+                                # LOE rax rbx rbp r12 r13 r14 r15
+..B1.6:                         # Preds ..B1.5
+                                # Execution count [1.00e+00]
+        movq      $0, (%rax)                                    #21.3
+        movq      %r12, 8(%rax)                                 #20.3
+        movq      %rbp, 16(%rax)                                #22.3
+        movq      %rax, (%rbp)                                  #23.3
+        popq      %rcx                                          #24.1
+	.cfi_def_cfa_offset 24
+	.cfi_restore 6
+        popq      %rbp                                          #24.1
+	.cfi_def_cfa_offset 16
+	.cfi_restore 12
+        popq      %r12                                          #24.1
+	.cfi_def_cfa_offset 8
+        ret                                                     #24.1
+        .align    16,0x90
+                                # LOE
+	.cfi_endproc
+# mark_end;
+	.type	addList,@function
+	.size	addList,.-addList
+..LNaddList.0:
+	.data
+# -- End  addList
+	.text
+.L_2__routine_start_removeList_1:
+# -- Begin  removeList
+	.text
+# mark_begin;
+       .align    16,0x90
+	.globl removeList
+# --- removeList(struct List *, struct Patient *)
+removeList:
+# parameter 1: %rdi
+# parameter 2: %rsi
+..B2.1:                         # Preds ..B2.0
+                                # Execution count [1.00e+00]
+	.cfi_startproc
+..___tag_value_removeList.14:
+..L15:
+                                                         #26.61
+        cmpq      8(%rdi), %rsi                                 #31.14
+        je        ..B2.5        # Prob 1%                       #31.14
+                                # LOE rbx rbp rsi rdi r12 r13 r14 r15
+..B2.3:                         # Preds ..B2.1 ..B2.3
+                                # Execution count [5.47e+00]
+        movq      (%rdi), %rdi                                  #32.14
+        cmpq      8(%rdi), %rsi                                 #31.14
+        jne       ..B2.3        # Prob 82%                      #31.14
+                                # LOE rbx rbp rsi rdi r12 r13 r14 r15
+..B2.5:                         # Preds ..B2.3 ..B2.1
+                                # Execution count [1.00e+00]
+        movq      16(%rdi), %rdx                                #36.8
+        movq      (%rdi), %rax                                  #37.8
+        movq      %rax, (%rdx)                                  #38.3
+        movq      (%rdi), %rax                                  #39.7
+        testq     %rax, %rax                                    #39.24
+        je        ..B2.7        # Prob 12%                      #39.24
+                                # LOE rax rdx rbx rbp r12 r13 r14 r15
+..B2.6:                         # Preds ..B2.5
+                                # Execution count [8.80e-01]
+        movq      %rdx, 16(%rax)                                #42.5
+                                # LOE rbx rbp r12 r13 r14 r15
+..B2.7:                         # Preds ..B2.5 ..B2.6
+                                # Execution count [1.00e+00]
+        ret                                                     #45.1
+        .align    16,0x90
+                                # LOE
+	.cfi_endproc
+# mark_end;
+	.type	removeList,@function
+	.size	removeList,.-removeList
+..LNremoveList.1:
+	.data
+# -- End  removeList
+	.data
+	.section .note.GNU-stack, ""
+# End

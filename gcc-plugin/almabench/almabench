@@ -1,0 +1,2103 @@
+# mark_description "Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.235 Build 20190416";
+# mark_description "-lm -S -c -o almabench";
+	.file "almabench.c"
+	.text
+..TXTST0:
+.L_2__routine_start_main_0:
+# -- Begin  main
+	.text
+# mark_begin;
+       .align    16,0x90
+	.globl main
+# --- main(int, char **)
+main:
+# parameter 1: %edi
+# parameter 2: %rsi
+..B1.1:                         # Preds ..B1.0
+                                # Execution count [1.00e+00]
+	.cfi_startproc
+..___tag_value_main.1:
+..L2:
+                                                          #339.1
+        pushq     %rbp                                          #339.1
+	.cfi_def_cfa_offset 16
+        movq      %rsp, %rbp                                    #339.1
+	.cfi_def_cfa 6, 16
+	.cfi_offset 6, -16
+        andq      $-128, %rsp                                   #339.1
+        pushq     %r12                                          #339.1
+        pushq     %r13                                          #339.1
+        pushq     %r14                                          #339.1
+        pushq     %r15                                          #339.1
+        pushq     %rbx                                          #339.1
+        subq      $472, %rsp                                    #339.1
+        xorl      %esi, %esi                                    #339.1
+        movl      $3, %edi                                      #339.1
+        call      __intel_new_feature_proc_init                 #339.1
+	.cfi_escape 0x10, 0x03, 0x0e, 0x38, 0x1c, 0x0d, 0x80, 0xff, 0xff, 0xff, 0x1a, 0x0d, 0xd8, 0xff, 0xff, 0xff, 0x22
+	.cfi_escape 0x10, 0x0c, 0x0e, 0x38, 0x1c, 0x0d, 0x80, 0xff, 0xff, 0xff, 0x1a, 0x0d, 0xf8, 0xff, 0xff, 0xff, 0x22
+	.cfi_escape 0x10, 0x0d, 0x0e, 0x38, 0x1c, 0x0d, 0x80, 0xff, 0xff, 0xff, 0x1a, 0x0d, 0xf0, 0xff, 0xff, 0xff, 0x22
+	.cfi_escape 0x10, 0x0e, 0x0e, 0x38, 0x1c, 0x0d, 0x80, 0xff, 0xff, 0xff, 0x1a, 0x0d, 0xe8, 0xff, 0xff, 0xff, 0x22
+	.cfi_escape 0x10, 0x0f, 0x0e, 0x38, 0x1c, 0x0d, 0x80, 0xff, 0xff, 0xff, 0x1a, 0x0d, 0xe0, 0xff, 0xff, 0xff, 0x22
+                                # LOE rbx r12 r13 r14 r15
+..B1.33:                        # Preds ..B1.1
+                                # Execution count [1.00e+00]
+        stmxcsr   (%rsp)                                        #339.1
+        xorb      %al, %al                                      #362.10
+        orl       $32832, (%rsp)                                #339.1
+        ldmxcsr   (%rsp)                                        #339.1
+        movsd     .L_2il0floatpacket.0(%rip), %xmm1             #364.9
+        movsd     .L_2il0floatpacket.22(%rip), %xmm2            #369.22
+        movsd     .L_2il0floatpacket.1(%rip), %xmm3             #373.17
+        movsd     .L_2il0floatpacket.4(%rip), %xmm15            #373.17
+        movsd     .L_2il0floatpacket.5(%rip), %xmm14            #373.17
+        movups    .L_2il0floatpacket.7(%rip), %xmm13            #373.17
+        movsd     .L_2il0floatpacket.9(%rip), %xmm12            #373.17
+                                # LOE al xmm1 xmm2 xmm3
+..B1.2:                         # Preds ..B1.19 ..B1.33
+                                # Execution count [2.00e+01]
+        movb      %al, (%rsp)                                   #367.14[spill]
+        xorl      %edx, %edx                                    #367.14
+        movaps    %xmm1, %xmm0                                  #364.9
+                                # LOE edx xmm0 xmm1 xmm2 xmm3
+..B1.3:                         # Preds ..B1.18 ..B1.2
+                                # Execution count [7.30e+05]
+        movsd     .L_2il0floatpacket.6(%rip), %xmm6             #373.17
+        xorl      %r13d, %r13d                                  #371.18
+        movsd     .L_2il0floatpacket.8(%rip), %xmm4             #373.17
+        xorl      %r14d, %r14d                                  #371.18
+        xorl      %r12d, %r12d                                  #371.18
+        addsd     %xmm2, %xmm0                                  #369.13
+        movaps    %xmm0, %xmm7                                  #373.17
+        xorl      %ebx, %ebx                                    #371.18
+        movsd     %xmm0, 208(%rsp)                              #371.18[spill]
+        subsd     %xmm1, %xmm7                                  #373.17
+        divsd     %xmm3, %xmm7                                  #373.17
+        mulsd     %xmm7, %xmm6                                  #373.17
+        mulsd     %xmm7, %xmm4                                  #373.17
+        movaps    %xmm6, %xmm5                                  #373.17
+        unpcklpd  %xmm5, %xmm5                                  #373.17
+        movsd     %xmm4, 272(%rsp)                              #371.18[spill]
+        movups    %xmm5, 224(%rsp)                              #371.18[spill]
+        movsd     %xmm6, 216(%rsp)                              #371.18[spill]
+        movsd     %xmm7, 288(%rsp)                              #371.18[spill]
+        movl      %edx, 200(%rsp)                               #371.18[spill]
+                                # LOE rbx r12 r13 r14
+..B1.4:                         # Preds ..B1.52 ..B1.3
+                                # Execution count [5.84e+06]
+        movsd     288(%rsp), %xmm6                              #373.17[spill]
+        movsd     16+pi(%r14), %xmm7                            #373.17
+        movsd     16+dlm(%r14), %xmm2                           #373.17
+        mulsd     %xmm6, %xmm7                                  #373.17
+        mulsd     %xmm6, %xmm2                                  #373.17
+        addsd     8+pi(%r14), %xmm7                             #373.17
+        addsd     8+dlm(%r14), %xmm2                            #373.17
+        mulsd     %xmm6, %xmm7                                  #373.17
+        mulsd     %xmm6, %xmm2                                  #373.17
+        movsd     16+a(%r14), %xmm1                             #373.17
+        mulsd     %xmm6, %xmm1                                  #373.17
+        movsd     16+e(%r14), %xmm4                             #373.17
+        mulsd     %xmm6, %xmm4                                  #373.17
+        addsd     8+a(%r14), %xmm1                              #373.17
+        movsd     .L_2il0floatpacket.3(%rip), %xmm5             #373.17
+        movsd     pi(%r14), %xmm0                               #373.17
+        movsd     dlm(%r14), %xmm3                              #373.17
+        mulsd     %xmm5, %xmm0                                  #373.17
+        addsd     8+e(%r14), %xmm4                              #373.17
+        mulsd     %xmm5, %xmm3                                  #373.17
+        mulsd     %xmm6, %xmm1                                  #373.17
+        addsd     %xmm7, %xmm0                                  #373.17
+        mulsd     %xmm6, %xmm4                                  #373.17
+        addsd     %xmm2, %xmm3                                  #373.17
+        addsd     a(%r14), %xmm1                                #373.17
+        addsd     e(%r14), %xmm4                                #373.17
+        movsd     .L_2il0floatpacket.2(%rip), %xmm8             #373.17
+        mulsd     %xmm8, %xmm0                                  #373.17
+        mulsd     %xmm8, %xmm3                                  #373.17
+        movsd     %xmm1, 312(%rsp)                              #373.17[spill]
+        movsd     .L_2il0floatpacket.4(%rip), %xmm1             #373.17
+        movsd     %xmm3, 304(%rsp)                              #373.17[spill]
+        movsd     %xmm4, 456(%rsp)                              #373.17[spill]
+        movsd     %xmm0, 360(%rsp)                              #373.17[spill]
+        call      fmod                                          #373.17
+                                # LOE rbx r12 r13 r14 xmm0
+..B1.34:                        # Preds ..B1.4
+                                # Execution count [5.84e+06]
+        movsd     %xmm0, 384(%rsp)                              #373.17[spill]
+        andps     .L_2il0floatpacket.20(%rip), %xmm0            #373.17
+        comisd    .L_2il0floatpacket.5(%rip), %xmm0             #373.17
+        jb        ..B1.6        # Prob 50%                      #373.17
+                                # LOE rbx r12 r13 r14
+..B1.5:                         # Preds ..B1.34
+                                # Execution count [2.92e+06]
+        movsd     .L_2il0floatpacket.19(%rip), %xmm1            #373.17
+        pxor      %xmm0, %xmm0                                  #373.17
+        comisd    360(%rsp), %xmm0                              #373.17[spill]
+        movsd     384(%rsp), %xmm2                              #373.17[spill]
+        ja        ..L25         # Prob 50%                      #373.17
+        movsd     .L_2il0floatpacket.4(%rip), %xmm1             #373.17
+..L25:                                                          #
+        subsd     %xmm1, %xmm2                                  #373.17
+        movsd     %xmm2, 384(%rsp)                              #373.17[spill]
+                                # LOE rbx r12 r13 r14
+..B1.6:                         # Preds ..B1.5 ..B1.34
+                                # Execution count [5.84e+06]
+        movsd     288(%rsp), %xmm4                              #373.17[spill]
+        movsd     16+omega(%r14), %xmm5                         #373.17
+        movsd     16+dinc(%r14), %xmm1                          #373.17
+        mulsd     %xmm4, %xmm5                                  #373.17
+        mulsd     %xmm4, %xmm1                                  #373.17
+        addsd     8+omega(%r14), %xmm5                          #373.17
+        addsd     8+dinc(%r14), %xmm1                           #373.17
+        mulsd     %xmm4, %xmm5                                  #373.17
+        mulsd     %xmm4, %xmm1                                  #373.17
+        movsd     .L_2il0floatpacket.3(%rip), %xmm3             #373.17
+        movsd     omega(%r14), %xmm0                            #373.17
+        movsd     dinc(%r14), %xmm2                             #373.17
+        mulsd     %xmm3, %xmm0                                  #373.17
+        mulsd     %xmm3, %xmm2                                  #373.17
+        addsd     %xmm5, %xmm0                                  #373.17
+        addsd     %xmm1, %xmm2                                  #373.17
+        movsd     .L_2il0floatpacket.2(%rip), %xmm6             #373.17
+        mulsd     %xmm6, %xmm0                                  #373.17
+        mulsd     %xmm6, %xmm2                                  #373.17
+        movsd     .L_2il0floatpacket.4(%rip), %xmm1             #373.17
+        movsd     %xmm2, 320(%rsp)                              #373.17[spill]
+        movsd     %xmm0, 344(%rsp)                              #373.17[spill]
+        call      fmod                                          #373.17
+                                # LOE rbx r12 r13 r14 xmm0
+..B1.35:                        # Preds ..B1.6
+                                # Execution count [5.84e+06]
+        movsd     %xmm0, 376(%rsp)                              #373.17[spill]
+        andps     .L_2il0floatpacket.20(%rip), %xmm0            #373.17
+        comisd    .L_2il0floatpacket.5(%rip), %xmm0             #373.17
+        jb        ..B1.8        # Prob 50%                      #373.17
+                                # LOE rbx r12 r13 r14
+..B1.7:                         # Preds ..B1.35
+                                # Execution count [2.92e+06]
+        movsd     .L_2il0floatpacket.19(%rip), %xmm1            #373.17
+        pxor      %xmm0, %xmm0                                  #373.17
+        comisd    344(%rsp), %xmm0                              #373.17[spill]
+        movsd     376(%rsp), %xmm2                              #373.17[spill]
+        ja        ..L33         # Prob 50%                      #373.17
+        movsd     .L_2il0floatpacket.4(%rip), %xmm1             #373.17
+..L33:                                                          #
+        subsd     %xmm1, %xmm2                                  #373.17
+        movsd     %xmm2, 376(%rsp)                              #373.17[spill]
+                                # LOE rbx r12 r13 r14
+..B1.8:                         # Preds ..B1.7 ..B1.35
+                                # Execution count [5.84e+06]
+        movups    224(%rsp), %xmm10                             #373.17[spill]
+        xorl      %r15d, %r15d                                  #373.17
+        pxor      %xmm0, %xmm0                                  #373.17
+        movups    %xmm0, 256(%rsp)                              #373.17[spill]
+        movups    %xmm0, 240(%rsp)                              #373.17[spill]
+        movaps    %xmm0, %xmm8                                  #373.17
+        movups    256(%rsp), %xmm9                              #373.17[spill]
+        movups    .L_2il0floatpacket.7(%rip), %xmm11            #373.17
+                                # LOE rbx r12 r13 r14 r15 xmm8 xmm9 xmm10 xmm11
+..B1.9:                         # Preds ..B1.36 ..B1.8
+                                # Execution count [4.67e+07]
+        movups    kq(%r12,%r15,8), %xmm0                        #373.17
+        mulpd     %xmm10, %xmm0                                 #373.17
+..___tag_value_main.40:
+        call      *__svml_sincos2@GOTPCREL(%rip)                #373.17
+..___tag_value_main.41:
+                                # LOE rbx r12 r13 r14 r15 xmm0 xmm1 xmm8 xmm9 xmm10 xmm11
+..B1.37:                        # Preds ..B1.9
+                                # Execution count [4.67e+07]
+        mulpd     cl(%r12,%r15,8), %xmm1                        #373.17
+        mulpd     sl(%r12,%r15,8), %xmm0                        #373.17
+        addpd     %xmm0, %xmm1                                  #373.17
+        movups    kp(%rbx,%r15,8), %xmm0                        #373.17
+        mulpd     %xmm11, %xmm1                                 #373.17
+        mulpd     %xmm10, %xmm0                                 #373.17
+        addpd     %xmm1, %xmm9                                  #373.17
+..___tag_value_main.42:
+        call      *__svml_sincos2@GOTPCREL(%rip)                #373.17
+..___tag_value_main.43:
+                                # LOE rbx r12 r13 r14 r15 xmm0 xmm1 xmm8 xmm9 xmm10 xmm11
+..B1.36:                        # Preds ..B1.37
+                                # Execution count [4.67e+07]
+        movaps    %xmm0, %xmm2                                  #373.17
+        movaps    %xmm1, %xmm3                                  #373.17
+        movups    ca(%rbx,%r15,8), %xmm1                        #373.17
+        movups    sa(%rbx,%r15,8), %xmm0                        #373.17
+        mulpd     %xmm1, %xmm3                                  #373.17
+        mulpd     %xmm0, %xmm2                                  #373.17
+        addpd     %xmm2, %xmm3                                  #373.17
+        mulpd     %xmm11, %xmm3                                 #373.17
+        addq      $2, %r15                                      #373.17
+        addpd     %xmm3, %xmm8                                  #373.17
+        cmpq      $8, %r15                                      #373.17
+        jb        ..B1.9        # Prob 87%                      #373.17
+                                # LOE rbx r12 r13 r14 r15 xmm8 xmm9 xmm10 xmm11
+..B1.10:                        # Preds ..B1.36
+                                # Execution count [5.84e+06]
+        movsd     64+kp(%rbx), %xmm0                            #373.17
+        mulsd     216(%rsp), %xmm0                              #373.17[spill]
+        movups    %xmm8, 240(%rsp)                              #[spill]
+        movups    %xmm9, 256(%rsp)                              #[spill]
+        call      __libm_sse2_sincos                            #373.17
+                                # LOE rbx r12 r13 r14 xmm0 xmm1
+..B1.42:                        # Preds ..B1.10
+                                # Execution count [5.84e+06]
+        movaps    %xmm0, %xmm2                                  #373.17
+        movaps    %xmm1, %xmm3                                  #373.17
+        mulsd     64+ca(%rbx), %xmm3                            #373.17
+        mulsd     64+sa(%rbx), %xmm2                            #373.17
+        movups    240(%rsp), %xmm0                              #373.17[spill]
+        addsd     %xmm2, %xmm3                                  #373.17
+        movaps    %xmm0, %xmm1                                  #373.17
+        unpckhpd  %xmm0, %xmm1                                  #373.17
+        mulsd     272(%rsp), %xmm3                              #373.17[spill]
+        addsd     %xmm1, %xmm0                                  #373.17
+        addsd     312(%rsp), %xmm0                              #373.17[spill]
+        addsd     %xmm0, %xmm3                                  #373.17
+        movsd     64+kq(%r12), %xmm0                            #373.17
+        mulsd     216(%rsp), %xmm0                              #373.17[spill]
+        movsd     %xmm3, 432(%rsp)                              #373.17[spill]
+        call      __libm_sse2_sincos                            #373.17
+                                # LOE rbx r12 r13 r14 xmm0 xmm1
+..B1.41:                        # Preds ..B1.42
+                                # Execution count [5.84e+06]
+        movaps    %xmm0, %xmm2                                  #373.17
+        movaps    %xmm1, %xmm3                                  #373.17
+        mulsd     64+cl(%r12), %xmm3                            #373.17
+        mulsd     64+sl(%r12), %xmm2                            #373.17
+        movups    256(%rsp), %xmm0                              #373.17[spill]
+        addsd     %xmm2, %xmm3                                  #373.17
+        movaps    %xmm0, %xmm1                                  #373.17
+        unpckhpd  %xmm0, %xmm1                                  #373.17
+        mulsd     272(%rsp), %xmm3                              #373.17[spill]
+        addsd     %xmm1, %xmm0                                  #373.17
+        addsd     304(%rsp), %xmm0                              #373.17[spill]
+        addsd     %xmm3, %xmm0                                  #373.17
+        movsd     %xmm0, 280(%rsp)                              #373.17[spill]
+        movsd     72+kq(%r12), %xmm0                            #373.17
+        mulsd     216(%rsp), %xmm0                              #373.17[spill]
+        call      __libm_sse2_sincos                            #373.17
+                                # LOE rbx r12 r13 r14 xmm0 xmm1
+..B1.40:                        # Preds ..B1.41
+                                # Execution count [5.84e+06]
+        mulsd     72+cl(%r12), %xmm1                            #373.17
+        mulsd     72+sl(%r12), %xmm0                            #373.17
+        addsd     %xmm0, %xmm1                                  #373.17
+        movsd     280(%rsp), %xmm0                              #373.17[spill]
+        mulsd     272(%rsp), %xmm1                              #373.17[spill]
+        addsd     %xmm1, %xmm0                                  #373.17
+        movsd     .L_2il0floatpacket.4(%rip), %xmm1             #373.17
+        call      fmod                                          #373.17
+                                # LOE rbx r12 r13 r14 xmm0
+..B1.39:                        # Preds ..B1.40
+                                # Execution count [5.84e+06]
+        subsd     384(%rsp), %xmm0                              #373.17[spill]
+        movsd     %xmm0, 440(%rsp)                              #373.17[spill]
+        call      sin                                           #373.17
+                                # LOE rbx r12 r13 r14 xmm0
+..B1.38:                        # Preds ..B1.39
+                                # Execution count [5.84e+06]
+        mulsd     456(%rsp), %xmm0                              #373.17[spill]
+        xorl      %r15d, %r15d                                  #373.17
+        addsd     440(%rsp), %xmm0                              #373.17[spill]
+        movsd     %xmm0, 448(%rsp)                              #373.17[spill]
+                                # LOE rbx r12 r13 r14 r15d
+..B1.11:                        # Preds ..B1.12 ..B1.38
+                                # Execution count [1.62e+07]
+        movsd     448(%rsp), %xmm0                              #373.17[spill]
+        call      __libm_sse2_sincos                            #373.17
+                                # LOE rbx r12 r13 r14 r15d xmm0 xmm1
+..B1.43:                        # Preds ..B1.11
+                                # Execution count [1.62e+07]
+        movsd     448(%rsp), %xmm5                              #373.17[spill]
+        movaps    %xmm1, %xmm4                                  #373.17
+        movsd     440(%rsp), %xmm1                              #373.17[spill]
+        incl      %r15d                                         #373.17
+        movsd     456(%rsp), %xmm2                              #373.17[spill]
+        subsd     %xmm5, %xmm1                                  #373.17
+        mulsd     %xmm2, %xmm0                                  #373.17
+        mulsd     %xmm2, %xmm4                                  #373.17
+        addsd     %xmm0, %xmm1                                  #373.17
+        movsd     .L_2il0floatpacket.22(%rip), %xmm3            #373.17
+        subsd     %xmm4, %xmm3                                  #373.17
+        divsd     %xmm3, %xmm1                                  #373.17
+        addsd     %xmm1, %xmm5                                  #373.17
+        movsd     %xmm5, 448(%rsp)                              #373.17[spill]
+        cmpl      $10, %r15d                                    #373.17
+        jge       ..B1.14       # Prob 20%                      #373.17
+                                # LOE rbx r12 r13 r14 r15d xmm1
+..B1.12:                        # Preds ..B1.43
+                                # Execution count [1.30e+07]
+        andps     .L_2il0floatpacket.20(%rip), %xmm1            #373.17
+        movsd     .L_2il0floatpacket.9(%rip), %xmm0             #373.17
+        comisd    %xmm1, %xmm0                                  #373.17
+        jbe       ..B1.11       # Prob 80%                      #373.17
+                                # LOE rbx r12 r13 r14 r15d
+..B1.14:                        # Preds ..B1.43 ..B1.12
+                                # Execution count [5.84e+06]
+        movsd     .L_2il0floatpacket.10(%rip), %xmm0            #373.17
+        mulsd     448(%rsp), %xmm0                              #373.17[spill]
+        call      __libm_sse2_sincos                            #373.17
+                                # LOE rbx r12 r13 r14 xmm0 xmm1
+..B1.51:                        # Preds ..B1.14
+                                # Execution count [5.84e+06]
+        movsd     .L_2il0floatpacket.22(%rip), %xmm2            #373.17
+        movsd     456(%rsp), %xmm3                              #373.17[spill]
+        movaps    %xmm2, %xmm4                                  #373.17
+        addsd     %xmm3, %xmm4                                  #373.17
+        subsd     %xmm3, %xmm2                                  #373.17
+        divsd     %xmm2, %xmm4                                  #373.17
+        sqrtsd    %xmm4, %xmm4                                  #373.17
+        mulsd     %xmm4, %xmm0                                  #373.17
+        call      atan2                                         #373.17
+                                # LOE rbx r12 r13 r14 xmm0
+..B1.50:                        # Preds ..B1.51
+                                # Execution count [5.84e+06]
+        movsd     %xmm0, 336(%rsp)                              #373.17[spill]
+        movsd     448(%rsp), %xmm0                              #373.17[spill]
+        call      cos                                           #373.17
+                                # LOE rbx r12 r13 r14 xmm0
+..B1.49:                        # Preds ..B1.50
+                                # Execution count [5.84e+06]
+        movsd     .L_2il0floatpacket.22(%rip), %xmm2            #373.17
+        movaps    %xmm2, %xmm5                                  #373.17
+        movaps    %xmm2, %xmm1                                  #373.17
+        divsd     amas(,%r13,8), %xmm5                          #373.17
+        movsd     432(%rsp), %xmm3                              #373.17[spill]
+        addsd     %xmm2, %xmm5                                  #373.17
+        mulsd     456(%rsp), %xmm0                              #373.17[spill]
+        movaps    %xmm3, %xmm4                                  #373.17
+        subsd     %xmm0, %xmm1                                  #373.17
+        mulsd     %xmm3, %xmm4                                  #373.17
+        mulsd     %xmm3, %xmm1                                  #373.17
+        mulsd     %xmm3, %xmm4                                  #373.17
+        divsd     %xmm4, %xmm5                                  #373.17
+        sqrtsd    %xmm5, %xmm5                                  #373.17
+        movsd     320(%rsp), %xmm0                              #373.17[spill]
+        mulsd     .L_2il0floatpacket.10(%rip), %xmm0            #373.17
+        mulsd     .L_2il0floatpacket.11(%rip), %xmm5            #373.17
+        movsd     %xmm1, 352(%rsp)                              #373.17[spill]
+        movsd     %xmm5, 296(%rsp)                              #373.17[spill]
+        call      __libm_sse2_sincos                            #373.17
+                                # LOE rbx r12 r13 r14 xmm0 xmm1
+..B1.48:                        # Preds ..B1.49
+                                # Execution count [5.84e+06]
+        movsd     %xmm0, 408(%rsp)                              #373.17[spill]
+        movsd     376(%rsp), %xmm0                              #373.17[spill]
+        movsd     %xmm1, 416(%rsp)                              #373.17[spill]
+        call      __libm_sse2_sincos                            #373.17
+                                # LOE rbx r12 r13 r14 xmm0 xmm1
+..B1.47:                        # Preds ..B1.48
+                                # Execution count [5.84e+06]
+        movsd     408(%rsp), %xmm2                              #373.17[spill]
+        movsd     384(%rsp), %xmm3                              #373.17[spill]
+        mulsd     %xmm2, %xmm1                                  #373.17
+        mulsd     %xmm0, %xmm2                                  #373.17
+        movsd     336(%rsp), %xmm0                              #373.17[spill]
+        movsd     %xmm1, 392(%rsp)                              #373.17[spill]
+        addsd     %xmm0, %xmm3                                  #373.17
+        movsd     %xmm2, 408(%rsp)                              #373.17[spill]
+        addsd     %xmm3, %xmm0                                  #373.17
+        call      __libm_sse2_sincos                            #373.17
+                                # LOE rbx r12 r13 r14 xmm0 xmm1
+..B1.46:                        # Preds ..B1.47
+                                # Execution count [5.84e+06]
+        movsd     456(%rsp), %xmm4                              #373.17[spill]
+        movaps    %xmm0, %xmm3                                  #373.17
+        mulsd     %xmm4, %xmm4                                  #373.17
+        movaps    %xmm1, %xmm0                                  #373.17
+        movsd     .L_2il0floatpacket.22(%rip), %xmm5            #373.17
+        movsd     432(%rsp), %xmm6                              #373.17[spill]
+        subsd     %xmm4, %xmm5                                  #373.17
+        sqrtsd    %xmm5, %xmm5                                  #373.17
+        divsd     %xmm5, %xmm6                                  #373.17
+        movsd     408(%rsp), %xmm1                              #373.17[spill]
+        movsd     392(%rsp), %xmm2                              #373.17[spill]
+        mulsd     %xmm0, %xmm1                                  #373.17
+        mulsd     %xmm3, %xmm2                                  #373.17
+        movsd     %xmm0, 400(%rsp)                              #373.17[spill]
+        subsd     %xmm2, %xmm1                                  #373.17
+        mulsd     .L_2il0floatpacket.12(%rip), %xmm1            #373.17
+        movsd     384(%rsp), %xmm0                              #373.17[spill]
+        movsd     %xmm3, 424(%rsp)                              #373.17[spill]
+        movsd     %xmm1, 368(%rsp)                              #373.17[spill]
+        movsd     %xmm6, 432(%rsp)                              #373.17[spill]
+        call      __libm_sse2_sincos                            #373.17
+                                # LOE rbx r12 r13 r14 xmm0 xmm1
+..B1.45:                        # Preds ..B1.46
+                                # Execution count [5.84e+06]
+        movsd     456(%rsp), %xmm9                              #373.17[spill]
+        movaps    %xmm0, %xmm8                                  #373.17
+        mulsd     %xmm9, %xmm8                                  #373.17
+        mulsd     %xmm1, %xmm9                                  #373.17
+        movsd     392(%rsp), %xmm5                              #373.17[spill]
+        movsd     424(%rsp), %xmm7                              #373.17[spill]
+        movaps    %xmm5, %xmm11                                 #373.17
+        movsd     400(%rsp), %xmm1                              #373.17[spill]
+        movsd     368(%rsp), %xmm13                             #373.17[spill]
+        addsd     %xmm7, %xmm8                                  #373.17
+        mulsd     %xmm13, %xmm11                                #373.17
+        addsd     %xmm1, %xmm9                                  #373.17
+        movsd     408(%rsp), %xmm4                              #373.17[spill]
+        movaps    %xmm13, %xmm12                                #373.17
+        movsd     432(%rsp), %xmm6                              #373.17[spill]
+        movsd     416(%rsp), %xmm2                              #373.17[spill]
+        mulsd     %xmm4, %xmm13                                 #373.17
+        addsd     %xmm11, %xmm7                                 #373.17
+        mulsd     %xmm6, %xmm8                                  #373.17
+        mulsd     %xmm9, %xmm6                                  #373.17
+        subsd     %xmm13, %xmm1                                 #373.17
+        mulsd     %xmm8, %xmm4                                  #373.17
+        movsd     352(%rsp), %xmm14                             #373.17[spill]
+        movaps    %xmm2, %xmm9                                  #373.17
+        addsd     %xmm2, %xmm2                                  #373.17
+        mulsd     %xmm14, %xmm9                                 #373.17
+        mulsd     %xmm14, %xmm7                                 #373.17
+        mulsd     %xmm14, %xmm1                                 #373.17
+        mulsd     %xmm6, %xmm5                                  #373.17
+        xorps     .L_2il0floatpacket.21(%rip), %xmm12           #373.17
+        mulsd     %xmm12, %xmm9                                 #373.17
+        addsd     %xmm5, %xmm4                                  #373.17
+        movsd     .L_2il0floatpacket.13(%rip), %xmm13           #373.17
+        movaps    %xmm1, %xmm5                                  #374.17
+        movsd     .L_2il0floatpacket.14(%rip), %xmm12           #373.17
+        movaps    %xmm13, %xmm0                                 #373.17
+        movaps    %xmm12, %xmm15                                #373.17
+        movsd     296(%rsp), %xmm3                              #373.17[spill]
+        mulsd     %xmm7, %xmm0                                  #373.17
+        mulsd     %xmm9, %xmm15                                 #373.17
+        mulsd     %xmm3, %xmm2                                  #373.17
+        mulsd     %xmm12, %xmm7                                 #373.17
+        subsd     %xmm15, %xmm0                                 #373.17
+        mulsd     %xmm13, %xmm9                                 #373.17
+        mulsd     %xmm4, %xmm2                                  #373.17
+        mulsd     %xmm1, %xmm5                                  #374.17
+        addsd     %xmm9, %xmm7                                  #373.17
+        movsd     %xmm2, 416(%rsp)                              #373.17[spill]
+        movaps    %xmm0, %xmm2                                  #374.17
+        mulsd     %xmm0, %xmm2                                  #374.17
+        addsd     %xmm2, %xmm5                                  #374.17
+        movsd     %xmm7, 424(%rsp)                              #373.17[spill]
+        mulsd     %xmm7, %xmm7                                  #374.17
+        addsd     %xmm7, %xmm5                                  #374.17
+        sqrtsd    %xmm5, %xmm5                                  #374.17
+        movsd     %xmm6, 432(%rsp)                              #373.17[spill]
+        movsd     %xmm1, 400(%rsp)                              #373.17[spill]
+        movsd     %xmm5, 328(%rsp)                              #374.17[spill]
+        movsd     %xmm5, 24(%rsp,%r14)                          #374.17
+        call      atan2                                         #374.17
+                                # LOE rbx r12 r13 r14 xmm0
+..B1.44:                        # Preds ..B1.45
+                                # Execution count [5.84e+06]
+        movaps    %xmm0, %xmm1                                  #374.17
+        mulsd     .L_2il0floatpacket.16(%rip), %xmm1            #374.17
+        pxor      %xmm0, %xmm0                                  #374.17
+        comisd    %xmm1, %xmm0                                  #374.17
+        jbe       ..B1.16       # Prob 50%                      #374.17
+                                # LOE rbx r12 r13 r14 xmm1
+..B1.15:                        # Preds ..B1.44
+                                # Execution count [2.92e+06]
+        addsd     .L_2il0floatpacket.18(%rip), %xmm1            #374.17
+        movsd     %xmm1, 8(%rsp,%r14)                           #374.17
+        jmp       ..B1.17       # Prob 100%                     #374.17
+                                # LOE rbx r12 r13 r14
+..B1.16:                        # Preds ..B1.44
+                                # Execution count [2.92e+06]
+        movsd     %xmm1, 8(%rsp,%r14)                           #374.17
+                                # LOE rbx r12 r13 r14
+..B1.17:                        # Preds ..B1.15 ..B1.16
+                                # Execution count [5.84e+06]
+        movsd     424(%rsp), %xmm0                              #374.17[spill]
+        divsd     328(%rsp), %xmm0                              #374.17[spill]
+        call      asin                                          #374.17
+                                # LOE rbx r12 r13 r14 xmm0
+..B1.52:                        # Preds ..B1.17
+                                # Execution count [5.84e+06]
+        mulsd     .L_2il0floatpacket.17(%rip), %xmm0            #374.17
+        incq      %r13                                          #371.34
+        movsd     %xmm0, 16(%rsp,%r14)                          #374.17
+        addq      $24, %r14                                     #371.34
+        addq      $80, %r12                                     #371.34
+        addq      $72, %rbx                                     #371.34
+        cmpq      $8, %r13                                      #371.29
+        jl        ..B1.4        # Prob 87%                      #371.29
+                                # LOE rbx r12 r13 r14
+..B1.18:                        # Preds ..B1.52
+                                # Execution count [7.30e+05]
+        movl      200(%rsp), %edx                               #[spill]
+        incl      %edx                                          #367.40
+        movsd     208(%rsp), %xmm0                              #[spill]
+        movsd     .L_2il0floatpacket.0(%rip), %xmm1             #
+        movsd     .L_2il0floatpacket.1(%rip), %xmm3             #
+        movsd     .L_2il0floatpacket.22(%rip), %xmm2            #
+        cmpl      $36525, %edx                                  #367.25
+        jl        ..B1.3        # Prob 99%                      #367.25
+                                # LOE edx xmm0 xmm1 xmm2 xmm3
+..B1.19:                        # Preds ..B1.18
+                                # Execution count [2.00e+01]
+        movb      (%rsp), %al                                   #[spill]
+        incb      %al                                           #362.35
+        cmpb      $20, %al                                      #362.21
+        jl        ..B1.2        # Prob 95%                      #362.21
+                                # LOE al xmm1 xmm2 xmm3
+..B1.20:                        # Preds ..B1.19
+                                # Execution count [1.00e+00]
+        movl      $.L_2__STRING.1, %edi                         #380.7
+        movl      $3, %eax                                      #380.7
+        movsd     8(%rsp), %xmm0                                #380.7
+        movsd     16(%rsp), %xmm1                               #380.7
+        movsd     24(%rsp), %xmm2                               #380.7
+..___tag_value_main.115:
+#       printf(const char *__restrict__, ...)
+        call      printf                                        #380.7
+..___tag_value_main.116:
+                                # LOE rbx r12 r13 r14 r15
+..B1.21:                        # Preds ..B1.20
+                                # Execution count [1.00e+00]
+        movsd     32(%rsp), %xmm0                               #380.7
+        movl      $.L_2__STRING.1, %edi                         #380.7
+        movsd     40(%rsp), %xmm1                               #380.7
+        movl      $3, %eax                                      #380.7
+        movsd     48(%rsp), %xmm2                               #380.7
+..___tag_value_main.117:
+#       printf(const char *__restrict__, ...)
+        call      printf                                        #380.7
+..___tag_value_main.118:
+                                # LOE rbx r12 r13 r14 r15
+..B1.22:                        # Preds ..B1.21
+                                # Execution count [1.00e+00]
+        movsd     56(%rsp), %xmm0                               #380.7
+        movl      $.L_2__STRING.1, %edi                         #380.7
+        movsd     64(%rsp), %xmm1                               #380.7
+        movl      $3, %eax                                      #380.7
+        movsd     72(%rsp), %xmm2                               #380.7
+..___tag_value_main.119:
+#       printf(const char *__restrict__, ...)
+        call      printf                                        #380.7
+..___tag_value_main.120:
+                                # LOE rbx r12 r13 r14 r15
+..B1.23:                        # Preds ..B1.22
+                                # Execution count [1.00e+00]
+        movsd     80(%rsp), %xmm0                               #380.7
+        movl      $.L_2__STRING.1, %edi                         #380.7
+        movsd     88(%rsp), %xmm1                               #380.7
+        movl      $3, %eax                                      #380.7
+        movsd     96(%rsp), %xmm2                               #380.7
+..___tag_value_main.121:
+#       printf(const char *__restrict__, ...)
+        call      printf                                        #380.7
+..___tag_value_main.122:
+                                # LOE rbx r12 r13 r14 r15
+..B1.24:                        # Preds ..B1.23
+                                # Execution count [1.00e+00]
+        movsd     104(%rsp), %xmm0                              #380.7
+        movl      $.L_2__STRING.1, %edi                         #380.7
+        movsd     112(%rsp), %xmm1                              #380.7
+        movl      $3, %eax                                      #380.7
+        movsd     120(%rsp), %xmm2                              #380.7
+..___tag_value_main.123:
+#       printf(const char *__restrict__, ...)
+        call      printf                                        #380.7
+..___tag_value_main.124:
+                                # LOE rbx r12 r13 r14 r15
+..B1.25:                        # Preds ..B1.24
+                                # Execution count [1.00e+00]
+        movsd     128(%rsp), %xmm0                              #380.7
+        movl      $.L_2__STRING.1, %edi                         #380.7
+        movsd     136(%rsp), %xmm1                              #380.7
+        movl      $3, %eax                                      #380.7
+        movsd     144(%rsp), %xmm2                              #380.7
+..___tag_value_main.125:
+#       printf(const char *__restrict__, ...)
+        call      printf                                        #380.7
+..___tag_value_main.126:
+                                # LOE rbx r12 r13 r14 r15
+..B1.26:                        # Preds ..B1.25
+                                # Execution count [1.00e+00]
+        movsd     152(%rsp), %xmm0                              #380.7
+        movl      $.L_2__STRING.1, %edi                         #380.7
+        movsd     160(%rsp), %xmm1                              #380.7
+        movl      $3, %eax                                      #380.7
+        movsd     168(%rsp), %xmm2                              #380.7
+..___tag_value_main.127:
+#       printf(const char *__restrict__, ...)
+        call      printf                                        #380.7
+..___tag_value_main.128:
+                                # LOE rbx r12 r13 r14 r15
+..B1.27:                        # Preds ..B1.26
+                                # Execution count [1.00e+00]
+        movsd     176(%rsp), %xmm0                              #380.7
+        movl      $.L_2__STRING.1, %edi                         #380.7
+        movsd     184(%rsp), %xmm1                              #380.7
+        movl      $3, %eax                                      #380.7
+        movsd     192(%rsp), %xmm2                              #380.7
+..___tag_value_main.129:
+#       printf(const char *__restrict__, ...)
+        call      printf                                        #380.7
+..___tag_value_main.130:
+                                # LOE rbx r12 r13 r14 r15
+..B1.28:                        # Preds ..B1.27
+                                # Execution count [1.00e+00]
+        movq      stdout(%rip), %rdi                            #387.5
+#       fflush(FILE *)
+        call      fflush                                        #387.5
+                                # LOE rbx r12 r13 r14 r15
+..B1.29:                        # Preds ..B1.28
+                                # Execution count [1.00e+00]
+        xorl      %eax, %eax                                    #389.12
+        addq      $472, %rsp                                    #389.12
+	.cfi_restore 3
+        popq      %rbx                                          #389.12
+	.cfi_restore 15
+        popq      %r15                                          #389.12
+	.cfi_restore 14
+        popq      %r14                                          #389.12
+	.cfi_restore 13
+        popq      %r13                                          #389.12
+	.cfi_restore 12
+        popq      %r12                                          #389.12
+        movq      %rbp, %rsp                                    #389.12
+        popq      %rbp                                          #389.12
+	.cfi_def_cfa 7, 8
+	.cfi_restore 6
+        ret                                                     #389.12
+        .align    16,0x90
+                                # LOE
+	.cfi_endproc
+# mark_end;
+	.type	main,@function
+	.size	main,.-main
+..LNmain.0:
+	.data
+# -- End  main
+	.text
+.L_2__routine_start_anpm_1:
+# -- Begin  anpm
+	.text
+# mark_begin;
+       .align    16,0x90
+	.globl anpm
+# --- anpm(double)
+anpm:
+# parameter 1: %xmm0
+..B2.1:                         # Preds ..B2.0
+                                # Execution count [1.00e+00]
+	.cfi_startproc
+..___tag_value_anpm.139:
+..L140:
+                                                        #209.1
+        pushq     %rsi                                          #209.1
+	.cfi_def_cfa_offset 16
+        movsd     .L_2il0floatpacket.4(%rip), %xmm1             #210.16
+        movsd     %xmm0, (%rsp)                                 #209.1[spill]
+        call      fmod                                          #210.16
+                                # LOE rbx rbp r12 r13 r14 r15 xmm0
+..B2.6:                         # Preds ..B2.1
+                                # Execution count [1.00e+00]
+        movaps    %xmm0, %xmm1                                  #212.9
+        andps     .L_2il0floatpacket.20(%rip), %xmm1            #212.9
+        comisd    .L_2il0floatpacket.5(%rip), %xmm1             #212.20
+        jb        ..B2.3        # Prob 50%                      #212.20
+                                # LOE rbx rbp r12 r13 r14 r15 xmm0
+..B2.2:                         # Preds ..B2.6
+                                # Execution count [5.00e-01]
+        movsd     .L_2il0floatpacket.19(%rip), %xmm2            #213.23
+        pxor      %xmm1, %xmm1                                  #213.23
+        comisd    (%rsp), %xmm1                                 #213.23[spill]
+        ja        ..L143        # Prob 50%                      #213.23
+        movsd     .L_2il0floatpacket.4(%rip), %xmm2             #213.23
+..L143:                                                         #
+        subsd     %xmm2, %xmm0                                  #213.23
+                                # LOE rbx rbp r12 r13 r14 r15 xmm0
+..B2.3:                         # Preds ..B2.2 ..B2.6
+                                # Execution count [1.00e+00]
+        popq      %rcx                                          #215.12
+	.cfi_def_cfa_offset 8
+        ret                                                     #215.12
+        .align    16,0x90
+                                # LOE
+	.cfi_endproc
+# mark_end;
+	.type	anpm,@function
+	.size	anpm,.-anpm
+..LNanpm.1:
+	.data
+# -- End  anpm
+	.text
+.L_2__routine_start_planetpv_2:
+# -- Begin  planetpv
+	.text
+# mark_begin;
+       .align    16,0x90
+	.globl planetpv
+# --- planetpv(double *, int, double (*)[3])
+planetpv:
+# parameter 1: %rdi
+# parameter 2: %esi
+# parameter 3: %rdx
+..B3.1:                         # Preds ..B3.0
+                                # Execution count [1.00e+00]
+	.cfi_startproc
+..___tag_value_planetpv.147:
+..L148:
+                                                        #222.1
+        pushq     %r14                                          #222.1
+	.cfi_def_cfa_offset 16
+	.cfi_offset 14, -16
+        pushq     %r15                                          #222.1
+	.cfi_def_cfa_offset 24
+	.cfi_offset 15, -24
+        pushq     %rbx                                          #222.1
+	.cfi_def_cfa_offset 32
+	.cfi_offset 3, -32
+        pushq     %rbp                                          #222.1
+	.cfi_def_cfa_offset 40
+	.cfi_offset 6, -40
+        subq      $104, %rsp                                    #222.1
+	.cfi_def_cfa_offset 144
+        movq      %rdx, %r15                                    #222.1
+        movsd     (%rdi), %xmm6                                 #230.11
+        movslq    %esi, %r14                                    #222.1
+        subsd     .L_2il0floatpacket.0(%rip), %xmm6             #230.22
+        movsd     .L_2il0floatpacket.3(%rip), %xmm5             #234.12
+        lea       (%r14,%r14,2), %rbx                           #233.11
+        movsd     16+pi(,%rbx,8), %xmm7                         #236.51
+        movsd     16+dlm(,%rbx,8), %xmm2                        #234.48
+        movsd     16+a(,%rbx,8), %xmm1                          #233.34
+        movsd     16+e(,%rbx,8), %xmm4                          #235.34
+        movsd     pi(,%rbx,8), %xmm0                            #236.26
+        movsd     dlm(,%rbx,8), %xmm3                           #234.21
+        mulsd     %xmm5, %xmm0                                  #236.26
+        addsd     8(%rdi), %xmm6                                #230.31
+        mulsd     %xmm5, %xmm3                                  #234.21
+        divsd     .L_2il0floatpacket.1(%rip), %xmm6             #230.43
+        mulsd     %xmm6, %xmm7                                  #236.63
+        mulsd     %xmm6, %xmm2                                  #234.61
+        mulsd     %xmm6, %xmm1                                  #233.45
+        addsd     8+pi(,%rbx,8), %xmm7                          #236.63
+        mulsd     %xmm6, %xmm4                                  #235.45
+        addsd     8+dlm(,%rbx,8), %xmm2                         #234.61
+        addsd     8+a(,%rbx,8), %xmm1                           #233.45
+        mulsd     %xmm6, %xmm7                                  #236.69
+        addsd     8+e(,%rbx,8), %xmm4                           #235.45
+        mulsd     %xmm6, %xmm2                                  #234.67
+        mulsd     %xmm6, %xmm1                                  #233.51
+        addsd     %xmm7, %xmm0                                  #236.69
+        mulsd     %xmm6, %xmm4                                  #235.51
+        addsd     %xmm2, %xmm3                                  #234.67
+        addsd     a(,%rbx,8), %xmm1                             #233.51
+        addsd     e(,%rbx,8), %xmm4                             #235.51
+        movsd     .L_2il0floatpacket.2(%rip), %xmm8             #234.73
+        mulsd     %xmm8, %xmm0                                  #236.75
+        mulsd     %xmm8, %xmm3                                  #234.73
+        movsd     %xmm1, 80(%rsp)                               #233.51[spill]
+        movsd     .L_2il0floatpacket.4(%rip), %xmm1             #236.11
+        movsd     %xmm6, 72(%rsp)                               #230.43[spill]
+        movsd     %xmm3, 64(%rsp)                               #234.73[spill]
+        movsd     %xmm4, 96(%rsp)                               #235.51[spill]
+        movsd     %xmm0, (%rsp)                                 #236.75[spill]
+        call      fmod                                          #236.11
+                                # LOE rbx r12 r13 r14 r15 xmm0
+..B3.15:                        # Preds ..B3.1
+                                # Execution count [1.00e+00]
+        movsd     %xmm0, 32(%rsp)                               #236.11[spill]
+        andps     .L_2il0floatpacket.20(%rip), %xmm0            #236.11
+        comisd    .L_2il0floatpacket.5(%rip), %xmm0             #236.11
+        jb        ..B3.3        # Prob 50%                      #236.11
+                                # LOE rbx r12 r13 r14 r15
+..B3.2:                         # Preds ..B3.15
+                                # Execution count [5.00e-01]
+        movsd     .L_2il0floatpacket.19(%rip), %xmm1            #236.11
+        pxor      %xmm0, %xmm0                                  #236.11
+        comisd    (%rsp), %xmm0                                 #236.11[spill]
+        movsd     32(%rsp), %xmm2                               #236.11[spill]
+        ja        ..L165        # Prob 50%                      #236.11
+        movsd     .L_2il0floatpacket.4(%rip), %xmm1             #236.11
+..L165:                                                         #
+        subsd     %xmm1, %xmm2                                  #236.11
+        movsd     %xmm2, 32(%rsp)                               #236.11[spill]
+                                # LOE rbx r12 r13 r14 r15
+..B3.3:                         # Preds ..B3.2 ..B3.15
+                                # Execution count [1.00e+00]
+        movsd     16+dinc(,%rbx,8), %xmm1                       #237.50
+        movsd     72(%rsp), %xmm4                               #237.64[spill]
+        movsd     16+omega(,%rbx,8), %xmm5                      #238.57
+        mulsd     %xmm4, %xmm1                                  #237.64
+        mulsd     %xmm4, %xmm5                                  #238.72
+        addsd     8+dinc(,%rbx,8), %xmm1                        #237.64
+        addsd     8+omega(,%rbx,8), %xmm5                       #238.72
+        mulsd     %xmm4, %xmm1                                  #237.70
+        mulsd     %xmm4, %xmm5                                  #238.78
+        movsd     dinc(,%rbx,8), %xmm2                          #237.21
+        movsd     .L_2il0floatpacket.3(%rip), %xmm3             #237.21
+        mulsd     %xmm3, %xmm2                                  #237.21
+        mulsd     omega(,%rbx,8), %xmm3                         #238.26
+        addsd     %xmm1, %xmm2                                  #237.70
+        addsd     %xmm5, %xmm3                                  #238.78
+        movsd     .L_2il0floatpacket.2(%rip), %xmm0             #237.76
+        mulsd     %xmm0, %xmm2                                  #237.76
+        mulsd     %xmm3, %xmm0                                  #238.84
+        movsd     .L_2il0floatpacket.4(%rip), %xmm1             #238.11
+        movsd     %xmm2, 56(%rsp)                               #237.76[spill]
+        movsd     %xmm0, (%rsp)                                 #238.84[spill]
+        call      fmod                                          #238.11
+                                # LOE r12 r13 r14 r15 xmm0
+..B3.16:                        # Preds ..B3.3
+                                # Execution count [1.00e+00]
+        movsd     %xmm0, 48(%rsp)                               #238.11[spill]
+        andps     .L_2il0floatpacket.20(%rip), %xmm0            #238.11
+        comisd    .L_2il0floatpacket.5(%rip), %xmm0             #238.11
+        jb        ..B3.5        # Prob 50%                      #238.11
+                                # LOE r12 r13 r14 r15
+..B3.4:                         # Preds ..B3.16
+                                # Execution count [5.00e-01]
+        movsd     .L_2il0floatpacket.19(%rip), %xmm1            #238.11
+        pxor      %xmm0, %xmm0                                  #238.11
+        comisd    (%rsp), %xmm0                                 #238.11[spill]
+        movsd     48(%rsp), %xmm2                               #238.11[spill]
+        ja        ..L173        # Prob 50%                      #238.11
+        movsd     .L_2il0floatpacket.4(%rip), %xmm1             #238.11
+..L173:                                                         #
+        subsd     %xmm1, %xmm2                                  #238.11
+        movsd     %xmm2, 48(%rsp)                               #238.11[spill]
+                                # LOE r12 r13 r14 r15
+..B3.5:                         # Preds ..B3.4 ..B3.16
+                                # Execution count [1.00e+00]
+        movsd     .L_2il0floatpacket.6(%rip), %xmm10            #241.24
+        lea       (%r14,%r14,4), %rbp                           #246.16
+        mulsd     72(%rsp), %xmm10                              #241.24[spill]
+        pxor      %xmm0, %xmm0                                  #234.5
+        movups    %xmm0, (%rsp)                                 #234.5[spill]
+        lea       (%r14,%r14,8), %rbx                           #245.16
+        movups    %xmm0, 16(%rsp)                               #247.9[spill]
+        xorl      %eax, %eax                                    #243.5
+        movsd     %xmm10, 88(%rsp)                              #241.24[spill]
+        unpcklpd  %xmm10, %xmm10                                #225.5
+        shlq      $4, %rbp                                      #246.16
+        movups    .L_2il0floatpacket.7(%rip), %xmm8             #248.71
+        shlq      $3, %rbx                                      #245.16
+        movq      %r13, 40(%rsp)                                #245.16[spill]
+	.cfi_offset 13, -104
+        movq      %rax, %r13                                    #245.16
+        movaps    %xmm0, %xmm9                                  #245.16
+        movups    (%rsp), %xmm11                                #245.16[spill]
+                                # LOE rbx rbp r12 r13 r14 r15 xmm8 xmm9 xmm10 xmm11
+..B3.6:                         # Preds ..B3.17 ..B3.5
+                                # Execution count [8.00e+00]
+        movups    kq(%rbp,%r13,8), %xmm0                        #246.16
+        mulpd     %xmm10, %xmm0                                 #246.28
+..___tag_value_planetpv.183:
+        call      *__svml_sincos2@GOTPCREL(%rip)                #248.62
+..___tag_value_planetpv.184:
+                                # LOE rbx rbp r12 r13 r14 r15 xmm0 xmm1 xmm8 xmm9 xmm10 xmm11
+..B3.18:                        # Preds ..B3.6
+                                # Execution count [8.00e+00]
+        mulpd     cl(%rbp,%r13,8), %xmm1                        #248.34
+        mulpd     sl(%rbp,%r13,8), %xmm0                        #248.58
+        addpd     %xmm0, %xmm1                                  #248.58
+        movups    kp(%rbx,%r13,8), %xmm0                        #245.16
+        mulpd     %xmm8, %xmm1                                  #248.71
+        mulpd     %xmm10, %xmm0                                 #245.28
+        addpd     %xmm1, %xmm11                                 #248.71
+..___tag_value_planetpv.185:
+        call      *__svml_sincos2@GOTPCREL(%rip)                #247.58
+..___tag_value_planetpv.186:
+                                # LOE rbx rbp r12 r13 r14 r15 xmm0 xmm1 xmm8 xmm9 xmm10 xmm11
+..B3.17:                        # Preds ..B3.18
+                                # Execution count [8.00e+00]
+        movaps    %xmm0, %xmm2                                  #247.58
+        movaps    %xmm1, %xmm3                                  #247.58
+        movups    ca(%rbx,%r13,8), %xmm1                        #247.22
+        movups    sa(%rbx,%r13,8), %xmm0                        #247.46
+        mulpd     %xmm1, %xmm3                                  #247.34
+        mulpd     %xmm0, %xmm2                                  #247.58
+        addpd     %xmm2, %xmm3                                  #247.58
+        mulpd     %xmm8, %xmm3                                  #247.71
+        addq      $2, %r13                                      #243.5
+        addpd     %xmm3, %xmm9                                  #247.71
+        cmpq      $8, %r13                                      #243.5
+        jb        ..B3.6        # Prob 87%                      #243.5
+                                # LOE rbx rbp r12 r13 r14 r15 xmm8 xmm9 xmm10 xmm11
+..B3.7:                         # Preds ..B3.17
+                                # Execution count [1.00e+00]
+        movsd     72(%rsp), %xmm0                               #252.58[spill]
+        mulsd     .L_2il0floatpacket.8(%rip), %xmm0             #252.58
+        movsd     %xmm0, 72(%rsp)                               #252.58[spill]
+        movsd     64+kp(%rbx), %xmm0                            #252.5
+        mulsd     88(%rsp), %xmm0                               #252.5[spill]
+        movq      40(%rsp), %r13                                #[spill]
+	.cfi_restore 13
+        movups    %xmm9, 16(%rsp)                               #[spill]
+        movups    %xmm11, (%rsp)                                #[spill]
+        call      __libm_sse2_sincos                            #252.5
+	.cfi_offset 13, -104
+                                # LOE rbx rbp r12 r13 r14 r15 xmm0 xmm1
+..B3.23:                        # Preds ..B3.7
+                                # Execution count [1.00e+00]
+        movaps    %xmm0, %xmm2                                  #252.5
+        movaps    %xmm1, %xmm3                                  #252.5
+        mulsd     64+ca(%rbx), %xmm3                            #252.34
+        mulsd     64+sa(%rbx), %xmm2                            #252.58
+        movups    16(%rsp), %xmm0                               #247.9[spill]
+        addsd     %xmm2, %xmm3                                  #252.58
+        movaps    %xmm0, %xmm1                                  #247.9
+        unpckhpd  %xmm0, %xmm1                                  #247.9
+        mulsd     72(%rsp), %xmm3                               #252.71[spill]
+        addsd     %xmm1, %xmm0                                  #247.9
+        addsd     80(%rsp), %xmm0                               #247.9[spill]
+        addsd     %xmm0, %xmm3                                  #252.71
+        movsd     64+kq(%rbp), %xmm0                            #257.9
+        mulsd     88(%rsp), %xmm0                               #257.9[spill]
+        movsd     %xmm3, 40(%rsp)                               #252.71[spill]
+        call      __libm_sse2_sincos                            #257.9
+                                # LOE rbp r12 r13 r14 r15 xmm0 xmm1
+..B3.22:                        # Preds ..B3.23
+                                # Execution count [1.00e+00]
+        movaps    %xmm0, %xmm2                                  #257.9
+        movaps    %xmm1, %xmm3                                  #257.9
+        mulsd     64+cl(%rbp), %xmm3                            #257.39
+        mulsd     64+sl(%rbp), %xmm2                            #257.63
+        movups    (%rsp), %xmm0                                 #234.5[spill]
+        addsd     %xmm2, %xmm3                                  #257.63
+        movaps    %xmm0, %xmm1                                  #234.5
+        unpckhpd  %xmm0, %xmm1                                  #234.5
+        mulsd     72(%rsp), %xmm3                               #257.77[spill]
+        addsd     %xmm1, %xmm0                                  #234.5
+        addsd     64(%rsp), %xmm0                               #234.5[spill]
+        addsd     %xmm3, %xmm0                                  #257.77
+        movsd     %xmm0, 16(%rsp)                               #257.77[spill]
+        movsd     88(%rsp), %xmm0                               #263.5[spill]
+        mulsd     72+kq(%rbp), %xmm0                            #263.5
+        call      __libm_sse2_sincos                            #263.5
+                                # LOE rbp r12 r13 r14 r15 xmm0 xmm1
+..B3.21:                        # Preds ..B3.22
+                                # Execution count [1.00e+00]
+        mulsd     72+cl(%rbp), %xmm1                            #260.10
+        mulsd     72+sl(%rbp), %xmm0                            #260.10
+        movsd     72(%rsp), %xmm2                               #260.10[spill]
+        addsd     %xmm0, %xmm1                                  #260.10
+        mulsd     %xmm1, %xmm2                                  #260.10
+        movsd     16(%rsp), %xmm0                               #260.10[spill]
+        movsd     .L_2il0floatpacket.4(%rip), %xmm1             #260.10
+        addsd     %xmm2, %xmm0                                  #260.10
+        call      fmod                                          #260.10
+                                # LOE r12 r13 r14 r15 xmm0
+..B3.20:                        # Preds ..B3.21
+                                # Execution count [1.00e+00]
+        subsd     32(%rsp), %xmm0                               #263.15[spill]
+        movsd     %xmm0, 8(%rsp)                                #263.15[spill]
+        call      sin                                           #264.20
+                                # LOE r12 r13 r14 r15 xmm0
+..B3.19:                        # Preds ..B3.20
+                                # Execution count [1.00e+00]
+        mulsd     96(%rsp), %xmm0                               #264.20[spill]
+        xorl      %ebx, %ebx                                    #265.5
+        addsd     8(%rsp), %xmm0                                #264.20[spill]
+        movsd     %xmm0, (%rsp)                                 #264.20[spill]
+                                # LOE r12 r13 r14 r15 ebx
+..B3.8:                         # Preds ..B3.9 ..B3.19
+                                # Execution count [2.78e+00]
+        movsd     (%rsp), %xmm0                                 #269.9[spill]
+        call      __libm_sse2_sincos                            #269.9
+                                # LOE r12 r13 r14 r15 ebx xmm0 xmm1
+..B3.24:                        # Preds ..B3.8
+                                # Execution count [2.78e+00]
+        movaps    %xmm0, %xmm4                                  #269.9
+        movaps    %xmm1, %xmm2                                  #269.9
+        movsd     96(%rsp), %xmm0                               #269.31[spill]
+        incl      %ebx                                          #271.19
+        mulsd     %xmm0, %xmm4                                  #269.31
+        mulsd     %xmm0, %xmm2                                  #269.54
+        addsd     8(%rsp), %xmm4                                #269.31[spill]
+        movsd     (%rsp), %xmm3                                 #269.21[spill]
+        movsd     .L_2il0floatpacket.22(%rip), %xmm1            #269.54
+        subsd     %xmm3, %xmm4                                  #269.21
+        subsd     %xmm2, %xmm1                                  #269.54
+        divsd     %xmm1, %xmm4                                  #269.54
+        addsd     %xmm4, %xmm3                                  #270.20
+        movsd     %xmm3, (%rsp)                                 #270.20[spill]
+        cmpl      $10, %ebx                                     #273.19
+        jge       ..B3.11       # Prob 20%                      #273.19
+                                # LOE r12 r13 r14 r15 ebx xmm4
+..B3.9:                         # Preds ..B3.24
+                                # Execution count [2.22e+00]
+        andps     .L_2il0floatpacket.20(%rip), %xmm4            #273.27
+        movsd     .L_2il0floatpacket.9(%rip), %xmm0             #273.39
+        comisd    %xmm4, %xmm0                                  #273.39
+        jbe       ..B3.8        # Prob 80%                      #273.39
+                                # LOE r12 r13 r14 r15 ebx
+..B3.11:                        # Preds ..B3.24 ..B3.9
+                                # Execution count [1.00e+00]
+        movsd     .L_2il0floatpacket.10(%rip), %xmm0            #279.17
+        mulsd     (%rsp), %xmm0                                 #279.17[spill]
+        call      __libm_sse2_sincos                            #279.17
+                                # LOE r12 r13 r14 r15 xmm0 xmm1
+..B3.31:                        # Preds ..B3.11
+                                # Execution count [1.00e+00]
+        movsd     .L_2il0floatpacket.22(%rip), %xmm2            #279.17
+        movsd     96(%rsp), %xmm3                               #279.17[spill]
+        movaps    %xmm2, %xmm4                                  #279.17
+        addsd     %xmm3, %xmm4                                  #279.17
+        subsd     %xmm3, %xmm2                                  #279.17
+        divsd     %xmm2, %xmm4                                  #279.17
+        sqrtsd    %xmm4, %xmm4                                  #279.17
+        mulsd     %xmm4, %xmm0                                  #279.17
+        call      atan2                                         #279.17
+                                # LOE r12 r13 r14 r15 xmm0
+..B3.30:                        # Preds ..B3.31
+                                # Execution count [1.00e+00]
+        movsd     %xmm0, 64(%rsp)                               #279.17[spill]
+        movsd     (%rsp), %xmm0                                 #282.26[spill]
+        call      cos                                           #282.26
+                                # LOE r12 r13 r14 r15 xmm0
+..B3.29:                        # Preds ..B3.30
+                                # Execution count [1.00e+00]
+        movsd     .L_2il0floatpacket.22(%rip), %xmm2            #282.26
+        movaps    %xmm2, %xmm5                                  #283.36
+        movaps    %xmm2, %xmm1                                  #282.26
+        divsd     amas(,%r14,8), %xmm5                          #283.36
+        movsd     40(%rsp), %xmm3                               #282.26[spill]
+        addsd     %xmm2, %xmm5                                  #283.36
+        mulsd     96(%rsp), %xmm0                               #282.26[spill]
+        movaps    %xmm3, %xmm4                                  #283.55
+        subsd     %xmm0, %xmm1                                  #282.26
+        mulsd     %xmm3, %xmm4                                  #283.55
+        mulsd     %xmm3, %xmm1                                  #282.26
+        mulsd     %xmm3, %xmm4                                  #283.60
+        divsd     %xmm4, %xmm5                                  #283.60
+        sqrtsd    %xmm5, %xmm5                                  #283.18
+        movsd     .L_2il0floatpacket.10(%rip), %xmm0            #285.13
+        mulsd     56(%rsp), %xmm0                               #285.13[spill]
+        mulsd     .L_2il0floatpacket.11(%rip), %xmm5            #283.18
+        movsd     %xmm1, 8(%rsp)                                #282.26[spill]
+        movsd     %xmm5, (%rsp)                                 #283.18[spill]
+        call      __libm_sse2_sincos                            #285.13
+                                # LOE r12 r13 r15 xmm0 xmm1
+..B3.28:                        # Preds ..B3.29
+                                # Execution count [1.00e+00]
+        movsd     %xmm0, 24(%rsp)                               #285.13[spill]
+        movsd     48(%rsp), %xmm0                               #286.5[spill]
+        movsd     %xmm1, 16(%rsp)                               #285.13[spill]
+        call      __libm_sse2_sincos                            #286.5
+                                # LOE r12 r13 r15 xmm0 xmm1
+..B3.27:                        # Preds ..B3.28
+                                # Execution count [1.00e+00]
+        movsd     24(%rsp), %xmm2                               #286.19[spill]
+        movsd     32(%rsp), %xmm3                               #289.13[spill]
+        mulsd     %xmm2, %xmm1                                  #286.19
+        mulsd     %xmm0, %xmm2                                  #287.19
+        movsd     64(%rsp), %xmm0                               #289.13[spill]
+        movsd     %xmm1, 48(%rsp)                               #286.19[spill]
+        addsd     %xmm0, %xmm3                                  #289.13
+        movsd     %xmm2, 24(%rsp)                               #287.19[spill]
+        addsd     %xmm3, %xmm0                                  #289.13
+        call      __libm_sse2_sincos                            #289.13
+                                # LOE r12 r13 r15 xmm0 xmm1
+..B3.26:                        # Preds ..B3.27
+                                # Execution count [1.00e+00]
+        movsd     96(%rsp), %xmm4                               #292.32[spill]
+        movaps    %xmm0, %xmm3                                  #289.13
+        mulsd     %xmm4, %xmm4                                  #292.32
+        movaps    %xmm1, %xmm0                                  #289.13
+        movsd     .L_2il0floatpacket.22(%rip), %xmm5            #292.32
+        movsd     40(%rsp), %xmm6                               #292.18[spill]
+        subsd     %xmm4, %xmm5                                  #292.32
+        sqrtsd    %xmm5, %xmm5                                  #292.18
+        divsd     %xmm5, %xmm6                                  #292.18
+        movsd     24(%rsp), %xmm1                               #291.25[spill]
+        movsd     48(%rsp), %xmm2                               #291.36[spill]
+        mulsd     %xmm0, %xmm1                                  #291.25
+        mulsd     %xmm3, %xmm2                                  #291.36
+        movsd     %xmm0, 56(%rsp)                               #289.13[spill]
+        subsd     %xmm2, %xmm1                                  #291.36
+        mulsd     .L_2il0floatpacket.12(%rip), %xmm1            #291.36
+        movsd     32(%rsp), %xmm0                               #294.5[spill]
+        movsd     %xmm3, 72(%rsp)                               #289.13[spill]
+        movsd     %xmm1, 64(%rsp)                               #291.36[spill]
+        movsd     %xmm6, 40(%rsp)                               #292.18[spill]
+        call      __libm_sse2_sincos                            #294.5
+                                # LOE r12 r13 r15 xmm0 xmm1
+..B3.25:                        # Preds ..B3.26
+                                # Execution count [1.00e+00]
+        movsd     48(%rsp), %xmm5                               #296.24[spill]
+        movaps    %xmm0, %xmm11                                 #294.5
+        movsd     96(%rsp), %xmm10                              #294.19[spill]
+        movaps    %xmm5, %xmm13                                 #300.26
+        movsd     24(%rsp), %xmm7                               #296.19[spill]
+        movaps    %xmm5, %xmm6                                  #296.24
+        movsd     64(%rsp), %xmm15                              #300.26[spill]
+        movaps    %xmm7, %xmm8                                  #296.19
+        mulsd     %xmm10, %xmm11                                #294.19
+        movaps    %xmm15, %xmm14                                #301.15
+        addsd     %xmm7, %xmm8                                  #296.19
+        mulsd     %xmm1, %xmm10                                 #295.19
+        mulsd     %xmm15, %xmm13                                #300.26
+        mulsd     %xmm7, %xmm15                                 #299.26
+        mulsd     %xmm8, %xmm6                                  #296.24
+        movsd     72(%rsp), %xmm9                               #294.29[spill]
+        movsd     56(%rsp), %xmm1                               #295.29[spill]
+        addsd     %xmm9, %xmm11                                 #294.29
+        addsd     %xmm1, %xmm10                                 #295.29
+        addsd     %xmm13, %xmm9                                 #300.26
+        subsd     %xmm15, %xmm1                                 #299.26
+        movsd     16(%rsp), %xmm4                               #301.21[spill]
+        movsd     8(%rsp), %xmm0                                #300.26[spill]
+        movaps    %xmm4, %xmm3                                  #301.21
+        mulsd     %xmm0, %xmm3                                  #301.21
+        addsd     %xmm4, %xmm4                                  #311.20
+        mulsd     %xmm0, %xmm9                                  #300.26
+        mulsd     %xmm1, %xmm0                                  #299.26
+        xorps     .L_2il0floatpacket.21(%rip), %xmm14           #301.15
+        mulsd     %xmm14, %xmm3                                 #301.21
+        movaps    %xmm7, %xmm14                                 #311.32
+        mulsd     %xmm8, %xmm7                                  #309.33
+        movsd     %xmm0, (%r15)                                 #304.5
+        movsd     40(%rsp), %xmm12                              #294.36[spill]
+        movsd     .L_2il0floatpacket.13(%rip), %xmm0            #305.20
+        movsd     .L_2il0floatpacket.14(%rip), %xmm2            #305.33
+        movaps    %xmm0, %xmm13                                 #305.20
+        mulsd     %xmm12, %xmm11                                #294.36
+        addsd     .L_2il0floatpacket.15(%rip), %xmm7            #309.33
+        mulsd     %xmm12, %xmm10                                #295.36
+        mulsd     %xmm9, %xmm13                                 #305.20
+        mulsd     %xmm2, %xmm9                                  #306.20
+        mulsd     %xmm11, %xmm14                                #311.32
+        mulsd     %xmm11, %xmm7                                 #309.39
+        movaps    %xmm2, %xmm12                                 #305.33
+        mulsd     %xmm3, %xmm12                                 #305.33
+        mulsd     %xmm0, %xmm3                                  #306.33
+        subsd     %xmm12, %xmm13                                #305.33
+        addsd     %xmm3, %xmm9                                  #306.33
+        movaps    %xmm5, %xmm3                                  #310.28
+        movsd     .L_2il0floatpacket.22(%rip), %xmm1            #310.33
+        addsd     %xmm5, %xmm3                                  #310.28
+        mulsd     %xmm5, %xmm3                                  #310.33
+        mulsd     %xmm10, %xmm5                                 #311.43
+        subsd     %xmm3, %xmm1                                  #310.33
+        addsd     %xmm5, %xmm14                                 #311.43
+        mulsd     %xmm10, %xmm1                                 #310.40
+        movsd     %xmm9, 16(%r15)                               #306.5
+        movaps    %xmm11, %xmm9                                 #310.54
+        mulsd     %xmm6, %xmm9                                  #310.54
+        movaps    %xmm2, %xmm5                                  #315.33
+        mulsd     %xmm10, %xmm6                                 #309.53
+        subsd     %xmm9, %xmm1                                  #310.54
+        addsd     %xmm6, %xmm7                                  #309.53
+        movsd     (%rsp), %xmm3                                 #310.54[spill]
+        movaps    %xmm0, %xmm6                                  #315.20
+        mulsd     %xmm3, %xmm4                                  #311.43
+        mulsd     %xmm3, %xmm1                                  #310.54
+        mulsd     %xmm7, %xmm3                                  #309.53
+        mulsd     %xmm14, %xmm4                                 #311.43
+        mulsd     %xmm1, %xmm6                                  #315.20
+        mulsd     %xmm2, %xmm1                                  #316.20
+        mulsd     %xmm4, %xmm5                                  #315.33
+        mulsd     %xmm4, %xmm0                                  #316.33
+        subsd     %xmm5, %xmm6                                  #315.33
+        addsd     %xmm0, %xmm1                                  #316.33
+        movsd     %xmm13, 8(%r15)                               #305.5
+        movsd     %xmm3, 24(%r15)                               #314.5
+        movsd     %xmm6, 32(%r15)                               #315.5
+        movsd     %xmm1, 40(%r15)                               #316.5
+        addq      $104, %rsp                                    #317.1
+	.cfi_def_cfa_offset 40
+	.cfi_restore 6
+        popq      %rbp                                          #317.1
+	.cfi_def_cfa_offset 32
+	.cfi_restore 3
+        popq      %rbx                                          #317.1
+	.cfi_def_cfa_offset 24
+	.cfi_restore 15
+        popq      %r15                                          #317.1
+	.cfi_def_cfa_offset 16
+	.cfi_restore 14
+        popq      %r14                                          #317.1
+	.cfi_def_cfa_offset 8
+        ret                                                     #317.1
+        .align    16,0x90
+                                # LOE
+	.cfi_endproc
+# mark_end;
+	.type	planetpv,@function
+	.size	planetpv,.-planetpv
+..LNplanetpv.2:
+	.data
+# -- End  planetpv
+	.text
+.L_2__routine_start_radecdist_3:
+# -- Begin  radecdist
+	.text
+# mark_begin;
+       .align    16,0x90
+	.globl radecdist
+# --- radecdist(double (*)[3], double *)
+radecdist:
+# parameter 1: %rdi
+# parameter 2: %rsi
+..B4.1:                         # Preds ..B4.0
+                                # Execution count [1.00e+00]
+	.cfi_startproc
+..___tag_value_radecdist.263:
+..L264:
+                                                        #323.1
+        pushq     %rbx                                          #323.1
+	.cfi_def_cfa_offset 16
+	.cfi_offset 3, -16
+        pushq     %rbp                                          #323.1
+	.cfi_def_cfa_offset 24
+	.cfi_offset 6, -24
+        pushq     %rsi                                          #323.1
+	.cfi_def_cfa_offset 32
+        movq      %rdi, %rbx                                    #323.1
+        movq      %rsi, %rbp                                    #323.1
+        movsd     (%rbx), %xmm3                                 #325.19
+        movsd     8(%rbx), %xmm1                                #325.61
+        mulsd     %xmm3, %xmm3                                  #325.33
+        mulsd     %xmm1, %xmm1                                  #325.61
+        movsd     16(%rbx), %xmm2                               #325.89
+        addsd     %xmm1, %xmm3                                  #325.61
+        mulsd     %xmm2, %xmm2                                  #325.89
+        addsd     %xmm2, %xmm3                                  #325.89
+        sqrtsd    %xmm3, %xmm3                                  #325.14
+        movsd     %xmm3, 16(%rbp)                               #325.5
+        movsd     8(%rbx), %xmm0                                #328.14
+        movsd     (%rbx), %xmm1                                 #328.14
+        movsd     %xmm3, (%rsp)                                 #325.14[spill]
+        call      atan2                                         #328.14
+                                # LOE rbx rbp r12 r13 r14 r15 xmm0
+..B4.7:                         # Preds ..B4.1
+                                # Execution count [1.00e+00]
+        movaps    %xmm0, %xmm1                                  #328.14
+        mulsd     .L_2il0floatpacket.16(%rip), %xmm1            #328.48
+        pxor      %xmm0, %xmm0                                  #329.5
+        comisd    %xmm1, %xmm0                                  #329.18
+        jbe       ..B4.3        # Prob 50%                      #329.18
+                                # LOE rbx rbp r12 r13 r14 r15 xmm1
+..B4.2:                         # Preds ..B4.7
+                                # Execution count [5.00e-01]
+        movsd     .L_2il0floatpacket.18(%rip), %xmm0            #329.33
+        addsd     %xmm0, %xmm1                                  #329.23
+        movsd     %xmm1, (%rbp)                                 #329.23
+        jmp       ..B4.4        # Prob 100%                     #329.23
+                                # LOE rbx rbp r12 r13 r14 r15
+..B4.3:                         # Preds ..B4.7
+                                # Execution count [5.00e-01]
+        movsd     %xmm1, (%rbp)                                 #329.23
+                                # LOE rbx rbp r12 r13 r14 r15
+..B4.4:                         # Preds ..B4.2 ..B4.3
+                                # Execution count [1.00e+00]
+        movsd     16(%rbx), %xmm0                               #332.14
+        divsd     (%rsp), %xmm0                                 #332.14[spill]
+        call      asin                                          #332.14
+                                # LOE rbp r12 r13 r14 r15 xmm0
+..B4.8:                         # Preds ..B4.4
+                                # Execution count [1.00e+00]
+        mulsd     .L_2il0floatpacket.17(%rip), %xmm0            #332.43
+        movsd     %xmm0, 8(%rbp)                                #332.5
+        popq      %rcx                                          #333.1
+	.cfi_def_cfa_offset 24
+	.cfi_restore 6
+        popq      %rbp                                          #333.1
+	.cfi_def_cfa_offset 16
+	.cfi_restore 3
+        popq      %rbx                                          #333.1
+	.cfi_def_cfa_offset 8
+        ret                                                     #333.1
+        .align    16,0x90
+                                # LOE
+	.cfi_endproc
+# mark_end;
+	.type	radecdist,@function
+	.size	radecdist,.-radecdist
+..LNradecdist.3:
+	.data
+# -- End  radecdist
+	.section .rodata, "a"
+	.align 32
+	.align 32
+pi:
+	.long	0x0de9f882,0x40535d31
+	.long	0xab9f559b,0x40b6571d
+	.long	0x7689ca19,0xc0135215
+	.long	0xdadfb507,0x40607209
+	.long	0x96bb98c8,0x4065ef90
+	.long	0x9ddc1e79,0xc07f27b5
+	.long	0x82cd2461,0x4059bbfd
+	.long	0x2bd3c361,0x40c6ae2d
+	.long	0x6e6d9be5,0x404aa34c
+	.long	0xb7dfd5be,0x407500f6
+	.long	0xc3222920,0x40cf363a
+	.long	0xe76c8b44,0xc04f29fb
+	.long	0xf265b897,0x402ca993
+	.long	0x6ad2dcb1,0x40be4ec0
+	.long	0x9ed7c6fc,0x40703f59
+	.long	0xc7642d26,0x405743a9
+	.long	0xa415f45e,0x40d3eadf
+	.long	0xfce3150e,0x4067c84d
+	.long	0x58283528,0x4065a02b
+	.long	0xf04577d9,0x40a91f1f
+	.long	0x7de939eb,0xc0410be3
+	.long	0x305b6785,0x40480f65
+	.long	0x60fe4799,0x40906ae0
+	.long	0xeee0f3cb,0x403b65ac
+	.type	pi,@object
+	.size	pi,192
+	.align 32
+dlm:
+	.long	0x6b035926,0x406f8807
+	.long	0xadee3cb4,0x41f40bbc
+	.long	0x2f44912a,0xbffed8a3
+	.long	0x874feafa,0x4066bf5a
+	.long	0xf5157881,0x41df6432
+	.long	0xd4413554,0x3fe3007d
+	.long	0x6dbf7622,0x40591dda
+	.long	0xf3b56502,0x41d34fc2
+	.long	0x57fb6998,0xc0005a56
+	.long	0x90f7b482,0x407636ed
+	.long	0x4b784dfd,0x41c4890a
+	.long	0x5c7cd899,0x3fee2a1b
+	.long	0x90ea1d96,0x40412cfe
+	.long	0x6f1ea0ba,0x419a0c7e
+	.long	0x5379fa98,0xc03e9a91
+	.long	0xb1dfe17d,0x404909e9
+	.long	0x14756430,0x4184fa9e
+	.long	0xd677707a,0x4052e76e
+	.long	0x4d09c902,0x4073a0e1
+	.long	0x7e0efdca,0x416d6ba5
+	.long	0x516db0de,0xbffc0366
+	.long	0x22411d82,0x40730594
+	.long	0xcd46b26c,0x415e0127
+	.long	0xf23cc8de,0x3fcb0307
+	.type	dlm,@object
+	.size	dlm,192
+	.align 32
+a:
+	.long	0xfd3b6253,0x3fd8c637
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x00000000
+	.long	0x9423e3e0,0x3fe72584
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x00000000
+	.long	0x1136aef5,0x3ff00001
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x00000000
+	.long	0x96f0d223,0x3ff860fd
+	.long	0xe361ce4c,0x3df49da7
+	.long	0x00000000,0x00000000
+	.long	0x37365089,0x4014cf77
+	.long	0xd2b8ae8f,0x3ec00c90
+	.long	0x68bf779e,0xbe30c018
+	.long	0x0ebb7c0f,0x40231c1d
+	.long	0x1e9d9a9d,0xbef66dba
+	.long	0x1ee91688,0x3e67d64a
+	.long	0x14c35efa,0x403337ec
+	.long	0x1561f9e1,0xbe98f00a
+	.long	0x038502a4,0x3e7a47a3
+	.long	0x5059fb17,0x403e1c42
+	.long	0x97c217d7,0xbebbe8ad
+	.long	0xf670079b,0x3e726a27
+	.type	a,@object
+	.size	a,192
+	.align 32
+e:
+	.long	0x2a37d430,0x3fca5224
+	.long	0x9459e7f4,0x3f2abf4b
+	.long	0xc1bd0f9b,0xbec7c7e6
+	.long	0x77820827,0x3f7bbcde
+	.long	0x25fb4bc2,0xbf3f4dac
+	.long	0x37feff37,0x3ee49427
+	.long	0x75cc9f7b,0x3f911c11
+	.long	0xa536f731,0xbf3b8c8f
+	.long	0xd53b08d4,0xbeea93fa
+	.long	0xd74bf5b0,0x3fb7e91a
+	.long	0x43b5e407,0x3f4da661
+	.long	0x76f62826,0xbee0e961
+	.long	0x57e48742,0x3fa8d4b8
+	.long	0x9a18b7b5,0x3f5abe2b
+	.long	0x3e59c18d,0xbf08b691
+	.long	0x5fa41e66,0x3fac70ce
+	.long	0xa86fd58e,0xbf6c6594
+	.long	0x61d60729,0xbf10df63
+	.long	0x9022d287,0x3fa7bf47
+	.long	0x6ae927d8,0xbf31e2fe
+	.long	0x0376f006,0x3ee08c9c
+	.long	0xe0fe76d8,0x3f835d88
+	.long	0xe27c5204,0x3f0fa0db
+	.long	0x00000000,0x00000000
+	.type	e,@object
+	.size	e,192
+	.align 32
+omega:
+	.long	0xb400a313,0x40482a5a
+	.long	0x9f01b867,0xc0b1a337
+	.long	0x05681ecd,0xc03fcc86
+	.long	0xcff8fc2b,0x40532b83
+	.long	0xa31a4bdc,0xc0c38c3d
+	.long	0xf49cf56f,0xc049a9be
+	.long	0x0e4ff9e8,0x4065dbf1
+	.long	0x9a804966,0xc0c0f3a2
+	.long	0xd3d859c9,0x402eaf0e
+	.long	0x992a88eb,0x4048c76f
+	.long	0x50092ccf,0xc0c4be73
+	.long	0x84cad57c,0xc06cd25f
+	.long	0xd838bbb3,0x40591db8
+	.long	0x1dbca969,0x40b8da09
+	.long	0x35fc3b4f,0x40746859
+	.long	0x97e1b38f,0x405c6a97
+	.long	0x86983516,0xc0c20c19
+	.long	0x0d9945b7,0xc0508f32
+	.long	0x9982c872,0x40528061
+	.long	0xf80dc337,0x40a4da4c
+	.long	0x87e7c06e,0x40623e11
+	.long	0xfebf632d,0x40607916
+	.long	0xdbb59ddc,0xc06bbe2e
+	.long	0xd3996fa8,0xbfe93165
+	.type	omega,@object
+	.size	omega,192
+	.align 32
+dinc:
+	.long	0x1d92b7fe,0x401c051b
+	.long	0x87160957,0xc06ac833
+	.long	0x785729b3,0x3fd28b97
+	.long	0x7e34386c,0x400b2844
+	.long	0xa1dfb939,0xc03ed828
+	.long	0x007dd441,0xc0275b52
+	.long	0x00000000,0x00000000
+	.long	0xf51ac9b0,0x407d5f90
+	.long	0xac322292,0xc00acde2
+	.long	0xcb2252bb,0x3ffd987a
+	.long	0x55475a32,0xc0725513
+	.long	0xd14e3bcd,0xc0203c91
+	.long	0x7a10e830,0x3ff4da2e
+	.long	0x04816f00,0xc051e3c5
+	.long	0xaf102364,0x4027e7eb
+	.long	0x471e778f,0x4003e939
+	.long	0x594af4f1,0x4056f686
+	.long	0x374bc6a8,0xc031a989
+	.long	0x677d67b5,0x3fe8be07
+	.long	0xdf6555c5,0xc04e5d15
+	.long	0xb11c6d1e,0x3ff41f16
+	.long	0xce9853f4,0x3ffc51b9
+	.long	0x1c193b3a,0x40203f25
+	.long	0x858793de,0x3fb4d35a
+	.type	dinc,@object
+	.size	dinc,192
+	.align 32
+kq:
+	.long	0x00000000,0x40a81c00
+	.long	0x00000000,0x40cec100
+	.long	0x00000000,0x40f0fed0
+	.long	0x00000000,0x40ed3f60
+	.long	0x00000000,0x40f277d0
+	.long	0x00000000,0x40f58f20
+	.long	0x00000000,0x40c8ba80
+	.long	0x00000000,0x40a4c400
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x40d559c0
+	.long	0x00000000,0x40e00340
+	.long	0x00000000,0x40c55980
+	.long	0x00000000,0x40524000
+	.long	0x00000000,0x40b12300
+	.long	0x00000000,0x40da4d80
+	.long	0x00000000,0x40970400
+	.long	0x00000000,0x40a0da00
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x40240000
+	.long	0x00000000,0x40cf4100
+	.long	0x00000000,0x40d559c0
+	.long	0x00000000,0x40c55980
+	.long	0x00000000,0x40970400
+	.long	0x00000000,0x40df4100
+	.long	0x00000000,0x40b12300
+	.long	0x00000000,0x40524000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x40240000
+	.long	0x00000000,0x40b8c900
+	.long	0x00000000,0x40be8a00
+	.long	0x00000000,0x40914c00
+	.long	0x00000000,0x40ce8a00
+	.long	0x00000000,0x40bba500
+	.long	0x00000000,0x40bff800
+	.long	0x00000000,0x4080a000
+	.long	0x00000000,0x40240000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x40330000
+	.long	0x00000000,0x409b8000
+	.long	0x00000000,0x4096b800
+	.long	0x00000000,0x4071f000
+	.long	0x00000000,0x40923c00
+	.long	0x00000000,0x408b8000
+	.long	0x00000000,0x4081f000
+	.long	0x00000000,0x40a4a000
+	.long	0x00000000,0x40330000
+	.long	0x00000000,0x4096b800
+	.long	0x00000000,0x40330000
+	.long	0x00000000,0x4081f000
+	.long	0x00000000,0x4071f000
+	.long	0x00000000,0x40732000
+	.long	0x00000000,0x409b8000
+	.long	0x00000000,0x40280000
+	.long	0x00000000,0x403f0000
+	.long	0x00000000,0x40430000
+	.long	0x00000000,0x40330000
+	.long	0x00000000,0x4081f000
+	.long	0x00000000,0x40100000
+	.long	0x00000000,0x40698000
+	.long	0x00000000,0x40662000
+	.long	0x00000000,0x40200000
+	.long	0x00000000,0x403f0000
+	.long	0x00000000,0x40690000
+	.long	0x00000000,0x4093c400
+	.long	0x00000000,0x40598000
+	.long	0x00000000,0x40100000
+	.long	0x00000000,0x40698000
+	.long	0x00000000,0x40100000
+	.long	0x00000000,0x40598000
+	.long	0x00000000,0x405a8000
+	.long	0x00000000,0x40200000
+	.long	0x00000000,0x40588000
+	.long	0x00000000,0x40955c00
+	.long	0x00000000,0x407e7000
+	.long	0x00000000,0x40698000
+	.long	0x00000000,0x40100000
+	.long	0x00000000,0x40598000
+	.type	kq,@object
+	.size	kq,640
+	.align 32
+cl:
+	.long	0x00000000,0x40350000
+	.long	0x00000000,0xc057c000
+	.long	0x00000000,0xc063a000
+	.long	0x00000000,0x40448000
+	.long	0x00000000,0xc0140000
+	.long	0x00000000,0x40450000
+	.long	0x00000000,0x40370000
+	.long	0x00000000,0x403e0000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0xc0640000
+	.long	0x00000000,0xc0739000
+	.long	0x00000000,0xc06d6000
+	.long	0x00000000,0x404e0000
+	.long	0x00000000,0xc0528000
+	.long	0x00000000,0xc0530000
+	.long	0x00000000,0xc03b0000
+	.long	0x00000000,0x40410000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0xc0745000
+	.long	0x00000000,0xc0742000
+	.long	0x00000000,0xc053c000
+	.long	0x00000000,0x406d0000
+	.long	0x00000000,0xc04a0000
+	.long	0x00000000,0x40584000
+	.long	0x00000000,0x404b8000
+	.long	0x00000000,0xc0448000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x40a1b800
+	.long	0x00000000,0xc08e9800
+	.long	0x00000000,0x40891000
+	.long	0x00000000,0x4082d000
+	.long	0x00000000,0xc084e000
+	.long	0x00000000,0xc0408000
+	.long	0x00000000,0x40759000
+	.long	0x00000000,0x40692000
+	.long	0x00000000,0xc04b8000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x40bdba00
+	.long	0x00000000,0xc0b38500
+	.long	0x00000000,0xc0be0900
+	.long	0x00000000,0xc0b6d100
+	.long	0x00000000,0xc0a47200
+	.long	0x00000000,0x40916c00
+	.long	0x00000000,0xc0876000
+	.long	0x00000000,0xc082f800
+	.long	0x00000000,0x40b7ba00
+	.long	0x00000000,0x40762000
+	.long	0x00000000,0xc0d21d40
+	.long	0x00000000,0x40dd6b40
+	.long	0x00000000,0x40d38b00
+	.long	0x00000000,0xc086d000
+	.long	0x00000000,0x4089c000
+	.long	0x00000000,0x40370000
+	.long	0x00000000,0x40942400
+	.long	0x00000000,0xc0760000
+	.long	0x00000000,0xc0ccd780
+	.long	0x00000000,0xc0a01c00
+	.long	0x00000000,0xc1008268
+	.long	0x00000000,0xc0cc8100
+	.long	0x00000000,0x40b06500
+	.long	0x00000000,0xc0af7c00
+	.long	0x00000000,0xc0b5fe00
+	.long	0x00000000,0xc0a6a400
+	.long	0x00000000,0x40a3d800
+	.long	0x00000000,0xc0732000
+	.long	0x00000000,0x40a6f600
+	.long	0x00000000,0x409f0800
+	.long	0x00000000,0x40f5f5c0
+	.long	0x00000000,0x40a06e00
+	.long	0x00000000,0x40c18180
+	.long	0x00000000,0x40a50e00
+	.long	0x00000000,0x40acc400
+	.long	0x00000000,0x4099c000
+	.long	0x00000000,0x408b1000
+	.long	0x00000000,0xc0634000
+	.long	0x00000000,0xc09eac00
+	.long	0x00000000,0xc071b000
+	.type	cl,@object
+	.size	cl,640
+	.align 32
+sl:
+	.long	0x00000000,0xc0756000
+	.long	0x00000000,0x40610000
+	.long	0x00000000,0xc0370000
+	.long	0x00000000,0x404f0000
+	.long	0x00000000,0x40508000
+	.long	0x00000000,0xc04a0000
+	.long	0x00000000,0xc0408000
+	.long	0x00000000,0x40310000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x40806000
+	.long	0x00000000,0xc062a000
+	.long	0x00000000,0xc0418000
+	.long	0x00000000,0x405d4000
+	.long	0x00000000,0x4062e000
+	.long	0x00000000,0x405e8000
+	.long	0x00000000,0xc051c000
+	.long	0x00000000,0xc04f0000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0xc05a4000
+	.long	0x00000000,0xc0612000
+	.long	0x00000000,0x40702000
+	.long	0x00000000,0x40418000
+	.long	0x00000000,0xc05d0000
+	.long	0x00000000,0xc0560000
+	.long	0x00000000,0xc05c0000
+	.long	0x00000000,0xc0540000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x408ab000
+	.long	0x00000000,0xc069a000
+	.long	0x00000000,0xc08d4000
+	.long	0x00000000,0xc06e0000
+	.long	0x00000000,0x40618000
+	.long	0x00000000,0xc0755000
+	.long	0x00000000,0xc0584000
+	.long	0x00000000,0xc06d0000
+	.long	0x00000000,0x4080c000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0xc0ebd280
+	.long	0x00000000,0x40bf5000
+	.long	0x00000000,0x408fa000
+	.long	0x00000000,0x4096a000
+	.long	0x00000000,0xc0a7a000
+	.long	0x00000000,0xc0acfc00
+	.long	0x00000000,0x4073e000
+	.long	0x00000000,0x407f7000
+	.long	0x00000000,0x40ad6e00
+	.long	0x00000000,0x40820800
+	.long	0x00000000,0x4100eb70
+	.long	0x00000000,0xc0ca5300
+	.long	0x00000000,0xc0b36400
+	.long	0x00000000,0x40968400
+	.long	0x00000000,0xc0949c00
+	.long	0x00000000,0xc0972800
+	.long	0x00000000,0x407ab000
+	.long	0x00000000,0x40935000
+	.long	0x00000000,0xc0c1e780
+	.long	0x00000000,0xc09df800
+	.long	0x00000000,0x40f16420
+	.long	0x00000000,0xc0e41380
+	.long	0x00000000,0x40b4d600
+	.long	0x00000000,0xc0b34700
+	.long	0x00000000,0xc09ce000
+	.long	0x00000000,0x40508000
+	.long	0x00000000,0x407b2000
+	.long	0x00000000,0xc09b5000
+	.long	0x00000000,0x40ad8800
+	.long	0x00000000,0xc085e800
+	.long	0x00000000,0xc0e743a0
+	.long	0x00000000,0x40c6bf80
+	.long	0x00000000,0x40a0ec00
+	.long	0x00000000,0x40a8f400
+	.long	0x00000000,0x40853800
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0xc06e8000
+	.long	0x00000000,0xc07a3000
+	.long	0x00000000,0xc0a3c600
+	.long	0x00000000,0x40480000
+	.type	sl,@object
+	.size	sl,640
+	.align 32
+kp:
+	.long	0x00000000,0x40f0fed0
+	.long	0x00000000,0x40f277d0
+	.long	0x00000000,0x40f58f20
+	.long	0x00000000,0x40ed3f60
+	.long	0x00000000,0x40cec100
+	.long	0x00000000,0x40f15af0
+	.long	0x00000000,0x41015ae8
+	.long	0x00000000,0x40a81c00
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x40d559c0
+	.long	0x00000000,0x40e00340
+	.long	0x00000000,0x40da4d80
+	.long	0x00000000,0x40c55980
+	.long	0x00000000,0x40d9a280
+	.long	0x00000000,0x40e559a0
+	.long	0x00000000,0x40ea4d60
+	.long	0x00000000,0x40dc42c0
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x40cf4100
+	.long	0x00000000,0x40d559c0
+	.long	0x00000000,0x40df4100
+	.long	0x00000000,0x40c55980
+	.long	0x00000000,0x40cc6080
+	.long	0x00000000,0x40cff800
+	.long	0x00000000,0x40cdeb00
+	.long	0x00000000,0x40e00340
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x40b8c900
+	.long	0x00000000,0x40be8a00
+	.long	0x00000000,0x40ce8a00
+	.long	0x00000000,0x40bba500
+	.long	0x00000000,0x40bff800
+	.long	0x00000000,0x40cba980
+	.long	0x00000000,0x40914c00
+	.long	0x00000000,0x40b30800
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x409b8000
+	.long	0x00000000,0x4096b800
+	.long	0x00000000,0x40923c00
+	.long	0x00000000,0x408b8000
+	.long	0x00000000,0x4071f000
+	.long	0x00000000,0x40a4a000
+	.long	0x00000000,0x40330000
+	.long	0x00000000,0x409ffc00
+	.long	0x00000000,0x4096b800
+	.long	0x00000000,0x4081f000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x408b8000
+	.long	0x00000000,0x4071f000
+	.long	0x00000000,0x40330000
+	.long	0x00000000,0x409b8000
+	.long	0x00000000,0x40923c00
+	.long	0x00000000,0x40732000
+	.long	0x00000000,0x4081f000
+	.long	0x00000000,0x40698000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x40662000
+	.long	0x00000000,0x4093c400
+	.long	0x00000000,0x40100000
+	.long	0x00000000,0x40781000
+	.long	0x00000000,0x40690000
+	.long	0x00000000,0x406a0000
+	.long	0x00000000,0x40698000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x40598000
+	.long	0x00000000,0x405a8000
+	.long	0x00000000,0x40100000
+	.long	0x00000000,0x40588000
+	.long	0x00000000,0x40955c00
+	.long	0x00000000,0x407e7000
+	.long	0x00000000,0x40698000
+	.long	0x00000000,0x00000000
+	.type	kp,@object
+	.size	kp,576
+	.align 32
+ca:
+	.long	0x00000000,0x40100000
+	.long	0x00000000,0xc02a0000
+	.long	0x00000000,0x40260000
+	.long	0x00000000,0xc0220000
+	.long	0x00000000,0xc0220000
+	.long	0x00000000,0xc0080000
+	.long	0x00000000,0xbff00000
+	.long	0x00000000,0x40100000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0xc0638000
+	.long	0x00000000,0x404d8000
+	.long	0x00000000,0xc0450000
+	.long	0x00000000,0x40180000
+	.long	0x00000000,0x40330000
+	.long	0x00000000,0xc0340000
+	.long	0x00000000,0xc0240000
+	.long	0x00000000,0xc0280000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x40500000
+	.long	0x00000000,0xc0630000
+	.long	0x00000000,0x404f0000
+	.long	0x00000000,0xc0200000
+	.long	0x00000000,0x40400000
+	.long	0x00000000,0xc0448000
+	.long	0x00000000,0x40330000
+	.long	0x00000000,0xc0260000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x405f0000
+	.long	0x00000000,0x40836800
+	.long	0x00000000,0xc0622000
+	.long	0x00000000,0x406a0000
+	.long	0x00000000,0x404b0000
+	.long	0x00000000,0xc04c8000
+	.long	0x00000000,0x403e0000
+	.long	0x00000000,0x402e0000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0xc0d6e340
+	.long	0x00000000,0xc0a49400
+	.long	0x00000000,0x40b9c900
+	.long	0x00000000,0x40b87300
+	.long	0x00000000,0xc0978c00
+	.long	0x00000000,0xc09c7400
+	.long	0x00000000,0x40a47800
+	.long	0x00000000,0xc0a08600
+	.long	0x00000000,0xc0974400
+	.long	0x00000000,0x40eeb7e0
+	.long	0x00000000,0xc0fd46f0
+	.long	0x00000000,0x40f35e80
+	.long	0x00000000,0x40d16580
+	.long	0x00000000,0xc0d7ac40
+	.long	0x00000000,0x40c79200
+	.long	0x00000000,0x40c03900
+	.long	0x00000000,0xc0b31d00
+	.long	0x00000000,0x40c16300
+	.long	0x00000000,0x4117bf14
+	.long	0x00000000,0xc10fff68
+	.long	0x00000000,0xc0e58700
+	.long	0x00000000,0x40c06180
+	.long	0x00000000,0xc0d67000
+	.long	0x00000000,0xc0a05a00
+	.long	0x00000000,0xc0833800
+	.long	0x00000000,0xc0c2fc00
+	.long	0x00000000,0x40b9e900
+	.long	0x00000000,0xc119292c
+	.long	0x00000000,0xc1032bb0
+	.long	0x00000000,0xc0deb180
+	.long	0x00000000,0x40e27720
+	.long	0x00000000,0xc0c30600
+	.long	0x00000000,0xc02a0000
+	.long	0x00000000,0xc0bd1900
+	.long	0x00000000,0x40c2d600
+	.long	0x00000000,0x00000000
+	.type	ca,@object
+	.size	ca,576
+	.align 32
+sa:
+	.long	0x00000000,0xc03d0000
+	.long	0x00000000,0xbff00000
+	.long	0x00000000,0x40220000
+	.long	0x00000000,0x40180000
+	.long	0x00000000,0xc0180000
+	.long	0x00000000,0x40140000
+	.long	0x00000000,0x40100000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0xc0480000
+	.long	0x00000000,0xc05f4000
+	.long	0x00000000,0xc03a0000
+	.long	0x00000000,0xc0428000
+	.long	0x00000000,0x40320000
+	.long	0x00000000,0xc02a0000
+	.long	0x00000000,0xc0340000
+	.long	0x00000000,0xc0000000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0xc062c000
+	.long	0x00000000,0xc0470000
+	.long	0x00000000,0x40510000
+	.long	0x00000000,0x404b0000
+	.long	0x00000000,0x402c0000
+	.long	0x00000000,0x40380000
+	.long	0x00000000,0xc03c0000
+	.long	0x00000000,0x40360000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0xc0836800
+	.long	0x00000000,0x4080a000
+	.long	0x00000000,0xc085b000
+	.long	0x00000000,0xc0340000
+	.long	0x00000000,0x40680000
+	.long	0x00000000,0xc0578000
+	.long	0x00000000,0x4051c000
+	.long	0x00000000,0xc0524000
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0xc0cc8b00
+	.long	0x00000000,0xc0d35d00
+	.long	0x00000000,0xc0b6ed00
+	.long	0x00000000,0x409d6400
+	.long	0x00000000,0xc0b11400
+	.long	0x00000000,0xc0a19e00
+	.long	0x00000000,0x40887000
+	.long	0x00000000,0x408d1000
+	.long	0x00000000,0x408c8800
+	.long	0x00000000,0x41010ec8
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x40d816c0
+	.long	0x00000000,0x40e8f660
+	.long	0x00000000,0xc0b3ee00
+	.long	0x00000000,0x40bd0500
+	.long	0x00000000,0xc0affe00
+	.long	0x00000000,0xc09ee000
+	.long	0x00000000,0xc0c2af00
+	.long	0x00000000,0xc100db08
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x40e22aa0
+	.long	0x00000000,0xc0e7f1e0
+	.long	0x00000000,0xc0e475a0
+	.long	0x00000000,0xc0e08a00
+	.long	0x00000000,0xc0da6740
+	.long	0x00000000,0xc0c85d00
+	.long	0x00000000,0x40d25b40
+	.long	0x00000000,0x00000000
+	.long	0x00000000,0x40dbd300
+	.long	0x00000000,0x410043a0
+	.long	0x00000000,0x40f10160
+	.long	0x00000000,0x40e98c40
+	.long	0x00000000,0xc0e83520
+	.long	0x00000000,0xc0d9cf80
+	.long	0x00000000,0xc0ac1200
+	.long	0x00000000,0x00000000
+	.type	sa,@object
+	.size	sa,576
+	.align 32
+amas:
+	.long	0x00000000,0x4156fa6c
+	.long	0x00000000,0x4118ef2e
+	.long	0x00000000,0x41141312
+	.long	0x00000000,0x4147a42b
+	.long	0x851eb852,0x40905d6b
+	.long	0x00000000,0x40ab5500
+	.long	0x00000000,0x40d65540
+	.long	0x00000000,0x40d2dc80
+	.type	amas,@object
+	.size	amas,64
+	.align 16
+.L_2il0floatpacket.7:
+	.long	0x9abcaf48,0x3e7ad7f2,0x9abcaf48,0x3e7ad7f2
+	.type	.L_2il0floatpacket.7,@object
+	.size	.L_2il0floatpacket.7,16
+	.align 16
+.L_2il0floatpacket.20:
+	.long	0xffffffff,0x7fffffff,0x00000000,0x00000000
+	.type	.L_2il0floatpacket.20,@object
+	.size	.L_2il0floatpacket.20,16
+	.align 16
+.L_2il0floatpacket.21:
+	.long	0x00000000,0x80000000,0x00000000,0x00000000
+	.type	.L_2il0floatpacket.21,@object
+	.size	.L_2il0floatpacket.21,16
+	.align 8
+.L_2il0floatpacket.0:
+	.long	0x80000000,0x4142b42c
+	.type	.L_2il0floatpacket.0,@object
+	.size	.L_2il0floatpacket.0,8
+	.align 8
+.L_2il0floatpacket.1:
+	.long	0x00000000,0x41164b08
+	.type	.L_2il0floatpacket.1,@object
+	.size	.L_2il0floatpacket.1,8
+	.align 8
+.L_2il0floatpacket.2:
+	.long	0xb2ff8f9d,0x3ed455a5
+	.type	.L_2il0floatpacket.2,@object
+	.size	.L_2il0floatpacket.2,8
+	.align 8
+.L_2il0floatpacket.3:
+	.long	0x00000000,0x40ac2000
+	.type	.L_2il0floatpacket.3,@object
+	.size	.L_2il0floatpacket.3,8
+	.align 8
+.L_2il0floatpacket.4:
+	.long	0x54442d18,0x401921fb
+	.type	.L_2il0floatpacket.4,@object
+	.size	.L_2il0floatpacket.4,8
+	.align 8
+.L_2il0floatpacket.5:
+	.long	0x54442d18,0x400921fb
+	.type	.L_2il0floatpacket.5,@object
+	.size	.L_2il0floatpacket.5,8
+	.align 8
+.L_2il0floatpacket.6:
+	.long	0x1f2e9970,0x3fd702a4
+	.type	.L_2il0floatpacket.6,@object
+	.size	.L_2il0floatpacket.6,8
+	.align 8
+.L_2il0floatpacket.8:
+	.long	0x9abcaf48,0x3e7ad7f2
+	.type	.L_2il0floatpacket.8,@object
+	.size	.L_2il0floatpacket.8,8
+	.align 8
+.L_2il0floatpacket.9:
+	.long	0x812dea11,0x3d719799
+	.type	.L_2il0floatpacket.9,@object
+	.size	.L_2il0floatpacket.9,8
+	.align 8
+.L_2il0floatpacket.10:
+	.long	0x00000000,0x3fe00000
+	.type	.L_2il0floatpacket.10,@object
+	.size	.L_2il0floatpacket.10,8
+	.align 8
+.L_2il0floatpacket.11:
+	.long	0x51a6b69a,0x3f919d6d
+	.type	.L_2il0floatpacket.11,@object
+	.size	.L_2il0floatpacket.11,8
+	.align 8
+.L_2il0floatpacket.12:
+	.long	0x00000000,0x40000000
+	.type	.L_2il0floatpacket.12,@object
+	.size	.L_2il0floatpacket.12,8
+	.align 8
+.L_2il0floatpacket.13:
+	.long	0x57681ef3,0x3fed5c03
+	.type	.L_2il0floatpacket.13,@object
+	.size	.L_2il0floatpacket.13,8
+	.align 8
+.L_2il0floatpacket.14:
+	.long	0x50f4b399,0x3fd9752e
+	.type	.L_2il0floatpacket.14,@object
+	.size	.L_2il0floatpacket.14,8
+	.align 8
+.L_2il0floatpacket.15:
+	.long	0x00000000,0xbff00000
+	.type	.L_2il0floatpacket.15,@object
+	.size	.L_2il0floatpacket.15,8
+	.align 8
+.L_2il0floatpacket.16:
+	.long	0xa4aeacc4,0x400e8ec8
+	.type	.L_2il0floatpacket.16,@object
+	.size	.L_2il0floatpacket.16,8
+	.align 8
+.L_2il0floatpacket.17:
+	.long	0x1a63c1f8,0x404ca5dc
+	.type	.L_2il0floatpacket.17,@object
+	.size	.L_2il0floatpacket.17,8
+	.align 8
+.L_2il0floatpacket.18:
+	.long	0x00000000,0x40380000
+	.type	.L_2il0floatpacket.18,@object
+	.size	.L_2il0floatpacket.18,8
+	.align 8
+.L_2il0floatpacket.19:
+	.long	0x54442d18,0xc01921fb
+	.type	.L_2il0floatpacket.19,@object
+	.size	.L_2il0floatpacket.19,8
+	.align 8
+.L_2il0floatpacket.22:
+	.long	0x00000000,0x3ff00000
+	.type	.L_2il0floatpacket.22,@object
+	.size	.L_2il0floatpacket.22,8
+	.section .rodata.str1.4, "aMS",@progbits,1
+	.align 4
+	.align 4
+.L_2__STRING.1:
+	.long	622880293
+	.long	1713709158
+	.word	10
+	.type	.L_2__STRING.1,@object
+	.size	.L_2__STRING.1,10
+	.data
+	.section .note.GNU-stack, ""
+# End

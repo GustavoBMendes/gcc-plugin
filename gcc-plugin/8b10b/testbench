@@ -1,0 +1,176 @@
+# mark_description "Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.235 Build 20190416";
+# mark_description "-S -c -o testbench";
+	.file "testbench.c"
+	.text
+..TXTST0:
+.L_2__routine_start_runTestbench_0:
+# -- Begin  runTestbench
+	.text
+# mark_begin;
+       .align    16,0x90
+	.globl runTestbench
+# --- runTestbench(int, char *, char *)
+runTestbench:
+# parameter 1: %edi
+# parameter 2: %rsi
+# parameter 3: %rdx
+..B1.1:                         # Preds ..B1.0
+                                # Execution count [1.00e+00]
+	.cfi_startproc
+..___tag_value_runTestbench.1:
+..L2:
+                                                          #39.1
+        pushq     %r13                                          #39.1
+	.cfi_def_cfa_offset 16
+	.cfi_offset 13, -16
+        pushq     %r14                                          #39.1
+	.cfi_def_cfa_offset 24
+	.cfi_offset 14, -24
+        pushq     %r15                                          #39.1
+	.cfi_def_cfa_offset 32
+	.cfi_offset 15, -32
+        pushq     %rbx                                          #39.1
+	.cfi_def_cfa_offset 40
+	.cfi_offset 3, -40
+        pushq     %rbp                                          #39.1
+	.cfi_def_cfa_offset 48
+	.cfi_offset 6, -48
+        movq      %rsi, %rbx                                    #39.1
+        movslq    %edi, %r14                                    #39.1
+        lea       (,%r14,8), %rdi                               #52.42
+#       malloc(size_t)
+        call      malloc                                        #52.42
+                                # LOE rax rbx r12 r13 r14
+..B1.19:                        # Preds ..B1.1
+                                # Execution count [1.00e+00]
+        movq      %rax, %r15                                    #52.42
+                                # LOE rbx r12 r13 r14 r15
+..B1.2:                         # Preds ..B1.19
+                                # Execution count [1.00e+00]
+        movq      %rbx, %rdi                                    #58.14
+        movl      $.L_2__STRING.0, %esi                         #58.14
+        lea       (%r15,%r14,4), %rbp                           #54.20
+#       fopen(const char *__restrict__, const char *__restrict__)
+        call      fopen                                         #58.14
+                                # LOE rax rbp r12 r13 r14 r15
+..B1.20:                        # Preds ..B1.2
+                                # Execution count [1.00e+00]
+        movq      %rax, %rbx                                    #58.14
+                                # LOE rbx rbp r12 r13 r14 r15
+..B1.3:                         # Preds ..B1.20
+                                # Execution count [1.00e+00]
+        movq      %r15, %rdi                                    #59.2
+        movq      %r14, %rsi                                    #59.2
+        movl      $4, %edx                                      #59.2
+        movq      %rbx, %rcx                                    #59.2
+#       fread(void *__restrict__, size_t, size_t, FILE *__restrict__)
+        call      fread                                         #59.2
+                                # LOE rbx rbp r12 r13 r14 r15
+..B1.4:                         # Preds ..B1.3
+                                # Execution count [1.00e+00]
+        movq      %rbx, %rdi                                    #60.2
+#       fclose(FILE *)
+        call      fclose                                        #60.2
+                                # LOE rbp r12 r13 r14 r15
+..B1.5:                         # Preds ..B1.4
+                                # Execution count [1.00e+00]
+        xorl      %ebx, %ebx                                    #64.8
+        testq     %r14, %r14                                    #64.23
+        jle       ..B1.15       # Prob 10%                      #64.23
+                                # LOE rbx rbp r12 r13 r14 r15
+..B1.7:                         # Preds ..B1.5 ..B1.10
+                                # Execution count [4.50e+00]
+        xorl      %r13d, %r13d                                  #65.6
+                                # LOE rbx rbp r12 r13 r14 r15
+..B1.8:                         # Preds ..B1.9 ..B1.7
+                                # Execution count [2.50e+01]
+        movl      (%r15,%r13,4), %esi                           #71.11
+        movzbl    %sil, %edi                                    #72.30
+        shrl      $8, %esi                                      #72.30
+..___tag_value_runTestbench.13:
+#       calc(unsigned int, unsigned int)
+        call      calc                                          #72.30
+..___tag_value_runTestbench.14:
+                                # LOE rbx rbp r12 r13 r14 r15 eax
+..B1.9:                         # Preds ..B1.8
+                                # Execution count [2.50e+01]
+        movl      %eax, (%rbp,%r13,4)                           #72.3
+        incq      %r13                                          #65.44
+        cmpq      %r14, %r13                                    #65.29
+        jl        ..B1.8        # Prob 82%                      #65.29
+                                # LOE rbx rbp r12 r13 r14 r15
+..B1.10:                        # Preds ..B1.9
+                                # Execution count [5.00e+00]
+        incq      %rbx                                          #64.40
+        cmpq      %r14, %rbx                                    #64.23
+        jl        ..B1.7        # Prob 82%                      #64.23
+                                # LOE rbx rbp r12 r14 r15
+..B1.11:                        # Preds ..B1.10
+                                # Execution count [9.00e-01]
+        movq      stdout(%rip), %rdi                            #78.16
+        xorl      %ebx, %ebx                                    #79.6
+        movq      %rbp, %r13                                    #79.6
+        movq      %rdi, %rbp                                    #79.6
+                                # LOE rbx rbp r12 r13 r14 r15
+..B1.12:                        # Preds ..B1.13 ..B1.11
+                                # Execution count [5.00e+00]
+        movq      %rbp, %rdi                                    #82.3
+        movl      $.L_2__STRING.1, %esi                         #82.3
+        xorl      %eax, %eax                                    #82.3
+        movl      (%r13,%rbx,4), %edx                           #82.3
+#       fprintf(FILE *__restrict__, const char *__restrict__, ...)
+        call      fprintf                                       #82.3
+                                # LOE rbx rbp r12 r13 r14 r15
+..B1.13:                        # Preds ..B1.12
+                                # Execution count [5.00e+00]
+        addq      $128, %rbx                                    #79.46
+        cmpq      %r14, %rbx                                    #79.29
+        jl        ..B1.12       # Prob 82%                      #79.29
+                                # LOE rbx rbp r12 r13 r14 r15
+..B1.15:                        # Preds ..B1.13 ..B1.5
+                                # Execution count [1.00e+00]
+        movq      %r15, %rdi                                    #85.2
+	.cfi_restore 6
+        popq      %rbp                                          #85.2
+	.cfi_def_cfa_offset 40
+	.cfi_restore 3
+        popq      %rbx                                          #85.2
+	.cfi_def_cfa_offset 32
+	.cfi_restore 15
+        popq      %r15                                          #85.2
+	.cfi_def_cfa_offset 24
+	.cfi_restore 14
+        popq      %r14                                          #85.2
+	.cfi_def_cfa_offset 16
+	.cfi_restore 13
+        popq      %r13                                          #85.2
+	.cfi_def_cfa_offset 8
+#       free(void *)
+        jmp       free                                          #85.2
+        .align    16,0x90
+                                # LOE
+	.cfi_endproc
+# mark_end;
+	.type	runTestbench,@function
+	.size	runTestbench,.-runTestbench
+..LNrunTestbench.0:
+	.data
+# -- End  runTestbench
+	.section .rodata.str1.4, "aMS",@progbits,1
+	.align 4
+	.align 4
+.L_2__STRING.0:
+	.word	114
+	.type	.L_2__STRING.0,@object
+	.size	.L_2__STRING.0,2
+	.space 2, 0x00 	# pad
+	.align 4
+.L_2__STRING.1:
+	.long	942553125
+	.word	2648
+	.byte	0
+	.type	.L_2__STRING.1,@object
+	.size	.L_2__STRING.1,7
+	.data
+	.section .note.GNU-stack, ""
+# End

@@ -1,0 +1,137 @@
+; ModuleID = 'list.bc'
+source_filename = "list.c"
+target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+%struct.List = type { %struct.List*, %struct.Patient*, %struct.List* }
+%struct.Patient = type { i32, i32, i32, %struct.Village* }
+%struct.Village = type { [4 x %struct.Village*], %struct.Village*, %struct.List, %struct.Hosp, i32, i64 }
+%struct.Hosp = type { i32, i32, i32, %struct.List, %struct.List, %struct.List, %struct.List }
+
+; Function Attrs: noinline nounwind uwtable
+define void @addList(%struct.List*, %struct.Patient*) #0 {
+  %3 = alloca %struct.List*, align 8
+  %4 = alloca %struct.Patient*, align 8
+  %5 = alloca %struct.List*, align 8
+  store %struct.List* %0, %struct.List** %3, align 8
+  store %struct.Patient* %1, %struct.Patient** %4, align 8
+  br label %6
+
+; <label>:6:                                      ; preds = %9, %2
+  %7 = load %struct.List*, %struct.List** %3, align 8
+  %8 = icmp ne %struct.List* %7, null
+  br i1 %8, label %9, label %14
+
+; <label>:9:                                      ; preds = %6
+  %10 = load %struct.List*, %struct.List** %3, align 8
+  store %struct.List* %10, %struct.List** %5, align 8
+  %11 = load %struct.List*, %struct.List** %3, align 8
+  %12 = getelementptr inbounds %struct.List, %struct.List* %11, i32 0, i32 0
+  %13 = load %struct.List*, %struct.List** %12, align 8
+  store %struct.List* %13, %struct.List** %3, align 8
+  br label %6
+
+; <label>:14:                                     ; preds = %6
+  %15 = call noalias i8* @malloc(i64 24) #2
+  %16 = bitcast i8* %15 to %struct.List*
+  store %struct.List* %16, %struct.List** %3, align 8
+  %17 = load %struct.Patient*, %struct.Patient** %4, align 8
+  %18 = load %struct.List*, %struct.List** %3, align 8
+  %19 = getelementptr inbounds %struct.List, %struct.List* %18, i32 0, i32 1
+  store %struct.Patient* %17, %struct.Patient** %19, align 8
+  %20 = load %struct.List*, %struct.List** %3, align 8
+  %21 = getelementptr inbounds %struct.List, %struct.List* %20, i32 0, i32 0
+  store %struct.List* null, %struct.List** %21, align 8
+  %22 = load %struct.List*, %struct.List** %5, align 8
+  %23 = load %struct.List*, %struct.List** %3, align 8
+  %24 = getelementptr inbounds %struct.List, %struct.List* %23, i32 0, i32 2
+  store %struct.List* %22, %struct.List** %24, align 8
+  %25 = load %struct.List*, %struct.List** %3, align 8
+  %26 = load %struct.List*, %struct.List** %5, align 8
+  %27 = getelementptr inbounds %struct.List, %struct.List* %26, i32 0, i32 0
+  store %struct.List* %25, %struct.List** %27, align 8
+  ret void
+}
+
+; Function Attrs: nounwind
+declare noalias i8* @malloc(i64) #1
+
+; Function Attrs: noinline nounwind uwtable
+define void @removeList(%struct.List*, %struct.Patient*) #0 {
+  %3 = alloca %struct.List*, align 8
+  %4 = alloca %struct.Patient*, align 8
+  %5 = alloca %struct.List*, align 8
+  %6 = alloca %struct.List*, align 8
+  %7 = alloca %struct.Patient*, align 8
+  store %struct.List* %0, %struct.List** %3, align 8
+  store %struct.Patient* %1, %struct.Patient** %4, align 8
+  %8 = load %struct.List*, %struct.List** %3, align 8
+  %9 = getelementptr inbounds %struct.List, %struct.List* %8, i32 0, i32 1
+  %10 = load %struct.Patient*, %struct.Patient** %9, align 8
+  store %struct.Patient* %10, %struct.Patient** %7, align 8
+  br label %11
+
+; <label>:11:                                     ; preds = %15, %2
+  %12 = load %struct.Patient*, %struct.Patient** %7, align 8
+  %13 = load %struct.Patient*, %struct.Patient** %4, align 8
+  %14 = icmp ne %struct.Patient* %12, %13
+  br i1 %14, label %15, label %22
+
+; <label>:15:                                     ; preds = %11
+  %16 = load %struct.List*, %struct.List** %3, align 8
+  %17 = getelementptr inbounds %struct.List, %struct.List* %16, i32 0, i32 0
+  %18 = load %struct.List*, %struct.List** %17, align 8
+  store %struct.List* %18, %struct.List** %3, align 8
+  %19 = load %struct.List*, %struct.List** %3, align 8
+  %20 = getelementptr inbounds %struct.List, %struct.List* %19, i32 0, i32 1
+  %21 = load %struct.Patient*, %struct.Patient** %20, align 8
+  store %struct.Patient* %21, %struct.Patient** %7, align 8
+  br label %11
+
+; <label>:22:                                     ; preds = %11
+  %23 = load %struct.List*, %struct.List** %3, align 8
+  %24 = getelementptr inbounds %struct.List, %struct.List* %23, i32 0, i32 2
+  %25 = load %struct.List*, %struct.List** %24, align 8
+  store %struct.List* %25, %struct.List** %5, align 8
+  %26 = load %struct.List*, %struct.List** %3, align 8
+  %27 = getelementptr inbounds %struct.List, %struct.List* %26, i32 0, i32 0
+  %28 = load %struct.List*, %struct.List** %27, align 8
+  store %struct.List* %28, %struct.List** %6, align 8
+  %29 = load %struct.List*, %struct.List** %6, align 8
+  %30 = load %struct.List*, %struct.List** %5, align 8
+  %31 = getelementptr inbounds %struct.List, %struct.List* %30, i32 0, i32 0
+  store %struct.List* %29, %struct.List** %31, align 8
+  %32 = load %struct.List*, %struct.List** %3, align 8
+  %33 = getelementptr inbounds %struct.List, %struct.List* %32, i32 0, i32 0
+  %34 = load %struct.List*, %struct.List** %33, align 8
+  %35 = icmp ne %struct.List* %34, null
+  br i1 %35, label %36, label %46
+
+; <label>:36:                                     ; preds = %22
+  %37 = load %struct.List*, %struct.List** %3, align 8
+  %38 = getelementptr inbounds %struct.List, %struct.List* %37, i32 0, i32 0
+  %39 = load %struct.List*, %struct.List** %38, align 8
+  store %struct.List* %39, %struct.List** %5, align 8
+  %40 = load %struct.List*, %struct.List** %3, align 8
+  %41 = getelementptr inbounds %struct.List, %struct.List* %40, i32 0, i32 2
+  %42 = load %struct.List*, %struct.List** %41, align 8
+  store %struct.List* %42, %struct.List** %6, align 8
+  %43 = load %struct.List*, %struct.List** %6, align 8
+  %44 = load %struct.List*, %struct.List** %5, align 8
+  %45 = getelementptr inbounds %struct.List, %struct.List* %44, i32 0, i32 2
+  store %struct.List* %43, %struct.List** %45, align 8
+  br label %46
+
+; <label>:46:                                     ; preds = %36, %22
+  ret void
+}
+
+attributes #0 = { noinline nounwind uwtable "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #1 = { nounwind "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #2 = { nounwind }
+
+!llvm.module.flags = !{!0}
+!llvm.ident = !{!1}
+
+!0 = !{i32 1, !"wchar_size", i32 4}
+!1 = !{!"clang version 6.0.0-1ubuntu2 (tags/RELEASE_600/final)"}

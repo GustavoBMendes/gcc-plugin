@@ -1,0 +1,133 @@
+# mark_description "Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.235 Build 20190416";
+# mark_description "-S -c -o main";
+	.file "main.c"
+	.text
+..TXTST0:
+.L_2__routine_start_main_0:
+# -- Begin  main
+	.text
+# mark_begin;
+       .align    16,0x90
+	.globl main
+# --- main(int, char **)
+main:
+# parameter 1: %edi
+# parameter 2: %rsi
+..B1.1:                         # Preds ..B1.0
+                                # Execution count [1.00e+00]
+	.cfi_startproc
+..___tag_value_main.1:
+..L2:
+                                                          #31.1
+        pushq     %rbp                                          #31.1
+	.cfi_def_cfa_offset 16
+        movq      %rsp, %rbp                                    #31.1
+	.cfi_def_cfa 6, 16
+	.cfi_offset 6, -16
+        andq      $-128, %rsp                                   #31.1
+        pushq     %r13                                          #31.1
+        pushq     %r14                                          #31.1
+        subq      $112, %rsp                                    #31.1
+	.cfi_escape 0x10, 0x0d, 0x0e, 0x38, 0x1c, 0x0d, 0x80, 0xff, 0xff, 0xff, 0x1a, 0x0d, 0xf8, 0xff, 0xff, 0xff, 0x22
+	.cfi_escape 0x10, 0x0e, 0x0e, 0x38, 0x1c, 0x0d, 0x80, 0xff, 0xff, 0xff, 0x1a, 0x0d, 0xf0, 0xff, 0xff, 0xff, 0x22
+        movq      %rsi, %r13                                    #31.1
+        movl      %edi, %r14d                                   #31.1
+        xorl      %esi, %esi                                    #31.1
+        movl      $3, %edi                                      #31.1
+        call      __intel_new_feature_proc_init                 #31.1
+                                # LOE rbx r12 r13 r15 r14d
+..B1.10:                        # Preds ..B1.1
+                                # Execution count [1.00e+00]
+        stmxcsr   (%rsp)                                        #31.1
+        orl       $32832, (%rsp)                                #31.1
+        ldmxcsr   (%rsp)                                        #31.1
+        cmpl      $3, %r14d                                     #33.13
+        je        ..B1.4        # Prob 16%                      #33.13
+                                # LOE rbx r12 r13 r15
+..B1.2:                         # Preds ..B1.10
+                                # Execution count [8.40e-01]
+        movl      $il0_peep_printf_format_0, %edi               #45.3
+        call      puts                                          #45.3
+                                # LOE rbx r12 r15
+..B1.3:                         # Preds ..B1.2
+                                # Execution count [8.40e-01]
+        movl      $-1, %eax                                     #46.10
+        addq      $112, %rsp                                    #46.10
+	.cfi_restore 14
+        popq      %r14                                          #46.10
+	.cfi_restore 13
+        popq      %r13                                          #46.10
+        movq      %rbp, %rsp                                    #46.10
+        popq      %rbp                                          #46.10
+	.cfi_def_cfa 7, 8
+	.cfi_restore 6
+        ret                                                     #46.10
+	.cfi_def_cfa 6, 16
+	.cfi_offset 6, -16
+	.cfi_escape 0x10, 0x0d, 0x0e, 0x38, 0x1c, 0x0d, 0x80, 0xff, 0xff, 0xff, 0x1a, 0x0d, 0xf8, 0xff, 0xff, 0xff, 0x22
+	.cfi_escape 0x10, 0x0e, 0x0e, 0x38, 0x1c, 0x0d, 0x80, 0xff, 0xff, 0xff, 0x1a, 0x0d, 0xf0, 0xff, 0xff, 0xff, 0x22
+                                # LOE
+..B1.4:                         # Preds ..B1.10
+                                # Execution count [1.60e-01]: Infreq
+        xorl      %eax, %eax                                    #35.3
+..___tag_value_main.16:
+#       calcSetup()
+        call      calcSetup                                     #35.3
+..___tag_value_main.17:
+                                # LOE rbx r12 r13 r15
+..B1.5:                         # Preds ..B1.4
+                                # Execution count [1.60e-01]: Infreq
+        movq      16(%r13), %rdi                                #39.19
+        call      atol                                          #39.19
+                                # LOE rax rbx r12 r13 r15
+..B1.6:                         # Preds ..B1.5
+                                # Execution count [1.60e-01]: Infreq
+        movl      %eax, %edi                                    #40.3
+        xorl      %edx, %edx                                    #40.3
+        movq      8(%r13), %rsi                                 #40.3
+..___tag_value_main.18:
+#       runTestbench(int, char *, char *)
+        call      runTestbench                                  #40.3
+..___tag_value_main.19:
+                                # LOE rbx r12 r15
+..B1.7:                         # Preds ..B1.6
+                                # Execution count [1.60e-01]: Infreq
+        xorl      %eax, %eax                                    #41.10
+        addq      $112, %rsp                                    #41.10
+	.cfi_restore 14
+        popq      %r14                                          #41.10
+	.cfi_restore 13
+        popq      %r13                                          #41.10
+        movq      %rbp, %rsp                                    #41.10
+        popq      %rbp                                          #41.10
+	.cfi_def_cfa 7, 8
+	.cfi_restore 6
+        ret                                                     #41.10
+        .align    16,0x90
+                                # LOE
+	.cfi_endproc
+# mark_end;
+	.type	main,@function
+	.size	main,.-main
+..LNmain.0:
+	.section .rodata.str1.4, "aMS",@progbits,1
+	.align 4
+	.align 4
+il0_peep_printf_format_0:
+	.long	1734439765
+	.long	1763719781
+	.long	1953853550
+	.long	1835101791
+	.long	1970217061
+	.long	1953853556
+	.long	1851732063
+	.long	543518049
+	.long	1651340654
+	.long	1868526181
+	.long	2036490086
+	.long	7562612
+	.data
+# -- End  main
+	.data
+	.section .note.GNU-stack, ""
+# End

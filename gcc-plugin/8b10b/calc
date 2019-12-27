@@ -1,0 +1,506 @@
+# mark_description "Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.235 Build 20190416";
+# mark_description "-S -c -o calc";
+	.file "calc.c"
+	.text
+..TXTST0:
+.L_2__routine_start_calcSetup_0:
+# -- Begin  calcSetup
+	.text
+# mark_begin;
+       .align    16,0x90
+	.globl calcSetup
+# --- calcSetup()
+calcSetup:
+..B1.1:                         # Preds ..B1.0
+                                # Execution count [1.00e+00]
+	.cfi_startproc
+..___tag_value_calcSetup.1:
+..L2:
+                                                          #160.1
+        ret                                                     #161.1
+        .align    16,0x90
+                                # LOE
+	.cfi_endproc
+# mark_end;
+	.type	calcSetup,@function
+	.size	calcSetup,.-calcSetup
+..LNcalcSetup.0:
+	.data
+# -- End  calcSetup
+	.text
+.L_2__routine_start_calc_1:
+# -- Begin  calc
+	.text
+# mark_begin;
+       .align    16,0x90
+	.globl calc
+# --- calc(unsigned int, unsigned int)
+calc:
+# parameter 1: %edi
+# parameter 2: %esi
+..B2.1:                         # Preds ..B2.0
+                                # Execution count [1.00e+00]
+	.cfi_startproc
+..___tag_value_calc.4:
+..L5:
+                                                          #164.1
+        movl      %edi, %edx                                    #170.22
+        shrl      $3, %edx                                      #170.22
+        movl      %esi, %eax                                    #170.35
+        shll      $5, %eax                                      #170.35
+        andl      $31, %edx                                     #170.25
+        shll      $3, %esi                                      #171.31
+        andl      $7, %edi                                      #171.22
+        orl       %eax, %edx                                    #170.35
+        orl       %esi, %edi                                    #171.31
+        movl      lookupTable5B(,%rdx,4), %r8d                  #172.12
+        movl      lookupTable3B(,%rdi,4), %edi                  #173.12
+        movl      disparity0(%rip), %r9d                        #178.16
+        testl     $65536, %r8d                                  #174.5
+        je        ..B2.3        # Prob 50%                      #174.5
+                                # LOE rbx rbp r12 r13 r14 r15 edi r8d r9d
+..B2.2:                         # Preds ..B2.1
+                                # Execution count [5.00e-01]
+        movl      %r8d, %eax                                    #177.22
+        movl      %r9d, disparity1(%rip)                        #178.3
+        andl      $994, %eax                                    #177.22
+        jmp       ..B2.6        # Prob 100%                     #177.22
+                                # LOE rbx rbp r12 r13 r14 r15 eax edi r9d
+..B2.3:                         # Preds ..B2.1
+                                # Execution count [5.00e-01]
+        movl      %r8d, %ecx                                    #186.24
+        movl      %r8d, %edx                                    #183.20
+        shrl      $18, %edx                                     #183.20
+        andl      $994, %ecx                                    #186.24
+        andl      $1, %edx                                      #183.20
+        movl      %ecx, %eax                                    #193.33
+        xorl      $994, %eax                                    #193.33
+        cmpl      %edx, %r9d                                    #193.4
+        cmove     %ecx, %eax                                    #193.4
+        testl     $524288, %r8d                                 #195.6
+        je        ..B2.5        # Prob 50%                      #195.6
+                                # LOE rbx rbp r12 r13 r14 r15 eax edi r9d
+..B2.4:                         # Preds ..B2.3
+                                # Execution count [2.50e-01]
+        xorl      $1, %r9d                                      #197.30
+        movl      %r9d, disparity1(%rip)                        #197.4
+        jmp       ..B2.6        # Prob 100%                     #197.4
+                                # LOE rbx rbp r12 r13 r14 r15 eax edi r9d
+..B2.5:                         # Preds ..B2.3
+                                # Execution count [2.50e-01]
+        movl      %r9d, disparity1(%rip)                        #201.4
+                                # LOE rbx rbp r12 r13 r14 r15 eax edi r9d
+..B2.6:                         # Preds ..B2.2 ..B2.4 ..B2.5
+                                # Execution count [1.00e+00]
+        testl     $65536, %edi                                  #204.5
+        je        ..B2.8        # Prob 50%                      #204.5
+                                # LOE rbx rbp r12 r13 r14 r15 eax edi r9d
+..B2.7:                         # Preds ..B2.6
+                                # Execution count [5.00e-01]
+        andl      $29, %edi                                     #207.23
+        movl      %r9d, disparity0(%rip)                        #208.3
+        orl       %edi, %eax                                    #207.3
+        ret                                                     #207.3
+                                # LOE rbx rbp r12 r13 r14 r15 eax
+..B2.8:                         # Preds ..B2.6
+                                # Execution count [5.00e-01]
+        movl      %edi, %edx                                    #216.25
+        movl      %edi, %ecx                                    #213.20
+        shrl      $18, %ecx                                     #213.20
+        andl      $29, %edx                                     #216.25
+        movl      %eax, %esi                                    #216.4
+        andl      $1, %ecx                                      #213.20
+        orl       %edx, %esi                                    #216.4
+        xorl      $29, %edx                                     #223.34
+        orl       %edx, %eax                                    #223.4
+        cmpl      %ecx, %r9d                                    #223.4
+        cmove     %esi, %eax                                    #223.4
+        testl     $524288, %edi                                 #225.6
+        je        ..B2.10       # Prob 50%                      #225.6
+                                # LOE rbx rbp r12 r13 r14 r15 eax r9d
+..B2.9:                         # Preds ..B2.8
+                                # Execution count [2.50e-01]
+        xorl      $1, %r9d                                      #227.30
+        movl      %r9d, disparity0(%rip)                        #227.4
+        ret                                                     #227.4
+                                # LOE rbx rbp r12 r13 r14 r15 eax
+..B2.10:                        # Preds ..B2.8
+                                # Execution count [2.50e-01]
+        movl      %r9d, disparity0(%rip)                        #231.4
+                                # LOE rbx rbp r12 r13 r14 r15 eax
+..B2.11:                        # Preds ..B2.10
+                                # Execution count [1.00e+00]
+        ret                                                     #234.9
+        .align    16,0x90
+                                # LOE
+	.cfi_endproc
+# mark_end;
+	.type	calc,@function
+	.size	calc,.-calc
+..LNcalc.1:
+	.data
+# -- End  calc
+	.text
+.L_2__routine_start_bigTableCalc_2:
+# -- Begin  bigTableCalc
+	.text
+# mark_begin;
+       .align    16,0x90
+	.globl bigTableCalc
+# --- bigTableCalc(unsigned int)
+bigTableCalc:
+# parameter 1: %edi
+..B3.1:                         # Preds ..B3.0
+                                # Execution count [1.00e+00]
+	.cfi_startproc
+..___tag_value_bigTableCalc.7:
+..L8:
+                                                          #238.1
+        movl      disparity0(%rip), %eax                        #240.21
+        movl      %edi, %edi                                    #238.1
+        shll      $9, %eax                                      #240.33
+        orq       %rdi, %rax                                    #240.36
+        movl      bigTable(,%rax,4), %eax                       #240.11
+        movl      %eax, %edx                                    #241.25
+        andl      $1023, %eax                                   #242.17
+        shrl      $16, %edx                                     #241.25
+        movl      %edx, disparity0(%rip)                        #241.2
+        ret                                                     #242.17
+        .align    16,0x90
+                                # LOE
+	.cfi_endproc
+# mark_end;
+	.type	bigTableCalc,@function
+	.size	bigTableCalc,.-bigTableCalc
+..LNbigTableCalc.2:
+	.data
+# -- End  bigTableCalc
+	.text
+.L_2__routine_start_resetDisparity_3:
+# -- Begin  resetDisparity
+	.text
+# mark_begin;
+       .align    16,0x90
+	.globl resetDisparity
+# --- resetDisparity()
+resetDisparity:
+..B4.1:                         # Preds ..B4.0
+                                # Execution count [1.00e+00]
+	.cfi_startproc
+..___tag_value_resetDisparity.10:
+..L11:
+                                                         #246.1
+        movl      $0, disparity0(%rip)                          #247.9
+        ret                                                     #248.1
+        .align    16,0x90
+                                # LOE
+	.cfi_endproc
+# mark_end;
+	.type	resetDisparity,@function
+	.size	resetDisparity,.-resetDisparity
+..LNresetDisparity.3:
+	.data
+# -- End  resetDisparity
+	.text
+.L_2__routine_start_bigTableSetup_4:
+# -- Begin  bigTableSetup
+	.text
+# mark_begin;
+       .align    16,0x90
+	.globl bigTableSetup
+# --- bigTableSetup()
+bigTableSetup:
+..B5.1:                         # Preds ..B5.0
+                                # Execution count [1.00e+00]
+	.cfi_startproc
+..___tag_value_bigTableSetup.13:
+..L14:
+                                                         #251.1
+        xorl      %edx, %edx                                    #254.2
+        xorl      %eax, %eax                                    #254.2
+                                # LOE rax rbx rbp r12 r13 r14 r15 edx
+..B5.2:                         # Preds ..B5.14 ..B5.1
+                                # Execution count [5.12e+02]
+        lea       (%rdx,%rdx), %r9d                             #258.3
+        movl      %r9d, %esi                                    #257.49
+        movl      %r9d, %ecx                                    #257.16
+        shrl      $8, %esi                                      #257.49
+        movl      %r9d, %r8d                                    #256.27
+        andl      $1, %esi                                      #257.54
+        andl      $7, %r9d                                      #257.16
+        shrl      $3, %ecx                                      #257.16
+        movl      %esi, %edi                                    #257.16
+        shll      $5, %edi                                      #257.16
+        andl      $31, %ecx                                     #257.16
+        shll      $3, %esi                                      #257.16
+        orl       %edi, %ecx                                    #257.16
+        orl       %esi, %r9d                                    #257.16
+        shrl      $9, %r8d                                      #256.27
+        movl      lookupTable5B(,%rcx,4), %edi                  #257.16
+        movl      lookupTable3B(,%r9,4), %ecx                   #257.16
+        testl     $65536, %edi                                  #257.16
+        je        ..B5.4        # Prob 50%                      #257.16
+                                # LOE rax rbx rbp r12 r13 r14 r15 edx ecx edi r8d
+..B5.3:                         # Preds ..B5.2
+                                # Execution count [2.56e+02]
+        movl      %edi, %esi                                    #257.16
+        andl      $994, %esi                                    #257.16
+        jmp       ..B5.5        # Prob 100%                     #257.16
+                                # LOE rax rbx rbp r12 r13 r14 r15 edx ecx esi r8d
+..B5.4:                         # Preds ..B5.2
+                                # Execution count [2.56e+02]
+        movl      %edi, %r10d                                   #257.16
+        movl      %edi, %r9d                                    #257.16
+        shrl      $18, %r9d                                     #257.16
+        andl      $994, %r10d                                   #257.16
+        movl      %r10d, %esi                                   #257.16
+        andl      $1, %r9d                                      #257.16
+        xorl      $994, %esi                                    #257.16
+        cmpl      %r9d, %r8d                                    #257.16
+        movl      %r8d, %r11d                                   #257.16
+        cmove     %r10d, %esi                                   #257.16
+        xorl      $1, %r11d                                     #257.16
+        testl     $524288, %edi                                 #257.16
+        cmovne    %r11d, %r8d                                   #257.16
+                                # LOE rax rbx rbp r12 r13 r14 r15 edx ecx esi r8d
+..B5.5:                         # Preds ..B5.3 ..B5.4
+                                # Execution count [5.12e+02]
+        testl     $65536, %ecx                                  #257.16
+        je        ..B5.7        # Prob 50%                      #257.16
+                                # LOE rax rbx rbp r12 r13 r14 r15 edx ecx esi r8d
+..B5.6:                         # Preds ..B5.5
+                                # Execution count [2.56e+02]
+        andl      $29, %ecx                                     #257.16
+        orl       %ecx, %esi                                    #257.16
+        jmp       ..B5.8        # Prob 100%                     #257.16
+                                # LOE rax rbx rbp r12 r13 r14 r15 edx esi r8d
+..B5.7:                         # Preds ..B5.5
+                                # Execution count [2.56e+02]
+        movl      %ecx, %edi                                    #257.16
+        movl      %ecx, %r9d                                    #257.16
+        shrl      $18, %r9d                                     #257.16
+        andl      $29, %edi                                     #257.16
+        movl      %esi, %r10d                                   #257.16
+        andl      $1, %r9d                                      #257.16
+        orl       %edi, %r10d                                   #257.16
+        xorl      $29, %edi                                     #257.16
+        orl       %edi, %esi                                    #257.16
+        cmpl      %r9d, %r8d                                    #257.16
+        movl      %r8d, %r11d                                   #257.16
+        cmove     %r10d, %esi                                   #257.16
+        xorl      $1, %r11d                                     #257.16
+        testl     $524288, %ecx                                 #257.16
+        cmovne    %r11d, %r8d                                   #257.16
+                                # LOE rax rbx rbp r12 r13 r14 r15 edx esi r8d
+..B5.8:                         # Preds ..B5.6 ..B5.7
+                                # Execution count [5.12e+02]
+        shll      $16, %r8d                                     #258.50
+        lea       1(%rdx,%rdx), %edi                            #258.3
+        orl       %r8d, %esi                                    #258.50
+        movl      %edi, %ecx                                    #257.16
+        movl      %esi, bigTable(,%rax,8)                       #258.3
+        movl      %edi, %esi                                    #257.49
+        shrl      $8, %esi                                      #257.49
+        movl      %edi, %r9d                                    #256.27
+        andl      $1, %esi                                      #257.54
+        andl      $7, %edi                                      #257.16
+        shrl      $3, %ecx                                      #257.16
+        movl      %esi, %r8d                                    #257.16
+        shll      $5, %r8d                                      #257.16
+        andl      $31, %ecx                                     #257.16
+        shll      $3, %esi                                      #257.16
+        orl       %r8d, %ecx                                    #257.16
+        orl       %esi, %edi                                    #257.16
+        shrl      $9, %r9d                                      #256.27
+        movl      lookupTable5B(,%rcx,4), %r8d                  #257.16
+        movl      lookupTable3B(,%rdi,4), %esi                  #257.16
+        testl     $65536, %r8d                                  #257.16
+        je        ..B5.10       # Prob 50%                      #257.16
+                                # LOE rax rbx rbp r12 r13 r14 r15 edx esi r8d r9d
+..B5.9:                         # Preds ..B5.8
+                                # Execution count [2.56e+02]
+        movl      %r8d, %edi                                    #257.16
+        movl      %r9d, %ecx                                    #257.16
+        andl      $994, %edi                                    #257.16
+        jmp       ..B5.11       # Prob 100%                     #257.16
+                                # LOE rax rbx rbp r12 r13 r14 r15 edx ecx esi edi r9d
+..B5.10:                        # Preds ..B5.8
+                                # Execution count [2.56e+02]
+        movl      %r8d, %r10d                                   #257.16
+        movl      %r8d, %ecx                                    #257.16
+        shrl      $18, %ecx                                     #257.16
+        andl      $994, %r10d                                   #257.16
+        movl      %r10d, %edi                                   #257.16
+        andl      $1, %ecx                                      #257.16
+        xorl      $994, %edi                                    #257.16
+        cmpl      %ecx, %r9d                                    #257.16
+        movl      %r9d, %ecx                                    #257.16
+        cmove     %r10d, %edi                                   #257.16
+        xorl      $1, %ecx                                      #257.16
+        testl     $524288, %r8d                                 #257.16
+        cmove     %r9d, %ecx                                    #257.16
+        movl      %ecx, %r9d                                    #257.16
+                                # LOE rax rbx rbp r12 r13 r14 r15 edx ecx esi edi r9d
+..B5.11:                        # Preds ..B5.9 ..B5.10
+                                # Execution count [5.12e+02]
+        testl     $65536, %esi                                  #257.16
+        je        ..B5.13       # Prob 50%                      #257.16
+                                # LOE rax rbx rbp r12 r13 r14 r15 edx ecx esi edi r9d
+..B5.12:                        # Preds ..B5.11
+                                # Execution count [2.56e+02]
+        andl      $29, %esi                                     #257.16
+        orl       %esi, %edi                                    #257.16
+        jmp       ..B5.14       # Prob 100%                     #257.16
+                                # LOE rax rbx rbp r12 r13 r14 r15 edx ecx edi r9d
+..B5.13:                        # Preds ..B5.11
+                                # Execution count [2.56e+02]
+        movl      %esi, %r8d                                    #257.16
+        movl      %esi, %r10d                                   #257.16
+        shrl      $18, %r10d                                    #257.16
+        andl      $29, %r8d                                     #257.16
+        movl      %edi, %r11d                                   #257.16
+        andl      $1, %r10d                                     #257.16
+        orl       %r8d, %r11d                                   #257.16
+        xorl      $29, %r8d                                     #257.16
+        orl       %r8d, %edi                                    #257.16
+        cmpl      %r10d, %ecx                                   #257.16
+        movl      %ecx, %r8d                                    #257.16
+        cmove     %r11d, %edi                                   #257.16
+        xorl      $1, %r8d                                      #257.16
+        testl     $524288, %esi                                 #257.16
+        cmovne    %r8d, %ecx                                    #257.16
+                                # LOE rax rbx rbp r12 r13 r14 r15 edx ecx edi r9d
+..B5.14:                        # Preds ..B5.12 ..B5.13
+                                # Execution count [5.12e+02]
+        shll      $16, %ecx                                     #258.50
+        incl      %edx                                          #254.2
+        orl       %ecx, %edi                                    #258.50
+        movl      %edi, 4+bigTable(,%rax,8)                     #258.3
+        incq      %rax                                          #254.2
+        cmpl      $512, %edx                                    #254.2
+        jb        ..B5.2        # Prob 99%                      #254.2
+                                # LOE rax rbx rbp r12 r13 r14 r15 edx r9d
+..B5.15:                        # Preds ..B5.14
+                                # Execution count [1.00e+00]
+        movl      %r9d, disparity1(%rip)                        #257.16
+        movl      $0, disparity0(%rip)                          #260.2
+        ret                                                     #261.1
+        .align    16,0x90
+                                # LOE
+	.cfi_endproc
+# mark_end;
+	.type	bigTableSetup,@function
+	.size	bigTableSetup,.-bigTableSetup
+..LNbigTableSetup.4:
+	.data
+# -- End  bigTableSetup
+	.bss
+	.align 4
+	.align 4
+	.globl disparity0
+disparity0:
+	.type	disparity0,@object
+	.size	disparity0,4
+	.space 4	# pad
+	.data
+	.align 32
+	.align 32
+	.globl lookupTable5B
+lookupTable5B:
+	.long	786816
+	.long	655778
+	.long	786528
+	.long	786624
+	.long	786592
+	.long	65698
+	.long	65730
+	.long	65760
+	.long	786720
+	.long	65826
+	.long	65858
+	.long	65888
+	.long	65922
+	.long	65952
+	.long	65984
+	.long	655840
+	.long	786976
+	.long	66082
+	.long	66114
+	.long	66144
+	.long	66178
+	.long	66208
+	.long	66240
+	.long	656096
+	.long	66306
+	.long	66336
+	.long	66368
+	.long	656224
+	.long	131968
+	.long	656288
+	.long	787072
+	.long	656034
+	.long	786816
+	.long	655778
+	.long	786528
+	.long	786624
+	.long	786592
+	.long	65698
+	.long	65730
+	.long	655586
+	.long	786720
+	.long	65826
+	.long	65858
+	.long	65888
+	.long	65922
+	.long	65952
+	.long	65984
+	.long	655840
+	.long	786976
+	.long	66082
+	.long	66114
+	.long	66144
+	.long	66178
+	.long	66208
+	.long	66240
+	.long	656096
+	.long	66306
+	.long	66336
+	.long	66368
+	.long	656224
+	.long	131968
+	.long	656288
+	.long	787072
+	.long	656034
+	.type	lookupTable5B,@object
+	.size	lookupTable5B,256
+	.align 32
+	.globl lookupTable3B
+lookupTable3B:
+	.long	786440
+	.long	786436
+	.long	65545
+	.long	65548
+	.long	65553
+	.long	65556
+	.long	131096
+	.long	655388
+	.long	786440
+	.long	786436
+	.long	262153
+	.long	262156
+	.long	262161
+	.long	262164
+	.long	131096
+	.long	655373
+	.type	lookupTable3B,@object
+	.size	lookupTable3B,64
+	.align 4
+	.globl disparity1
+disparity1:
+	.long	1
+	.type	disparity1,@object
+	.size	disparity1,4
+	.data
+	.comm bigTable,4096,32
+	.section .note.GNU-stack, ""
+# End

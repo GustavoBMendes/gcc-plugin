@@ -1,0 +1,99 @@
+# mark_description "Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.235 Build 20190416";
+# mark_description "-lm -DTORONTO -S -c -o args";
+	.file "args.c"
+	.text
+..TXTST0:
+.L_2__routine_start_dealwithargs_0:
+# -- Begin  dealwithargs
+	.text
+# mark_begin;
+       .align    16,0x90
+	.globl dealwithargs
+# --- dealwithargs(int, char **)
+dealwithargs:
+# parameter 1: %edi
+# parameter 2: %rsi
+..B1.1:                         # Preds ..B1.0
+                                # Execution count [1.00e+00]
+	.cfi_startproc
+..___tag_value_dealwithargs.1:
+..L2:
+                                                          #12.43
+        pushq     %r14                                          #12.43
+	.cfi_def_cfa_offset 16
+	.cfi_offset 14, -16
+        movq      %rsi, %r14                                    #12.43
+        cmpl      $4, %edi                                      #13.14
+        jge       ..B1.3        # Prob 50%                      #13.14
+                                # LOE rbx rbp r12 r13 r14 r15
+..B1.2:                         # Preds ..B1.1
+                                # Execution count [5.00e-01]
+        movl      $3, max_level(%rip)                           #14.5
+        movl      $3, %esi                                      #14.5
+        movq      $15, max_time(%rip)                           #15.5
+        movl      $15, %edx                                     #15.5
+        movq      $4, seed(%rip)                                #16.5
+        movl      $4, %eax                                      #16.5
+        jmp       ..B1.7        # Prob 100%                     #16.5
+                                # LOE rax rbx rbp r12 r13 r15 edx esi
+..B1.3:                         # Preds ..B1.1
+                                # Execution count [5.00e-01]
+        movq      8(%r14), %rdi                                 #18.17
+        call      atol                                          #18.17
+                                # LOE rax rbx rbp r12 r13 r14 r15
+..B1.4:                         # Preds ..B1.3
+                                # Execution count [5.00e-01]
+        movq      16(%r14), %rdi                                #19.16
+        movl      %eax, max_level(%rip)                         #18.5
+        call      atol                                          #19.16
+                                # LOE rax rbx rbp r12 r13 r14 r15
+..B1.5:                         # Preds ..B1.4
+                                # Execution count [5.00e-01]
+        movq      24(%r14), %rdi                                #20.12
+        movq      %rax, max_time(%rip)                          #19.5
+        call      atol                                          #20.12
+                                # LOE rax rbx rbp r12 r13 r15
+..B1.6:                         # Preds ..B1.5
+                                # Execution count [5.00e-01]
+        movq      %rax, seed(%rip)                              #20.5
+        movl      max_level(%rip), %esi                         #23.51
+        movl      max_time(%rip), %edx                          #23.67
+                                # LOE rax rbx rbp r12 r13 r15 edx esi
+..B1.7:                         # Preds ..B1.2 ..B1.6
+                                # Execution count [1.00e+00]
+        movl      $.L_2__STRING.0, %edi                         #23.3
+        movl      %eax, %ecx                                    #23.3
+        xorl      %eax, %eax                                    #23.3
+	.cfi_restore 14
+        popq      %r14                                          #23.3
+	.cfi_def_cfa_offset 8
+#       printf(const char *__restrict__, ...)
+        jmp       printf                                        #23.3
+        .align    16,0x90
+                                # LOE
+	.cfi_endproc
+# mark_end;
+	.type	dealwithargs,@function
+	.size	dealwithargs,.-dealwithargs
+..LNdealwithargs.0:
+	.data
+# -- End  dealwithargs
+	.section .rodata.str1.4, "aMS",@progbits,1
+	.align 4
+	.align 4
+.L_2__STRING.0:
+	.long	1601724781
+	.long	1702258028
+	.long	1680162156
+	.long	1634541600
+	.long	1769234296
+	.long	624780653
+	.long	1931485284
+	.long	1029989733
+	.long	169894949
+	.byte	0
+	.type	.L_2__STRING.0,@object
+	.size	.L_2__STRING.0,37
+	.data
+	.section .note.GNU-stack, ""
+# End

@@ -1,0 +1,215 @@
+; ModuleID = 'polybench.c'
+source_filename = "polybench.c"
+target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+%struct._IO_FILE = type { i32, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, %struct._IO_marker*, %struct._IO_FILE*, i32, i32, i64, i16, i8, [1 x i8], i8*, i64, i8*, i8*, i8*, i8*, i64, i32, [20 x i8] }
+%struct._IO_marker = type { %struct._IO_marker*, %struct._IO_FILE*, i32 }
+
+@polybench_papi_counters_threadid = global i32 0, align 4
+@polybench_program_total_flops = global double 0.000000e+00, align 8
+@.str = private unnamed_addr constant [12 x i8] c"tmp <= 10.0\00", align 1
+@.str.1 = private unnamed_addr constant [12 x i8] c"polybench.c\00", align 1
+@__PRETTY_FUNCTION__.polybench_flush_cache = private unnamed_addr constant [29 x i8] c"void polybench_flush_cache()\00", align 1
+@polybench_t_start = common global double 0.000000e+00, align 8
+@polybench_t_end = common global double 0.000000e+00, align 8
+@.str.2 = private unnamed_addr constant [7 x i8] c"%0.6f\0A\00", align 1
+@polybench_c_start = common global i64 0, align 8
+@polybench_c_end = common global i64 0, align 8
+@polybench_inter_array_padding_sz = internal global i64 0, align 8
+@stderr = external global %struct._IO_FILE*, align 8
+@.str.3 = private unnamed_addr constant [51 x i8] c"[PolyBench] posix_memalign: cannot allocate memory\00", align 1
+
+; Function Attrs: noinline nounwind uwtable
+define void @polybench_flush_cache() #0 {
+  %1 = alloca i32, align 4
+  %2 = alloca double*, align 8
+  %3 = alloca i32, align 4
+  %4 = alloca double, align 8
+  store i32 4194560, i32* %1, align 4
+  %5 = load i32, i32* %1, align 4
+  %6 = sext i32 %5 to i64
+  %7 = call noalias i8* @calloc(i64 %6, i64 8) #4
+  %8 = bitcast i8* %7 to double*
+  store double* %8, double** %2, align 8
+  store double 0.000000e+00, double* %4, align 8
+  store i32 0, i32* %3, align 4
+  br label %9
+
+; <label>:9:                                      ; preds = %21, %0
+  %10 = load i32, i32* %3, align 4
+  %11 = load i32, i32* %1, align 4
+  %12 = icmp slt i32 %10, %11
+  br i1 %12, label %13, label %24
+
+; <label>:13:                                     ; preds = %9
+  %14 = load double*, double** %2, align 8
+  %15 = load i32, i32* %3, align 4
+  %16 = sext i32 %15 to i64
+  %17 = getelementptr inbounds double, double* %14, i64 %16
+  %18 = load double, double* %17, align 8
+  %19 = load double, double* %4, align 8
+  %20 = fadd double %19, %18
+  store double %20, double* %4, align 8
+  br label %21
+
+; <label>:21:                                     ; preds = %13
+  %22 = load i32, i32* %3, align 4
+  %23 = add nsw i32 %22, 1
+  store i32 %23, i32* %3, align 4
+  br label %9
+
+; <label>:24:                                     ; preds = %9
+  %25 = load double, double* %4, align 8
+  %26 = fcmp ole double %25, 1.000000e+01
+  br i1 %26, label %27, label %28
+
+; <label>:27:                                     ; preds = %24
+  br label %29
+
+; <label>:28:                                     ; preds = %24
+  call void @__assert_fail(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.1, i32 0, i32 0), i32 123, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @__PRETTY_FUNCTION__.polybench_flush_cache, i32 0, i32 0)) #5
+  unreachable
+
+; <label>:29:                                     ; preds = %27
+  %30 = load double*, double** %2, align 8
+  %31 = bitcast double* %30 to i8*
+  call void @free(i8* %31) #4
+  ret void
+}
+
+; Function Attrs: nounwind
+declare noalias i8* @calloc(i64, i64) #1
+
+; Function Attrs: noreturn nounwind
+declare void @__assert_fail(i8*, i8*, i32, i8*) #2
+
+; Function Attrs: nounwind
+declare void @free(i8*) #1
+
+; Function Attrs: noinline nounwind uwtable
+define void @polybench_prepare_instruments() #0 {
+  call void @polybench_flush_cache()
+  ret void
+}
+
+; Function Attrs: noinline nounwind uwtable
+define void @polybench_timer_start() #0 {
+  call void @polybench_prepare_instruments()
+  %1 = call double @rtclock()
+  store double %1, double* @polybench_t_start, align 8
+  ret void
+}
+
+; Function Attrs: noinline nounwind uwtable
+define void @polybench_timer_stop() #0 {
+  %1 = call double @rtclock()
+  store double %1, double* @polybench_t_end, align 8
+  ret void
+}
+
+; Function Attrs: noinline nounwind uwtable
+define void @polybench_timer_print() #0 {
+  %1 = load double, double* @polybench_t_end, align 8
+  %2 = load double, double* @polybench_t_start, align 8
+  %3 = fsub double %1, %2
+  %4 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([7 x i8], [7 x i8]* @.str.2, i32 0, i32 0), double %3)
+  ret void
+}
+
+declare i32 @printf(i8*, ...) #3
+
+; Function Attrs: noinline nounwind uwtable
+define void @polybench_free_data(i8*) #0 {
+  %2 = alloca i8*, align 8
+  store i8* %0, i8** %2, align 8
+  %3 = load i8*, i8** %2, align 8
+  call void @free(i8* %3) #4
+  ret void
+}
+
+; Function Attrs: noinline nounwind uwtable
+define i8* @polybench_alloc_data(i64, i32) #0 {
+  %3 = alloca i64, align 8
+  %4 = alloca i32, align 4
+  %5 = alloca i64, align 8
+  %6 = alloca i8*, align 8
+  store i64 %0, i64* %3, align 8
+  store i32 %1, i32* %4, align 4
+  %7 = load i64, i64* %3, align 8
+  store i64 %7, i64* %5, align 8
+  %8 = load i32, i32* %4, align 4
+  %9 = sext i32 %8 to i64
+  %10 = load i64, i64* %5, align 8
+  %11 = mul i64 %10, %9
+  store i64 %11, i64* %5, align 8
+  %12 = load i64, i64* %5, align 8
+  %13 = call i8* @xmalloc(i64 %12)
+  store i8* %13, i8** %6, align 8
+  %14 = load i8*, i8** %6, align 8
+  ret i8* %14
+}
+
+; Function Attrs: noinline nounwind uwtable
+define internal i8* @xmalloc(i64) #0 {
+  %2 = alloca i64, align 8
+  %3 = alloca i8*, align 8
+  %4 = alloca i64, align 8
+  %5 = alloca i32, align 4
+  store i64 %0, i64* %2, align 8
+  store i8* null, i8** %3, align 8
+  %6 = load i64, i64* @polybench_inter_array_padding_sz, align 8
+  %7 = add i64 %6, 0
+  store i64 %7, i64* @polybench_inter_array_padding_sz, align 8
+  %8 = load i64, i64* %2, align 8
+  %9 = load i64, i64* @polybench_inter_array_padding_sz, align 8
+  %10 = add i64 %8, %9
+  store i64 %10, i64* %4, align 8
+  %11 = load i64, i64* %4, align 8
+  %12 = call i32 @posix_memalign(i8** %3, i64 4096, i64 %11) #4
+  store i32 %12, i32* %5, align 4
+  %13 = load i8*, i8** %3, align 8
+  %14 = icmp ne i8* %13, null
+  br i1 %14, label %15, label %18
+
+; <label>:15:                                     ; preds = %1
+  %16 = load i32, i32* %5, align 4
+  %17 = icmp ne i32 %16, 0
+  br i1 %17, label %18, label %21
+
+; <label>:18:                                     ; preds = %15, %1
+  %19 = load %struct._IO_FILE*, %struct._IO_FILE** @stderr, align 8
+  %20 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* %19, i8* getelementptr inbounds ([51 x i8], [51 x i8]* @.str.3, i32 0, i32 0))
+  call void @exit(i32 1) #5
+  unreachable
+
+; <label>:21:                                     ; preds = %15
+  %22 = load i8*, i8** %3, align 8
+  ret i8* %22
+}
+
+; Function Attrs: noinline nounwind uwtable
+define internal double @rtclock() #0 {
+  ret double 0.000000e+00
+}
+
+; Function Attrs: nounwind
+declare i32 @posix_memalign(i8**, i64, i64) #1
+
+declare i32 @fprintf(%struct._IO_FILE*, i8*, ...) #3
+
+; Function Attrs: noreturn nounwind
+declare void @exit(i32) #2
+
+attributes #0 = { noinline nounwind uwtable "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #1 = { nounwind "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #2 = { noreturn nounwind "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #3 = { "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #4 = { nounwind }
+attributes #5 = { noreturn nounwind }
+
+!llvm.module.flags = !{!0}
+!llvm.ident = !{!1}
+
+!0 = !{i32 1, !"wchar_size", i32 4}
+!1 = !{!"clang version 6.0.0-1ubuntu2 (tags/RELEASE_600/final)"}

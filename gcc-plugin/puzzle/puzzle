@@ -1,0 +1,1140 @@
+# mark_description "Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.235 Build 20190416";
+# mark_description "-lm -S -c -o puzzle";
+	.file "puzzle.c"
+	.text
+..TXTST0:
+.L_2__routine_start_main_0:
+# -- Begin  main
+	.text
+# mark_begin;
+       .align    16,0x90
+	.globl main
+# --- main()
+main:
+..B1.1:                         # Preds ..B1.0
+                                # Execution count [1.00e+00]
+	.cfi_startproc
+..___tag_value_main.1:
+..L2:
+                                                          #69.12
+        pushq     %rbp                                          #69.12
+	.cfi_def_cfa_offset 16
+        movq      %rsp, %rbp                                    #69.12
+	.cfi_def_cfa 6, 16
+	.cfi_offset 6, -16
+        andq      $-128, %rsp                                   #69.12
+        pushq     %r13                                          #69.12
+        pushq     %r14                                          #69.12
+        pushq     %r15                                          #69.12
+        pushq     %rbx                                          #69.12
+        subq      $96, %rsp                                     #69.12
+        xorl      %esi, %esi                                    #69.12
+        movl      $3, %edi                                      #69.12
+        call      __intel_new_feature_proc_init                 #69.12
+	.cfi_escape 0x10, 0x03, 0x0e, 0x38, 0x1c, 0x0d, 0x80, 0xff, 0xff, 0xff, 0x1a, 0x0d, 0xe0, 0xff, 0xff, 0xff, 0x22
+	.cfi_escape 0x10, 0x0d, 0x0e, 0x38, 0x1c, 0x0d, 0x80, 0xff, 0xff, 0xff, 0x1a, 0x0d, 0xf8, 0xff, 0xff, 0xff, 0x22
+	.cfi_escape 0x10, 0x0e, 0x0e, 0x38, 0x1c, 0x0d, 0x80, 0xff, 0xff, 0xff, 0x1a, 0x0d, 0xf0, 0xff, 0xff, 0xff, 0x22
+	.cfi_escape 0x10, 0x0f, 0x0e, 0x38, 0x1c, 0x0d, 0x80, 0xff, 0xff, 0xff, 0x1a, 0x0d, 0xe8, 0xff, 0xff, 0xff, 0x22
+                                # LOE rbx r12 r13 r14 r15
+..B1.47:                        # Preds ..B1.1
+                                # Execution count [1.00e+00]
+        stmxcsr   (%rsp)                                        #69.12
+        movl      $1, %eax                                      #73.5
+        xorb      %dl, %dl                                      #75.2
+        orl       $32832, (%rsp)                                #69.12
+        movq      %rax, %r13                                    #76.12
+        ldmxcsr   (%rsp)                                        #69.12
+        movq      $1, next(%rip)                                #73.5
+        movb      %dl, %r14b                                    #76.12
+        movdqu    .L_2il0floatpacket.0(%rip), %xmm2             #78.16
+        movsd     .L_2il0floatpacket.1(%rip), %xmm1             #76.12
+        movsd     .L_2il0floatpacket.2(%rip), %xmm0             #76.12
+                                # LOE r12 r13 r14b
+..B1.2:                         # Preds ..B1.39 ..B1.47
+                                # Execution count [5.00e+00]
+        movl      $2000004, %edi                                #76.12
+#       malloc(size_t)
+        call      malloc                                        #76.12
+                                # LOE rax r12 r13 r14b
+..B1.48:                        # Preds ..B1.2
+                                # Execution count [5.00e+00]
+        movq      %rax, %rdi                                    #76.12
+                                # LOE rdi r12 r13 r14b
+..B1.3:                         # Preds ..B1.48
+                                # Execution count [4.50e+00]
+        movq      %rdi, %r8                                     #76.12
+        andq      $15, %r8                                      #76.12
+        movl      %r8d, %r10d                                   #76.12
+        movl      %r10d, %ecx                                   #76.12
+        testl     %r8d, %r8d                                    #76.12
+        je        ..B1.8        # Prob 50%                      #76.12
+                                # LOE rdi r10 r12 r13 ecx r8d r14b
+..B1.4:                         # Preds ..B1.3
+                                # Execution count [4.50e+00]
+        testl     $3, %r8d                                      #76.12
+        jne       ..B1.41       # Prob 10%                      #76.12
+                                # LOE rdi r12 r13 ecx r8d r14b
+..B1.5:                         # Preds ..B1.4
+                                # Execution count [4.50e+00]
+        movl      %r8d, %r10d                                   #76.12
+        xorl      %esi, %esi                                    #76.12
+        negl      %r10d                                         #76.12
+        xorl      %ebx, %ebx                                    #76.12
+        addl      $16, %r10d                                    #76.12
+        shrl      $2, %r10d                                     #76.12
+                                # LOE rbx rdi r10 r12 r13 ecx esi r8d r14b
+..B1.6:                         # Preds ..B1.6 ..B1.5
+                                # Execution count [2.50e+01]
+        movl      %esi, (%rdi,%rbx,4)                           #76.12
+        incl      %esi                                          #76.12
+        incq      %rbx                                          #76.12
+        cmpl      %r10d, %esi                                   #76.12
+        jb        ..B1.6        # Prob 82%                      #76.12
+                                # LOE rbx rdi r10 r12 r13 ecx esi r8d r14b
+..B1.8:                         # Preds ..B1.6 ..B1.3
+                                # Execution count [4.50e+00]
+        movl      %r10d, %esi                                   #76.12
+        lea       1(%r10), %ebx                                 #76.12
+        negl      %esi                                          #76.12
+        lea       2(%r10), %r11d                                #76.12
+        incl      %esi                                          #76.12
+        lea       3(%r10), %r15d                                #76.12
+        andl      $15, %esi                                     #76.12
+        movd      %r10d, %xmm0                                  #76.12
+        negl      %esi                                          #76.12
+        movd      %ebx, %xmm1                                   #76.12
+        movd      %r11d, %xmm3                                  #76.12
+        movd      %r15d, %xmm2                                  #76.12
+        punpckldq %xmm1, %xmm0                                  #76.12
+        punpckldq %xmm2, %xmm3                                  #76.12
+        lea       500001(%rsi), %r9d                            #76.12
+        punpcklqdq %xmm3, %xmm0                                 #76.12
+        movl      %r9d, %ebx                                    #76.12
+        movdqu    .L_2il0floatpacket.0(%rip), %xmm1             #76.12
+                                # LOE rbx rdi r10 r12 r13 ecx esi r8d r9d r14b xmm0 xmm1
+..B1.9:                         # Preds ..B1.9 ..B1.8
+                                # Execution count [2.50e+01]
+        movdqu    %xmm0, (%rdi,%r10,4)                          #76.12
+        paddd     %xmm1, %xmm0                                  #76.12
+        movdqu    %xmm0, 16(%rdi,%r10,4)                        #76.12
+        paddd     %xmm1, %xmm0                                  #76.12
+        movdqu    %xmm0, 32(%rdi,%r10,4)                        #76.12
+        paddd     %xmm1, %xmm0                                  #76.12
+        movdqu    %xmm0, 48(%rdi,%r10,4)                        #76.12
+        addq      $16, %r10                                     #76.12
+        paddd     %xmm1, %xmm0                                  #76.12
+        cmpq      %rbx, %r10                                    #76.12
+        jb        ..B1.9        # Prob 82%                      #76.12
+                                # LOE rbx rdi r10 r12 r13 ecx esi r8d r9d r14b xmm0 xmm1
+..B1.10:                        # Preds ..B1.9
+                                # Execution count [4.50e+00]
+        lea       500002(%rsi), %r10d                           #76.12
+        cmpl      $500001, %r10d                                #76.12
+        ja        ..B1.19       # Prob 50%                      #76.12
+                                # LOE rbx rdi r12 r13 ecx esi r8d r9d r14b
+..B1.11:                        # Preds ..B1.10
+                                # Execution count [4.50e+00]
+        movl      %r9d, %edx                                    #76.12
+        negl      %edx                                          #76.12
+        addl      $500001, %edx                                 #76.12
+        cmpl      $4, %edx                                      #76.12
+        jb        ..B1.42       # Prob 10%                      #76.12
+                                # LOE rbx rdi r12 r13 edx ecx esi r8d r9d r14b
+..B1.12:                        # Preds ..B1.11
+                                # Execution count [4.50e+00]
+        movd      %r9d, %xmm0                                   #76.12
+        lea       500002(%rsi), %r10d                           #76.12
+        movl      %edx, %eax                                    #76.12
+        lea       500003(%rsi), %r11d                           #76.12
+        addl      $500004, %esi                                 #76.12
+        andl      $-4, %eax                                     #76.12
+        movd      %r10d, %xmm1                                  #76.12
+        movd      %r11d, %xmm3                                  #76.12
+        movd      %esi, %xmm2                                   #76.12
+        xorl      %esi, %esi                                    #76.12
+        punpckldq %xmm1, %xmm0                                  #76.12
+        punpckldq %xmm2, %xmm3                                  #76.12
+        punpcklqdq %xmm3, %xmm0                                 #76.12
+        movdqu    .L_2il0floatpacket.0(%rip), %xmm1             #76.12
+                                # LOE rbx rdi r12 r13 eax edx ecx esi r8d r9d r14b xmm0 xmm1
+..B1.13:                        # Preds ..B1.13 ..B1.12
+                                # Execution count [2.50e+01]
+        addl      $4, %esi                                      #76.12
+        movdqu    %xmm0, (%rdi,%rbx,4)                          #76.12
+        addq      $4, %rbx                                      #76.12
+        paddd     %xmm1, %xmm0                                  #76.12
+        cmpl      %eax, %esi                                    #76.12
+        jb        ..B1.13       # Prob 82%                      #76.12
+                                # LOE rbx rdi r12 r13 eax edx ecx esi r8d r9d r14b xmm0 xmm1
+..B1.15:                        # Preds ..B1.13 ..B1.42 ..B1.41
+                                # Execution count [4.50e+00]
+        addl      %eax, %r9d                                    #76.12
+        movl      %r9d, %ebx                                    #76.12
+        cmpl      %edx, %eax                                    #76.12
+        jae       ..B1.19       # Prob 0%                       #76.12
+                                # LOE rbx rdi r12 r13 eax edx ecx r8d r9d r14b
+..B1.17:                        # Preds ..B1.15 ..B1.17
+                                # Execution count [2.50e+01]
+        incl      %eax                                          #76.12
+        movl      %r9d, (%rdi,%rbx,4)                           #76.12
+        incq      %rbx                                          #76.12
+        incl      %r9d                                          #76.12
+        cmpl      %edx, %eax                                    #76.12
+        jb        ..B1.17       # Prob 82%                      #76.12
+                                # LOE rbx rdi r12 r13 eax edx ecx r8d r9d r14b
+..B1.19:                        # Preds ..B1.17 ..B1.10 ..B1.15
+                                # Execution count [5.00e+00]
+        imulq     $1103515245, %r13, %r13                       #76.12
+        addq      $12345, %r13                                  #76.12
+        movl      $131077, %eax                                 #76.12
+        movq      %r13, %rbx                                    #76.12
+        pxor      %xmm0, %xmm0                                  #76.12
+        shrq      $16, %rbx                                     #76.12
+        mull      %ebx                                          #76.12
+        movl      %ebx, %esi                                    #76.12
+        subl      %edx, %esi                                    #76.12
+        shrl      $1, %esi                                      #76.12
+        addl      %edx, %esi                                    #76.12
+        shrl      $14, %esi                                     #76.12
+        movl      %esi, %r9d                                    #76.12
+        shll      $15, %r9d                                     #76.12
+        subl      %esi, %r9d                                    #76.12
+        subl      %r9d, %ebx                                    #76.12
+        incl      %ebx                                          #76.12
+        cvtsi2sd  %ebx, %xmm0                                   #76.12
+        mulsd     .L_2il0floatpacket.1(%rip), %xmm0             #76.12
+        cvttsd2si %xmm0, %ebx                                   #76.12
+        cmpl      $500000, %ebx                                 #76.12
+        jne       ..B1.21       # Prob 50%                      #76.12
+                                # LOE rdi r12 r13 ecx ebx r8d r14b
+..B1.20:                        # Preds ..B1.19
+                                # Execution count [2.50e+00]
+        movl      $500000, (%rdi)                               #76.12
+        jmp       ..B1.22       # Prob 100%                     #76.12
+                                # LOE rdi r12 r13 ecx r8d r14b
+..B1.21:                        # Preds ..B1.19
+                                # Execution count [2.50e+00]
+        incl      %ebx                                          #76.12
+        movl      %ebx, (%rdi)                                  #76.12
+                                # LOE rdi r12 r13 ecx r8d r14b
+..B1.22:                        # Preds ..B1.20 ..B1.21
+                                # Execution count [4.50e+00]
+        movsd     .L_2il0floatpacket.2(%rip), %xmm2             #76.12
+        xorl      %esi, %esi                                    #76.12
+        xorl      %r9d, %r9d                                    #76.12
+                                # LOE rdi r9 r12 r13 ecx esi r8d r14b xmm2
+..B1.23:                        # Preds ..B1.45 ..B1.22
+                                # Execution count [2.50e+01]
+        imulq     $1103515245, %r13, %r13                       #76.12
+        movq      %r9, %r10                                     #76.12
+        addq      $12345, %r13                                  #76.12
+        pxor      %xmm1, %xmm1                                  #76.12
+        addq      $500001, %r10                                 #76.12
+        cvtsi2sdq %r10, %xmm1                                   #76.12
+        jns       ..B1.45       # Prob 70%                      #76.12
+                                # LOE rdi r9 r10 r12 r13 ecx esi r8d r14b xmm1 xmm2
+..B1.46:                        # Preds ..B1.23
+                                # Execution count [7.50e+00]
+        movq      %r10, %r11                                    #76.12
+        movq      %r10, %rbx                                    #76.12
+        shrq      $1, %rbx                                      #76.12
+        andq      $1, %r11                                      #76.12
+        orq       %rbx, %r11                                    #76.12
+        pxor      %xmm1, %xmm1                                  #76.12
+        cvtsi2sdq %r11, %xmm1                                   #76.12
+        addsd     %xmm1, %xmm1                                  #76.12
+                                # LOE rdi r9 r10 r12 r13 ecx esi r8d r14b xmm1 xmm2
+..B1.45:                        # Preds ..B1.46 ..B1.23
+                                # Execution count [2.50e+01]
+        movq      %r13, %rbx                                    #76.12
+        movl      $131077, %eax                                 #76.12
+        shrq      $16, %rbx                                     #76.12
+        pxor      %xmm0, %xmm0                                  #76.12
+        mull      %ebx                                          #76.12
+        movl      %ebx, %r11d                                   #76.12
+        incl      %esi                                          #76.12
+        subl      %edx, %r11d                                   #76.12
+        shrl      $1, %r11d                                     #76.12
+        addl      %edx, %r11d                                   #76.12
+        shrl      $14, %r11d                                    #76.12
+        movl      %r11d, %r15d                                  #76.12
+        shll      $15, %r15d                                    #76.12
+        subl      %r11d, %r15d                                  #76.12
+        subl      %r15d, %ebx                                   #76.12
+        incl      %ebx                                          #76.12
+        cvtsi2sd  %ebx, %xmm0                                   #76.12
+        mulsd     %xmm2, %xmm1                                  #76.12
+        mulsd     %xmm0, %xmm1                                  #76.12
+        cvttsd2si %xmm1, %ebx                                   #76.12
+        movslq    %ebx, %rbx                                    #76.12
+        cmpq      %r10, %rbx                                    #76.12
+        movl      2000000(%rdi,%r9,4), %r15d                    #76.12
+        lea       -1(%rbx), %r11                                #76.12
+        cmove     %r11, %rbx                                    #76.12
+        movl      (%rdi,%rbx,4), %r10d                          #76.12
+        movl      %r10d, 2000000(%rdi,%r9,4)                    #76.12
+        decq      %r9                                           #76.12
+        movl      %r15d, (%rdi,%rbx,4)                          #76.12
+        cmpl      $500000, %esi                                 #76.12
+        jb        ..B1.23       # Prob 82%                      #76.12
+                                # LOE rdi r9 r12 r13 ecx esi r8d r14b xmm2
+..B1.24:                        # Preds ..B1.45
+                                # Execution count [0.00e+00]
+        movl      %r8d, %edx                                    #78.16
+        movl      %r8d, %r11d                                   #78.16
+        negl      %edx                                          #78.16
+        xorl      %r10d, %r10d                                  #77.3
+        addl      $16, %edx                                     #78.16
+        andl      $3, %r11d                                     #78.16
+        movq      %r13, next(%rip)                              #76.12
+        shrl      $2, %edx                                      #78.16
+        movdqu    .L_2il0floatpacket.0(%rip), %xmm0             #78.16
+                                # LOE rdi r12 r13 edx ecx r8d r10d r11d r14b xmm0
+..B1.25:                        # Preds ..B1.36 ..B1.24
+                                # Execution count [9.00e+02]
+        xorl      %ebx, %ebx                                    #78.16
+        movl      %ecx, %eax                                    #78.16
+        testl     %r8d, %r8d                                    #78.16
+        je        ..B1.30       # Prob 50%                      #78.16
+                                # LOE rax rdi r12 r13 edx ecx ebx r8d r10d r11d r14b xmm0
+..B1.26:                        # Preds ..B1.25
+                                # Execution count [9.00e+02]
+        xorl      %r9d, %r9d                                    #78.16
+        xorl      %r15d, %r15d                                  #78.16
+        testl     %r11d, %r11d                                  #78.16
+        jne       ..B1.33       # Prob 10%                      #78.16
+                                # LOE rdi r12 r13 r15 edx ecx ebx r8d r9d r10d r11d r14b xmm0
+..B1.27:                        # Preds ..B1.26
+                                # Execution count [9.00e+02]
+        movl      %edx, %eax                                    #78.16
+                                # LOE rax rdi r12 r13 r15 edx ecx ebx r8d r9d r10d r11d r14b xmm0
+..B1.28:                        # Preds ..B1.28 ..B1.27
+                                # Execution count [5.00e+03]
+        incl      %r9d                                          #78.16
+        xorl      %r9d, %ebx                                    #78.16
+        xorl      (%rdi,%r15,4), %ebx                           #78.16
+        incq      %r15                                          #78.16
+        cmpl      %edx, %r9d                                    #78.16
+        jb        ..B1.28       # Prob 82%                      #78.16
+                                # LOE rax rdi r12 r13 r15 edx ecx ebx r8d r9d r10d r11d r14b xmm0
+..B1.30:                        # Preds ..B1.28 ..B1.25
+                                # Execution count [9.00e+02]
+        movd      %ebx, %xmm2                                   #78.16
+        lea       1(%rax), %ebx                                 #78.16
+        movl      %eax, %r9d                                    #78.16
+        lea       2(%rax), %esi                                 #78.16
+        negl      %r9d                                          #78.16
+        lea       3(%rax), %r15d                                #78.16
+        incl      %r9d                                          #78.16
+        movd      %ebx, %xmm1                                   #78.16
+        lea       4(%rax), %ebx                                 #78.16
+        andl      $15, %r9d                                     #78.16
+        movd      %esi, %xmm3                                   #78.16
+        negl      %r9d                                          #78.16
+        movd      %r15d, %xmm5                                  #78.16
+        punpckldq %xmm3, %xmm1                                  #78.16
+        addl      $500001, %r9d                                 #78.16
+        movd      %ebx, %xmm4                                   #78.16
+        movl      %r9d, %ebx                                    #78.16
+        punpckldq %xmm4, %xmm5                                  #78.16
+        punpcklqdq %xmm5, %xmm1                                 #78.16
+                                # LOE rax rbx rdi r12 r13 edx ecx r8d r9d r10d r11d r14b xmm0 xmm1 xmm2
+..B1.31:                        # Preds ..B1.31 ..B1.30
+                                # Execution count [5.00e+03]
+        pxor      %xmm1, %xmm2                                  #78.16
+        paddd     %xmm0, %xmm1                                  #78.16
+        pxor      (%rdi,%rax,4), %xmm2                          #78.16
+        pxor      %xmm1, %xmm2                                  #78.16
+        paddd     %xmm0, %xmm1                                  #78.16
+        pxor      16(%rdi,%rax,4), %xmm2                        #78.16
+        pxor      %xmm1, %xmm2                                  #78.16
+        paddd     %xmm0, %xmm1                                  #78.16
+        pxor      32(%rdi,%rax,4), %xmm2                        #78.16
+        pxor      %xmm1, %xmm2                                  #78.16
+        paddd     %xmm0, %xmm1                                  #78.16
+        pxor      48(%rdi,%rax,4), %xmm2                        #78.16
+        addq      $16, %rax                                     #78.16
+        cmpq      %rbx, %rax                                    #78.16
+        jb        ..B1.31       # Prob 82%                      #78.16
+                                # LOE rax rbx rdi r12 r13 edx ecx r8d r9d r10d r11d r14b xmm0 xmm1 xmm2
+..B1.32:                        # Preds ..B1.31
+                                # Execution count [9.00e+02]
+        movdqa    %xmm2, %xmm1                                  #78.16
+        psrldq    $8, %xmm1                                     #78.16
+        pxor      %xmm1, %xmm2                                  #78.16
+        movdqa    %xmm2, %xmm3                                  #78.16
+        psrldq    $4, %xmm3                                     #78.16
+        pxor      %xmm3, %xmm2                                  #78.16
+        movd      %xmm2, %ebx                                   #78.16
+        cmpl      $500001, %r9d                                 #78.16
+        jae       ..B1.36       # Prob 0%                       #78.16
+                                # LOE rdi r12 r13 edx ecx ebx r8d r9d r10d r11d r14b xmm0
+..B1.33:                        # Preds ..B1.32 ..B1.26
+                                # Execution count [9.00e+02]
+        movl      %r9d, %r15d                                   #78.16
+                                # LOE rdi r12 r13 r15 edx ecx ebx r8d r9d r10d r11d r14b xmm0
+..B1.34:                        # Preds ..B1.34 ..B1.33
+                                # Execution count [5.00e+03]
+        incl      %r9d                                          #78.16
+        xorl      %r9d, %ebx                                    #78.16
+        xorl      (%rdi,%r15,4), %ebx                           #78.16
+        incq      %r15                                          #78.16
+        cmpl      $500001, %r9d                                 #78.16
+        jb        ..B1.34       # Prob 82%                      #78.16
+                                # LOE rdi r12 r13 r15 edx ecx ebx r8d r9d r10d r11d r14b xmm0
+..B1.36:                        # Preds ..B1.34 ..B1.32
+                                # Execution count [9.95e+02]
+        incl      %r10d                                         #77.3
+        cmpl      $200, %r10d                                   #77.3
+        jb        ..B1.25       # Prob 99%                      #77.3
+                                # LOE rdi r12 r13 edx ecx ebx r8d r10d r11d r14b xmm0
+..B1.37:                        # Preds ..B1.36
+                                # Execution count [5.00e+00]
+#       free(void *)
+        call      free                                          #79.3
+                                # LOE r12 r13 ebx r14b
+..B1.38:                        # Preds ..B1.37
+                                # Execution count [5.00e+00]
+        xorl      $500001, %ebx                                 #80.3
+        movl      $.L_2__STRING.0, %edi                         #80.3
+        movl      %ebx, %esi                                    #80.3
+        xorl      %eax, %eax                                    #80.3
+..___tag_value_main.10:
+#       printf(const char *__restrict__, ...)
+        call      printf                                        #80.3
+..___tag_value_main.11:
+                                # LOE r12 r13 r14b
+..B1.39:                        # Preds ..B1.38
+                                # Execution count [5.00e+00]
+        incb      %r14b                                         #75.2
+        cmpb      $5, %r14b                                     #75.2
+        jb        ..B1.2        # Prob 80%                      #75.2
+                                # LOE r12 r13 r14b
+..B1.40:                        # Preds ..B1.39
+                                # Execution count [1.00e+00]
+        xorl      %eax, %eax                                    #83.12
+        addq      $96, %rsp                                     #83.12
+	.cfi_restore 3
+        popq      %rbx                                          #83.12
+	.cfi_restore 15
+        popq      %r15                                          #83.12
+	.cfi_restore 14
+        popq      %r14                                          #83.12
+	.cfi_restore 13
+        popq      %r13                                          #83.12
+        movq      %rbp, %rsp                                    #83.12
+        popq      %rbp                                          #83.12
+	.cfi_def_cfa 7, 8
+	.cfi_restore 6
+        ret                                                     #83.12
+	.cfi_def_cfa 6, 16
+	.cfi_escape 0x10, 0x03, 0x0e, 0x38, 0x1c, 0x0d, 0x80, 0xff, 0xff, 0xff, 0x1a, 0x0d, 0xe0, 0xff, 0xff, 0xff, 0x22
+	.cfi_offset 6, -16
+	.cfi_escape 0x10, 0x0d, 0x0e, 0x38, 0x1c, 0x0d, 0x80, 0xff, 0xff, 0xff, 0x1a, 0x0d, 0xf8, 0xff, 0xff, 0xff, 0x22
+	.cfi_escape 0x10, 0x0e, 0x0e, 0x38, 0x1c, 0x0d, 0x80, 0xff, 0xff, 0xff, 0x1a, 0x0d, 0xf0, 0xff, 0xff, 0xff, 0x22
+	.cfi_escape 0x10, 0x0f, 0x0e, 0x38, 0x1c, 0x0d, 0x80, 0xff, 0xff, 0xff, 0x1a, 0x0d, 0xe8, 0xff, 0xff, 0xff, 0x22
+                                # LOE
+..B1.41:                        # Preds ..B1.4
+                                # Execution count [4.50e-01]: Infreq
+        xorl      %r9d, %r9d                                    #76.12
+        movl      $500001, %edx                                 #76.12
+        xorl      %eax, %eax                                    #76.12
+        jmp       ..B1.15       # Prob 100%                     #76.12
+                                # LOE rdi r12 r13 eax edx ecx r8d r9d r14b
+..B1.42:                        # Preds ..B1.11
+                                # Execution count [4.50e-01]: Infreq
+        xorl      %eax, %eax                                    #76.12
+        jmp       ..B1.15       # Prob 100%                     #76.12
+        .align    16,0x90
+                                # LOE rdi r12 r13 eax edx ecx r8d r9d r14b
+	.cfi_endproc
+# mark_end;
+	.type	main,@function
+	.size	main,.-main
+..LNmain.0:
+	.data
+# -- End  main
+	.text
+.L_2__routine_start_rand_1:
+# -- Begin  rand
+	.text
+# mark_begin;
+       .align    16,0x90
+	.globl rand
+# --- rand(void)
+rand:
+..B2.1:                         # Preds ..B2.0
+                                # Execution count [1.00e+00]
+	.cfi_startproc
+..___tag_value_rand.25:
+..L26:
+                                                         #15.18
+        imulq     $1103515245, next(%rip), %rax                 #16.19
+        addq      $12345, %rax                                  #16.32
+        movq      %rax, next(%rip)                              #16.5
+        shrq      $16, %rax                                     #17.34
+        movl      %eax, %edi                                    #17.34
+        movl      $131077, %eax                                 #17.43
+        mull      %edi                                          #17.43
+        movl      %edi, %ecx                                    #17.43
+        subl      %edx, %ecx                                    #17.43
+        shrl      $1, %ecx                                      #17.43
+        addl      %edx, %ecx                                    #17.43
+        shrl      $14, %ecx                                     #17.43
+        movl      %ecx, %esi                                    #17.43
+        shll      $15, %esi                                     #17.43
+        subl      %ecx, %esi                                    #17.43
+        subl      %esi, %edi                                    #17.43
+        incl      %edi                                          #17.52
+        movl      %edi, %eax                                    #17.52
+        ret                                                     #17.52
+        .align    16,0x90
+                                # LOE
+	.cfi_endproc
+# mark_end;
+	.type	rand,@function
+	.size	rand,.-rand
+..LNrand.1:
+	.data
+# -- End  rand
+	.text
+.L_2__routine_start_srand_2:
+# -- Begin  srand
+	.text
+# mark_begin;
+       .align    16,0x90
+	.globl srand
+# --- srand(unsigned int)
+srand:
+# parameter 1: %edi
+..B3.1:                         # Preds ..B3.0
+                                # Execution count [1.00e+00]
+	.cfi_startproc
+..___tag_value_srand.28:
+..L29:
+                                                         #20.33
+        movl      %edi, %edi                                    #20.33
+        movq      %rdi, next(%rip)                              #21.5
+        ret                                                     #22.1
+        .align    16,0x90
+                                # LOE
+	.cfi_endproc
+# mark_end;
+	.type	srand,@function
+	.size	srand,.-srand
+..LNsrand.2:
+	.data
+# -- End  srand
+	.text
+.L_2__routine_start_randInt_3:
+# -- Begin  randInt
+	.text
+# mark_begin;
+       .align    16,0x90
+	.globl randInt
+# --- randInt(int, int)
+randInt:
+# parameter 1: %edi
+# parameter 2: %esi
+..B4.1:                         # Preds ..B4.0
+                                # Execution count [1.00e+00]
+	.cfi_startproc
+..___tag_value_randInt.31:
+..L32:
+                                                         #25.31
+        movl      $131077, %eax                                 #28.20
+        imulq     $1103515245, next(%rip), %rcx                 #28.20
+        addq      $12345, %rcx                                  #28.20
+        pxor      %xmm0, %xmm0                                  #28.20
+        movq      %rcx, next(%rip)                              #28.20
+        subl      %edi, %esi                                    #27.10
+        shrq      $16, %rcx                                     #28.20
+        incl      %esi                                          #27.23
+        mull      %ecx                                          #28.20
+        movl      %ecx, %r8d                                    #28.20
+        pxor      %xmm1, %xmm1                                  #28.15
+        subl      %edx, %r8d                                    #28.20
+        shrl      $1, %r8d                                      #28.20
+        addl      %edx, %r8d                                    #28.20
+        shrl      $14, %r8d                                     #28.20
+        movl      %r8d, %r9d                                    #28.20
+        shll      $15, %r9d                                     #28.20
+        subl      %r8d, %r9d                                    #28.20
+        subl      %r9d, %ecx                                    #28.20
+        incl      %ecx                                          #28.20
+        cvtsi2sd  %ecx, %xmm0                                   #28.20
+        cvtsi2sd  %esi, %xmm1                                   #28.15
+        mulsd     .L_2il0floatpacket.2(%rip), %xmm0             #28.29
+        mulsd     %xmm0, %xmm1                                  #28.29
+        cvttsd2si %xmm1, %r10d                                  #28.29
+        lea       -1(%r10,%rdi), %eax                           #29.33
+        addl      %r10d, %edi                                   #29.41
+        cmpl      %esi, %r10d                                   #29.18
+        cmovne    %edi, %eax                                    #29.18
+        ret                                                     #29.18
+        .align    16,0x90
+                                # LOE
+	.cfi_endproc
+# mark_end;
+	.type	randInt,@function
+	.size	randInt,.-randInt
+..LNrandInt.3:
+	.data
+# -- End  randInt
+	.text
+.L_2__routine_start_shuffle_4:
+# -- Begin  shuffle
+	.text
+# mark_begin;
+       .align    16,0x90
+	.globl shuffle
+# --- shuffle(int *, int)
+shuffle:
+# parameter 1: %rdi
+# parameter 2: %esi
+..B5.1:                         # Preds ..B5.0
+                                # Execution count [1.00e+00]
+	.cfi_startproc
+..___tag_value_shuffle.34:
+..L35:
+                                                         #32.35
+        xorl      %r9d, %r9d                                    #36.5
+        movslq    %esi, %rsi                                    #32.35
+        movq      %rdi, %r10                                    #32.35
+        movq      %rsi, %r11                                    #36.17
+        xorl      %edi, %edi                                    #37.30
+        decq      %r11                                          #36.17
+        je        ..B5.5        # Prob 9%                       #36.24
+                                # LOE rbx rbp rsi rdi r9 r10 r11 r12 r13 r14 r15
+..B5.2:                         # Preds ..B5.1
+                                # Execution count [9.00e-01]
+        movq      next(%rip), %r8                               #37.30
+        lea       (%r10,%rsi,4), %rcx                           #40.15
+        movsd     .L_2il0floatpacket.2(%rip), %xmm0             #37.39
+        movq      %r12, -8(%rsp)                                #40.15[spill]
+	.cfi_offset 12, -16
+                                # LOE rcx rbx rbp rsi rdi r8 r9 r10 r11 r13 r14 r15 xmm0
+..B5.3:                         # Preds ..B5.8 ..B5.2
+                                # Execution count [5.00e+00]
+        imulq     $1103515245, %r8, %r8                         #37.30
+        pxor      %xmm2, %xmm2                                  #37.24
+        addq      $12345, %r8                                   #37.30
+        cvtsi2sdq %rsi, %xmm2                                   #37.24
+        testq     %rsi, %rsi                                    #37.24
+        jge       ..B5.8        # Prob 70%                      #37.24
+                                # LOE rcx rbx rbp rsi rdi r8 r9 r10 r11 r13 r14 r15 xmm0 xmm2
+..B5.9:                         # Preds ..B5.3
+                                # Execution count [1.50e+00]
+        movq      %rsi, %rdx                                    #37.24
+        movq      %rsi, %rax                                    #37.24
+        shrq      $1, %rax                                      #37.24
+        andq      $1, %rdx                                      #37.24
+        orq       %rax, %rdx                                    #37.24
+        pxor      %xmm2, %xmm2                                  #37.24
+        cvtsi2sdq %rdx, %xmm2                                   #37.24
+        addsd     %xmm2, %xmm2                                  #37.24
+                                # LOE rcx rbx rbp rsi rdi r8 r9 r10 r11 r13 r14 r15 xmm0 xmm2
+..B5.8:                         # Preds ..B5.9 ..B5.3
+                                # Execution count [5.00e+00]
+        movq      %r8, %r12                                     #37.30
+        movl      $131077, %eax                                 #37.30
+        shrq      $16, %r12                                     #37.30
+        pxor      %xmm1, %xmm1                                  #37.30
+        mull      %r12d                                         #37.30
+        movl      %edx, %eax                                    #37.30
+        movl      %r12d, %edx                                   #37.30
+        subl      %eax, %edx                                    #37.30
+        incq      %r9                                           #36.5
+        shrl      $1, %edx                                      #37.30
+        addl      %eax, %edx                                    #37.30
+        shrl      $14, %edx                                     #37.30
+        movl      %edx, %eax                                    #37.30
+        shll      $15, %eax                                     #37.30
+        subl      %edx, %eax                                    #37.30
+        subl      %eax, %r12d                                   #37.30
+        incl      %r12d                                         #37.30
+        cvtsi2sd  %r12d, %xmm1                                  #37.30
+        mulsd     %xmm0, %xmm2                                  #37.39
+        mulsd     %xmm1, %xmm2                                  #37.39
+        cvttsd2si %xmm2, %eax                                   #37.39
+        movslq    %eax, %rax                                    #37.39
+        cmpq      %rsi, %rax                                    #41.9
+        movl      -4(%rcx,%rdi,4), %r12d                        #40.15
+        lea       -1(%rax), %rdx                                #38.34
+        cmove     %rdx, %rax                                    #41.9
+        decq      %rsi                                          #36.5
+        movl      (%r10,%rax,4), %edx                           #41.20
+        movl      %edx, -4(%rcx,%rdi,4)                         #41.9
+        decq      %rdi                                          #36.5
+        movl      %r12d, (%r10,%rax,4)                          #42.9
+        cmpq      %r11, %r9                                     #36.5
+        jb        ..B5.3        # Prob 82%                      #36.5
+                                # LOE rcx rbx rbp rsi rdi r8 r9 r10 r11 r13 r14 r15 xmm0
+..B5.4:                         # Preds ..B5.8
+                                # Execution count [9.00e-01]
+        movq      -8(%rsp), %r12                                #[spill]
+	.cfi_restore 12
+        movq      %r8, next(%rip)                               #37.30
+                                # LOE rbx rbp r12 r13 r14 r15
+..B5.5:                         # Preds ..B5.1 ..B5.4
+                                # Execution count [1.00e+00]
+        ret                                                     #44.1
+        .align    16,0x90
+                                # LOE
+	.cfi_endproc
+# mark_end;
+	.type	shuffle,@function
+	.size	shuffle,.-shuffle
+..LNshuffle.4:
+	.data
+# -- End  shuffle
+	.text
+.L_2__routine_start_createRandomArray_5:
+# -- Begin  createRandomArray
+	.text
+# mark_begin;
+       .align    16,0x90
+	.globl createRandomArray
+# --- createRandomArray(int)
+createRandomArray:
+# parameter 1: %edi
+..B6.1:                         # Preds ..B6.0
+                                # Execution count [1.00e+00]
+	.cfi_startproc
+..___tag_value_createRandomArray.40:
+..L41:
+                                                         #46.34
+        pushq     %r12                                          #46.34
+	.cfi_def_cfa_offset 16
+	.cfi_offset 12, -16
+        pushq     %r13                                          #46.34
+	.cfi_def_cfa_offset 24
+	.cfi_offset 13, -24
+        pushq     %rbx                                          #46.34
+	.cfi_def_cfa_offset 32
+	.cfi_offset 3, -32
+        movl      %edi, %r13d                                   #46.34
+        movslq    %r13d, %r12                                   #50.5
+        movq      %r12, %rbx                                    #50.5
+        lea       1(%r12), %rdi                                 #51.20
+        shlq      $2, %rdi                                      #51.20
+#       malloc(size_t)
+        call      malloc                                        #51.20
+                                # LOE rax rbx rbp r12 r14 r15 r13d
+..B6.35:                        # Preds ..B6.1
+                                # Execution count [1.00e+00]
+        movq      %rax, %rcx                                    #51.20
+                                # LOE rcx rbx rbp r12 r14 r15 r13d
+..B6.2:                         # Preds ..B6.35
+                                # Execution count [1.00e+00]
+        lea       1(%r13), %edi                                 #50.5
+        testl     %edi, %edi                                    #52.21
+        jle       ..B6.19       # Prob 50%                      #52.21
+                                # LOE rcx rbx rbp r12 r14 r15 edi r13d
+..B6.3:                         # Preds ..B6.2
+                                # Execution count [9.00e-01]
+        cmpl      $4, %edi                                      #52.5
+        jl        ..B6.28       # Prob 10%                      #52.5
+                                # LOE rcx rbx rbp r12 r14 r15 edi r13d
+..B6.4:                         # Preds ..B6.3
+                                # Execution count [9.00e-01]
+        movq      %rcx, %rdx                                    #52.5
+        andq      $15, %rdx                                     #52.5
+        testl     %edx, %edx                                    #52.5
+        je        ..B6.7        # Prob 50%                      #52.5
+                                # LOE rcx rbx rbp r12 r14 r15 edx edi r13d
+..B6.5:                         # Preds ..B6.4
+                                # Execution count [9.00e-01]
+        testb     $3, %dl                                       #52.5
+        jne       ..B6.28       # Prob 10%                      #52.5
+                                # LOE rcx rbx rbp r12 r14 r15 edx edi r13d
+..B6.6:                         # Preds ..B6.5
+                                # Execution count [4.50e-01]
+        negl      %edx                                          #52.5
+        addl      $16, %edx                                     #52.5
+        shrl      $2, %edx                                      #52.5
+                                # LOE rcx rbx rbp r12 r14 r15 edx edi r13d
+..B6.7:                         # Preds ..B6.6 ..B6.4
+                                # Execution count [9.00e-01]
+        lea       4(%rdx), %esi                                 #52.5
+        cmpl      %esi, %edi                                    #52.5
+        jl        ..B6.28       # Prob 10%                      #52.5
+                                # LOE rcx rbx rbp r12 r14 r15 edx edi r13d
+..B6.8:                         # Preds ..B6.7
+                                # Execution count [1.00e+00]
+        movl      %edi, %r8d                                    #52.5
+        xorl      %r9d, %r9d                                    #52.5
+        subl      %edx, %r8d                                    #52.5
+        andl      $3, %r8d                                      #52.5
+        movslq    %edi, %rsi                                    #52.5
+        subq      %r8, %rsi                                     #52.5
+        xorl      %r8d, %r8d                                    #53.9
+        testl     %edx, %edx                                    #52.5
+        jbe       ..B6.12       # Prob 9%                       #52.5
+                                # LOE rcx rbx rbp rsi r8 r12 r14 r15 edx edi r9d r13d
+..B6.10:                        # Preds ..B6.8 ..B6.10
+                                # Execution count [5.00e+00]
+        movl      %r9d, (%rcx,%r8,4)                            #53.9
+        incl      %r9d                                          #52.5
+        incq      %r8                                           #52.5
+        cmpl      %edx, %r9d                                    #52.5
+        jb        ..B6.10       # Prob 82%                      #52.5
+                                # LOE rcx rbx rbp rsi r8 r12 r14 r15 edx edi r9d r13d
+..B6.12:                        # Preds ..B6.10 ..B6.8
+                                # Execution count [9.00e-01]
+        movd      %edx, %xmm0                                   #53.9
+        lea       1(%rdx), %r8d                                 #53.9
+        movdqu    .L_2il0floatpacket.0(%rip), %xmm1             #53.9
+        lea       2(%rdx), %r9d                                 #53.9
+        lea       3(%rdx), %r10d                                #53.9
+        movl      %edx, %edx                                    #52.5
+        movd      %r8d, %xmm2                                   #53.9
+        movd      %r9d, %xmm4                                   #53.9
+        movd      %r10d, %xmm3                                  #53.9
+        punpckldq %xmm2, %xmm0                                  #53.9
+        punpckldq %xmm3, %xmm4                                  #53.9
+        punpcklqdq %xmm4, %xmm0                                 #53.9
+                                # LOE rdx rcx rbx rbp rsi r12 r14 r15 edi r13d xmm0 xmm1
+..B6.13:                        # Preds ..B6.13 ..B6.12
+                                # Execution count [5.00e+00]
+        movdqu    %xmm0, (%rcx,%rdx,4)                          #53.9
+        addq      $4, %rdx                                      #52.5
+        paddd     %xmm1, %xmm0                                  #53.9
+        cmpq      %rsi, %rdx                                    #52.5
+        jb        ..B6.13       # Prob 82%                      #52.5
+                                # LOE rdx rcx rbx rbp rsi r12 r14 r15 edi r13d xmm0 xmm1
+..B6.15:                        # Preds ..B6.13 ..B6.28
+                                # Execution count [1.00e+00]
+        movl      %esi, %r8d                                    #52.5
+        movslq    %esi, %rdx                                    #52.5
+        cmpl      %edi, %r8d                                    #52.5
+        jae       ..B6.19       # Prob 9%                       #52.5
+                                # LOE rdx rcx rbx rbp r12 r14 r15 edi r8d r13d
+..B6.17:                        # Preds ..B6.15 ..B6.17
+                                # Execution count [5.00e+00]
+        movl      %r8d, (%rcx,%rdx,4)                           #53.9
+        incl      %r8d                                          #52.5
+        incq      %rdx                                          #52.5
+        cmpl      %edi, %r8d                                    #52.5
+        jb        ..B6.17       # Prob 82%                      #52.5
+                                # LOE rdx rcx rbx rbp r12 r14 r15 edi r8d r13d
+..B6.19:                        # Preds ..B6.2 ..B6.17 ..B6.15
+                                # Execution count [1.00e+00]
+        imulq     $1103515245, next(%rip), %r10                 #54.17
+        addq      $12345, %r10                                  #54.17
+        movl      $131077, %eax                                 #54.17
+        movq      %r10, %rsi                                    #54.17
+        pxor      %xmm2, %xmm2                                  #54.17
+        shrq      $16, %rsi                                     #54.17
+        pxor      %xmm1, %xmm1                                  #54.17
+        mull      %esi                                          #54.17
+        movl      %esi, %edi                                    #54.17
+        subl      %edx, %edi                                    #54.17
+        shrl      $1, %edi                                      #54.17
+        addl      %edx, %edi                                    #54.17
+        shrl      $14, %edi                                     #54.17
+        movl      %edi, %r8d                                    #54.17
+        cvtsi2sd  %r13d, %xmm2                                  #54.17
+        shll      $15, %r8d                                     #54.17
+        subl      %edi, %r8d                                    #54.17
+        subl      %r8d, %esi                                    #54.17
+        incl      %esi                                          #54.17
+        cvtsi2sd  %esi, %xmm1                                   #54.17
+        movsd     .L_2il0floatpacket.2(%rip), %xmm0             #54.17
+        mulsd     %xmm0, %xmm2                                  #54.17
+        mulsd     %xmm1, %xmm2                                  #54.17
+        cvttsd2si %xmm2, %edx                                   #54.17
+        cmpl      %r13d, %edx                                   #54.17
+        jne       ..B6.21       # Prob 50%                      #54.17
+                                # LOE rcx rbx rbp r10 r12 r14 r15 edx xmm0
+..B6.20:                        # Preds ..B6.19
+                                # Execution count [5.00e-01]
+        movl      %edx, (%rcx)                                  #54.5
+        jmp       ..B6.22       # Prob 100%                     #54.5
+                                # LOE rcx rbx rbp r10 r12 r14 r15 xmm0
+..B6.21:                        # Preds ..B6.19
+                                # Execution count [5.00e-01]
+        incl      %edx                                          #54.17
+        movl      %edx, (%rcx)                                  #54.5
+                                # LOE rcx rbx rbp r10 r12 r14 r15 xmm0
+..B6.22:                        # Preds ..B6.20 ..B6.21
+                                # Execution count [1.00e+00]
+        xorl      %edi, %edi                                    #55.5
+        testq     %rbx, %rbx                                    #55.5
+        jbe       ..B6.25       # Prob 9%                       #55.5
+                                # LOE rcx rbx rbp rdi r10 r12 r14 r15 xmm0
+..B6.23:                        # Preds ..B6.22
+                                # Execution count [9.00e-01]
+        lea       (%rcx,%r12,4), %r8                            #55.5
+                                # LOE rcx rbx rbp rdi r8 r10 r12 r14 r15 xmm0
+..B6.24:                        # Preds ..B6.33 ..B6.23
+                                # Execution count [5.00e+00]
+        imulq     $1103515245, %r10, %r10                       #55.5
+        movq      %r12, %r9                                     #55.5
+        addq      $12345, %r10                                  #55.5
+        pxor      %xmm2, %xmm2                                  #55.5
+        incq      %r9                                           #55.5
+        cvtsi2sdq %r9, %xmm2                                    #55.5
+        jns       ..B6.33       # Prob 70%                      #55.5
+                                # LOE rcx rbx rbp rdi r8 r9 r10 r12 r14 r15 xmm0 xmm2
+..B6.34:                        # Preds ..B6.24
+                                # Execution count [1.50e+00]
+        movq      %r9, %rsi                                     #55.5
+        movq      %r9, %rdx                                     #55.5
+        shrq      $1, %rdx                                      #55.5
+        andq      $1, %rsi                                      #55.5
+        orq       %rdx, %rsi                                    #55.5
+        pxor      %xmm2, %xmm2                                  #55.5
+        cvtsi2sdq %rsi, %xmm2                                   #55.5
+        addsd     %xmm2, %xmm2                                  #55.5
+                                # LOE rcx rbx rbp rdi r8 r9 r10 r12 r14 r15 xmm0 xmm2
+..B6.33:                        # Preds ..B6.34 ..B6.24
+                                # Execution count [5.00e+00]
+        movq      %r10, %rsi                                    #55.5
+        movl      $131077, %eax                                 #55.5
+        shrq      $16, %rsi                                     #55.5
+        pxor      %xmm1, %xmm1                                  #55.5
+        mull      %esi                                          #55.5
+        movl      %esi, %r11d                                   #55.5
+        incq      %rdi                                          #55.5
+        subl      %edx, %r11d                                   #55.5
+        decq      %r12                                          #55.5
+        shrl      $1, %r11d                                     #55.5
+        addl      %edx, %r11d                                   #55.5
+        shrl      $14, %r11d                                    #55.5
+        movl      %r11d, %r13d                                  #55.5
+        shll      $15, %r13d                                    #55.5
+        subl      %r11d, %r13d                                  #55.5
+        subl      %r13d, %esi                                   #55.5
+        incl      %esi                                          #55.5
+        cvtsi2sd  %esi, %xmm1                                   #55.5
+        mulsd     %xmm0, %xmm2                                  #55.5
+        mulsd     %xmm1, %xmm2                                  #55.5
+        cvttsd2si %xmm2, %edx                                   #55.5
+        movslq    %edx, %rdx                                    #55.5
+        cmpq      %r9, %rdx                                     #55.5
+        movl      (%r8), %r11d                                  #55.5
+        lea       -1(%rdx), %rsi                                #55.5
+        cmove     %rsi, %rdx                                    #55.5
+        movl      (%rcx,%rdx,4), %r9d                           #55.5
+        movl      %r9d, (%r8)                                   #55.5
+        addq      $-4, %r8                                      #55.5
+        movl      %r11d, (%rcx,%rdx,4)                          #55.5
+        cmpq      %rbx, %rdi                                    #55.5
+        jb        ..B6.24       # Prob 82%                      #55.5
+                                # LOE rcx rbx rbp rdi r8 r10 r12 r14 r15 xmm0
+..B6.25:                        # Preds ..B6.22 ..B6.33
+                                # Execution count [9.00e-01]
+        movq      %r10, next(%rip)                              #55.5
+                                # LOE rcx rbp r14 r15
+..B6.26:                        # Preds ..B6.25
+                                # Execution count [1.00e+00]
+        movq      %rcx, %rax                                    #56.12
+	.cfi_restore 3
+        popq      %rbx                                          #56.12
+	.cfi_def_cfa_offset 24
+	.cfi_restore 13
+        popq      %r13                                          #56.12
+	.cfi_def_cfa_offset 16
+	.cfi_restore 12
+        popq      %r12                                          #56.12
+	.cfi_def_cfa_offset 8
+        ret                                                     #56.12
+	.cfi_def_cfa_offset 32
+	.cfi_offset 3, -32
+	.cfi_offset 12, -16
+	.cfi_offset 13, -24
+                                # LOE
+..B6.28:                        # Preds ..B6.3 ..B6.5 ..B6.7
+                                # Execution count [9.00e-02]: Infreq
+        xorl      %esi, %esi                                    #52.5
+        jmp       ..B6.15       # Prob 100%                     #52.5
+        .align    16,0x90
+                                # LOE rcx rbx rbp rsi r12 r14 r15 edi r13d
+	.cfi_endproc
+# mark_end;
+	.type	createRandomArray,@function
+	.size	createRandomArray,.-createRandomArray
+..LNcreateRandomArray.5:
+	.data
+# -- End  createRandomArray
+	.text
+.L_2__routine_start_findDuplicate_6:
+# -- Begin  findDuplicate
+	.text
+# mark_begin;
+       .align    16,0x90
+	.globl findDuplicate
+# --- findDuplicate(int *, int)
+findDuplicate:
+# parameter 1: %rdi
+# parameter 2: %esi
+..B7.1:                         # Preds ..B7.0
+                                # Execution count [1.00e+00]
+	.cfi_startproc
+..___tag_value_findDuplicate.59:
+..L60:
+                                                         #59.39
+        xorl      %eax, %eax                                    #61.16
+        testl     %esi, %esi                                    #63.21
+        jle       ..B7.18       # Prob 50%                      #63.21
+                                # LOE rbx rbp rdi r12 r13 r14 r15 eax esi
+..B7.2:                         # Preds ..B7.1
+                                # Execution count [9.00e-01]
+        cmpl      $4, %esi                                      #63.5
+        jl        ..B7.19       # Prob 10%                      #63.5
+                                # LOE rbx rbp rdi r12 r13 r14 r15 eax esi
+..B7.3:                         # Preds ..B7.2
+                                # Execution count [9.00e-01]
+        movq      %rdi, %rdx                                    #63.5
+        andq      $15, %rdx                                     #63.5
+        testl     %edx, %edx                                    #63.5
+        je        ..B7.6        # Prob 50%                      #63.5
+                                # LOE rbx rbp rdi r12 r13 r14 r15 eax edx esi
+..B7.4:                         # Preds ..B7.3
+                                # Execution count [9.00e-01]
+        testb     $3, %dl                                       #63.5
+        jne       ..B7.19       # Prob 10%                      #63.5
+                                # LOE rbx rbp rdi r12 r13 r14 r15 eax edx esi
+..B7.5:                         # Preds ..B7.4
+                                # Execution count [4.50e-01]
+        negl      %edx                                          #63.5
+        addl      $16, %edx                                     #63.5
+        shrl      $2, %edx                                      #63.5
+                                # LOE rbx rbp rdi r12 r13 r14 r15 eax edx esi
+..B7.6:                         # Preds ..B7.5 ..B7.3
+                                # Execution count [9.00e-01]
+        lea       4(%rdx), %ecx                                 #63.5
+        cmpl      %ecx, %esi                                    #63.5
+        jl        ..B7.19       # Prob 10%                      #63.5
+                                # LOE rbx rbp rdi r12 r13 r14 r15 eax edx esi
+..B7.7:                         # Preds ..B7.6
+                                # Execution count [1.00e+00]
+        movl      %esi, %r8d                                    #63.5
+        xorl      %r9d, %r9d                                    #63.5
+        subl      %edx, %r8d                                    #63.5
+        andl      $3, %r8d                                      #63.5
+        movslq    %esi, %rcx                                    #63.5
+        subq      %r8, %rcx                                     #63.5
+        xorl      %r8d, %r8d                                    #64.9
+        testl     %edx, %edx                                    #63.5
+        jbe       ..B7.11       # Prob 9%                       #63.5
+                                # LOE rcx rbx rbp rdi r8 r12 r13 r14 r15 eax edx esi r9d
+..B7.9:                         # Preds ..B7.7 ..B7.9
+                                # Execution count [5.00e+00]
+        incl      %r9d                                          #64.32
+        xorl      %r9d, %eax                                    #64.32
+        xorl      (%rdi,%r8,4), %eax                            #64.37
+        incq      %r8                                           #64.32
+        cmpl      %edx, %r9d                                    #63.5
+        jb        ..B7.9        # Prob 82%                      #63.5
+                                # LOE rcx rbx rbp rdi r8 r12 r13 r14 r15 eax edx esi r9d
+..B7.11:                        # Preds ..B7.9 ..B7.7
+                                # Execution count [9.00e-01]
+        movd      %eax, %xmm2                                   #61.16
+        lea       1(%rdx), %eax                                 #64.32
+        movdqu    .L_2il0floatpacket.0(%rip), %xmm1             #64.32
+        lea       2(%rdx), %r8d                                 #64.32
+        lea       3(%rdx), %r9d                                 #64.32
+        lea       4(%rdx), %r10d                                #64.32
+        movl      %edx, %edx                                    #63.5
+        movd      %eax, %xmm0                                   #64.32
+        movd      %r8d, %xmm3                                   #64.32
+        movd      %r9d, %xmm5                                   #64.32
+        movd      %r10d, %xmm4                                  #64.32
+        punpckldq %xmm3, %xmm0                                  #64.32
+        punpckldq %xmm4, %xmm5                                  #64.32
+        punpcklqdq %xmm5, %xmm0                                 #64.32
+                                # LOE rdx rcx rbx rbp rdi r12 r13 r14 r15 esi xmm0 xmm1 xmm2
+..B7.12:                        # Preds ..B7.12 ..B7.11
+                                # Execution count [5.00e+00]
+        pxor      %xmm0, %xmm2                                  #64.32
+        paddd     %xmm1, %xmm0                                  #64.32
+        pxor      (%rdi,%rdx,4), %xmm2                          #64.37
+        addq      $4, %rdx                                      #63.5
+        cmpq      %rcx, %rdx                                    #63.5
+        jb        ..B7.12       # Prob 82%                      #63.5
+                                # LOE rdx rcx rbx rbp rdi r12 r13 r14 r15 esi xmm0 xmm1 xmm2
+..B7.13:                        # Preds ..B7.12
+                                # Execution count [9.00e-01]
+        movdqa    %xmm2, %xmm0                                  #61.16
+        psrldq    $8, %xmm0                                     #61.16
+        pxor      %xmm0, %xmm2                                  #61.16
+        movdqa    %xmm2, %xmm1                                  #61.16
+        psrldq    $4, %xmm1                                     #61.16
+        pxor      %xmm1, %xmm2                                  #61.16
+        movd      %xmm2, %eax                                   #61.16
+                                # LOE rcx rbx rbp rdi r12 r13 r14 r15 eax esi
+..B7.14:                        # Preds ..B7.13 ..B7.19
+                                # Execution count [1.00e+00]
+        movl      %ecx, %r8d                                    #63.5
+        movslq    %ecx, %rdx                                    #63.5
+        cmpl      %esi, %r8d                                    #63.5
+        jae       ..B7.18       # Prob 9%                       #63.5
+                                # LOE rdx rbx rbp rdi r12 r13 r14 r15 eax esi r8d
+..B7.16:                        # Preds ..B7.14 ..B7.16
+                                # Execution count [5.00e+00]
+        incl      %r8d                                          #64.32
+        xorl      %r8d, %eax                                    #64.32
+        xorl      (%rdi,%rdx,4), %eax                           #64.37
+        incq      %rdx                                          #64.32
+        cmpl      %esi, %r8d                                    #63.5
+        jb        ..B7.16       # Prob 82%                      #63.5
+                                # LOE rdx rbx rbp rdi r12 r13 r14 r15 eax esi r8d
+..B7.18:                        # Preds ..B7.16 ..B7.14 ..B7.1
+                                # Execution count [1.00e+00]
+        xorl      %esi, %eax                                    #65.5
+        ret                                                     #66.12
+                                # LOE
+..B7.19:                        # Preds ..B7.2 ..B7.4 ..B7.6
+                                # Execution count [9.00e-02]: Infreq
+        xorl      %ecx, %ecx                                    #63.5
+        jmp       ..B7.14       # Prob 100%                     #63.5
+        .align    16,0x90
+                                # LOE rcx rbx rbp rdi r12 r13 r14 r15 eax esi
+	.cfi_endproc
+# mark_end;
+	.type	findDuplicate,@function
+	.size	findDuplicate,.-findDuplicate
+..LNfindDuplicate.6:
+	.data
+# -- End  findDuplicate
+	.data
+	.align 8
+	.align 8
+next:
+	.long	0x00000001,0x00000000
+	.type	next,@object
+	.size	next,8
+	.section .rodata, "a"
+	.align 16
+	.align 16
+.L_2il0floatpacket.0:
+	.long	0x00000004,0x00000004,0x00000004,0x00000004
+	.type	.L_2il0floatpacket.0,@object
+	.size	.L_2il0floatpacket.0,16
+	.align 8
+.L_2il0floatpacket.1:
+	.long	0x00000000,0x402e8480
+	.type	.L_2il0floatpacket.1,@object
+	.size	.L_2il0floatpacket.1,8
+	.align 8
+.L_2il0floatpacket.2:
+	.long	0x00000000,0x3f000000
+	.type	.L_2il0floatpacket.2,@object
+	.size	.L_2il0floatpacket.2,8
+	.section .rodata.str1.4, "aMS",@progbits,1
+	.align 4
+	.align 4
+.L_2__STRING.0:
+	.long	1853189958
+	.long	1969496164
+	.long	1667853424
+	.long	979727457
+	.long	174335264
+	.byte	0
+	.type	.L_2__STRING.0,@object
+	.size	.L_2__STRING.0,21
+	.data
+	.section .note.GNU-stack, ""
+# End

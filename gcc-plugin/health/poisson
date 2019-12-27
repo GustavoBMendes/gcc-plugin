@@ -1,0 +1,59 @@
+# mark_description "Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.235 Build 20190416";
+# mark_description "-lm -DTORONTO -S -c -o poisson";
+	.file "poisson.c"
+	.text
+..TXTST0:
+.L_2__routine_start_my_rand_0:
+# -- Begin  my_rand
+	.text
+# mark_begin;
+       .align    16,0x90
+	.globl my_rand
+# --- my_rand(long long)
+my_rand:
+# parameter 1: %rdi
+..B1.1:                         # Preds ..B1.0
+                                # Execution count [1.00e+00]
+	.cfi_startproc
+..___tag_value_my_rand.1:
+..L2:
+                                                          #12.1
+        xorq      $123459876, %rdi                              #16.3
+        movq      $0x41a705af1fe3fb79, %rax                     #17.14
+        movq      %rdi, %rcx                                    #17.14
+        imulq     %rdi                                          #17.14
+        sarq      $15, %rdx                                     #17.14
+        pxor      %xmm0, %xmm0                                  #22.17
+        sarq      $63, %rcx                                     #17.14
+        subq      %rcx, %rdx                                    #17.14
+        imulq     $-127773, %rdx, %rsi                          #18.27
+        imulq     $-2836, %rdx, %r8                             #18.38
+        addq      %rsi, %rdi                                    #18.3
+        imulq     $16807, %rdi, %r10                            #18.27
+        addq      %r8, %r10                                     #18.27
+        xorq      $123459876, %r10                              #19.3
+        lea       2147483647(%r10), %r9                         #21.5
+        cmovl     %r9, %r10                                     #21.5
+        cvtsi2sdq %r10, %xmm0                                   #22.17
+        mulsd     .L_2il0floatpacket.0(%rip), %xmm0             #22.17
+        cvtsd2ss  %xmm0, %xmm0                                  #22.17
+        ret                                                     #23.10
+        .align    16,0x90
+                                # LOE
+	.cfi_endproc
+# mark_end;
+	.type	my_rand,@function
+	.size	my_rand,.-my_rand
+..LNmy_rand.0:
+	.data
+# -- End  my_rand
+	.section .rodata, "a"
+	.align 8
+	.align 8
+.L_2il0floatpacket.0:
+	.long	0x00200000,0x3e000000
+	.type	.L_2il0floatpacket.0,@object
+	.size	.L_2il0floatpacket.0,8
+	.data
+	.section .note.GNU-stack, ""
+# End
