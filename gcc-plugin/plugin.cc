@@ -44,6 +44,7 @@ namespace {
             int local_var_ref = 0, ref_local_var = 0;
             int ref_static_extern = 0, static_extern_ref = 0;
             int local_var_p = 0, static_extern_p = 0;
+            int indirect_calls = 0;
 
             //std::cerr << "subgraph fun_" << fun << " {\n";
 
@@ -127,9 +128,12 @@ namespace {
                     std::cerr << "#35 - Operações unárias nesta função: " 
                               << n_unary_ops << "\n";
                     std::cerr << "#36 - Instruções aritméticas utilizando ponteiro nesta função: " 
-                              << pointer_arithmetic << "\n";  
+                              << pointer_arithmetic << "\n";
+                    std::cerr << "#40 - Chamadas indiretas nesta função: "
+                              << indirect_calls << "\n";
                     std::cerr << "#41 - Operações de atribuição "
-                              << "em que o operador do lado esquerdo da atribuição é inteiro: " << lhs_int << "\n";
+                              << "em que o operador do lado esquerdo da atribuição é inteiro: " 
+                              << lhs_int << "\n";
                     std::cerr << "#42 - Operações binárias com pelo menor um operador como inteiro: " 
                               << bin_op_1int << "\n";
                     std::cerr << "#51 - Referencias a variáveis locais nesta função: " 
@@ -205,6 +209,7 @@ namespace {
                                     fn_args_4 += 1;
 
                                 tree lhs = gimple_call_lhs(stmt);
+                                tree rhs = gimple_call_fn(stmt);
                                 //variavel local referenciada
                                 if(lhs != NULL) {
                                     if(!is_global_var(lhs))
@@ -212,6 +217,10 @@ namespace {
                                     else
                                         static_extern_ref += 1;
                                 }
+
+                                if(rhs != NULL)
+                                    if(TREE_CODE(TREE_TYPE(rhs)) == POINTER_TYPE)
+                                        indirect_calls += 1;
 
                                 const gcall *call_stmt = as_a <const gcall *> (stmt);
                                 tree call_type = gimple_call_return_type(call_stmt);
