@@ -45,10 +45,8 @@ namespace {
             int ref_static_extern = 0, static_extern_ref = 0;
             int local_var_p = 0, static_extern_p = 0;
             int indirect_calls = 0;
-
-            //std::cerr << "subgraph fun_" << fun << " {\n";
-
             
+            //percorre todos os basic-blocks(bb) de uma função fn
             FOR_ALL_BB_FN(bb, fun) {
                 int inst = 0;
                 int n_phi_nodes = 0;
@@ -58,45 +56,60 @@ namespace {
                 num_bb += 1;
                 total_bb += 1;
 
+                //verifica se o bb possui apenas um sucessor
                 if(single_succ_p(bb)) {
 
                     BB_ONE_SUCC += 1;
+
+                    //um sucessor e um predecessor
                     if(single_pred_p(bb))
                         BB_ONE_SUCC_PRED += 1;
                 }
                 
+                //numero de sucessor igual a 2
                 else if(EDGE_COUNT(bb->succs) == 2) {
 
                     BB_TWO_SUCCS += 1;
+
+                    //2 sucessores e 1 predecessor
                     if(single_pred_p(bb))
                         BB_2SUCCS_1PRED += 1;
 
+                    //2 sucessores e 2 predecessores
                     else if(EDGE_COUNT(bb->preds) == 2)
                         BB_2SUCCS_2PREDS += 2;
                 }
 
+                //mais de 2 sucessores
                 else if(EDGE_COUNT(bb->succs) > 2) {
 
                     BB_GT2_SUCCS += 1;
+
+                    //mais de 2 sucessores e mais de 2 predecessores
                     if(EDGE_COUNT(bb->preds) > 2)
                         BB_GT2_PS += 1;
                 }
                 
+                //único predecessor
                 if(single_pred_p(bb))
                     BB_ONE_PRED += 1;
 
+                //2 predecessores
                 else if(EDGE_COUNT(bb->preds) == 2) {
 
                     BB_TWO_PREDS += 1;
+
+                    //2 predecessores e 1 sucessor
                     if(single_succ_p(bb))
                         BB_1SUCC_2PREDS += 1;
                 }
 
+                //mais de 2 predecessores
                 else if(EDGE_COUNT(bb->preds) > 2)
                     BB_GT2_PREDS += 1;
 
-                //std::cerr << "bb_" << fun << "_" << bb->index << "[label=\"";
-                if(bb->index == 0)
+
+                if(bb->index == 0)  //entrada da função
                 {
                     std::cerr << "ENTRY: "
                             << function_name(fun) << "\n"
@@ -104,7 +117,7 @@ namespace {
                             << ":" << LOCATION_LINE(fun->function_start_locus);
                 }
 
-                else if(bb->index == 1)
+                else if(bb->index == 1) //fim da função
                 {
                     std::cerr << "\nNúmero de:\n";
                     std::cerr << "#1 - Basic Blocks nesta função: " 
@@ -160,40 +173,47 @@ namespace {
                     for(i = gsi_start_phis(bb); !gsi_end_p(i); gsi_next(&i)) {
 
                         gphi *phi = i.phi();
-                        n_phi_nodes += 1;   //numero de phi nodes neste basic block
-                        total_phi_nodes += 1;   //total phi nodes para todos BBs
+                        n_phi_nodes += 1;   //numero de phi nodes neste basic block, variavel local
+                        total_phi_nodes += 1;   //total phi nodes para todos BBs, variavel global
                         n_args_phi += static_cast<int>(gimple_phi_num_args(phi));   //nro args para todos BBs
                         bb_nargs_phi += static_cast<int>(gimple_phi_num_args(phi)); //nro args para este BB
                     }
 
+                    //nenhum phi node no bb
                     if(n_phi_nodes == 0)
                         bb_no_phi += 1;
 
+                    //entre 1 e 3 phi nodes
                     else if(n_phi_nodes <= 3)
                         bb_0_3_phi += 1;
 
+                    //mais que 3
                     else
                         bb_gt3_phi += 1;
 
+                    //mais que 5 argumentos no phi node
                     if(bb_nargs_phi > 5)
                         bb_argphi_5 += 1;
 
+                    //entre 1 e 5
                     else
-                        if(bb_nargs_phi > 1)
+                        if(bb_nargs_phi >= 1)
                             bb_argphi_1_5 += 1;
 
+                    //iterator para um statement
                     gimple_stmt_iterator gsi;
                     for(gsi = gsi_start_bb (bb); !gsi_end_p (gsi); gsi_next (&gsi)) {
 
                         gimple* stmt = gsi_stmt(gsi);
-                        //tree type_expr = gimple_expr_type(stmt);
                         
-                        num_insns += 1;
-                        inst += 1;
-                        total_insns += 1;
+                        num_insns += 1;     //numero de instruções nesta função
+                        inst += 1;          //numero de instruções no bb
+                        total_insns += 1;   //numero total de instruções no código, var global
 
+                        //intrução que faz referencia a memória
                         if(gimple_references_memory_p(stmt))
                             n_references += 1;
+                        //acesso ao endereço de memoria da variavel
                         if(gimple_has_mem_ops(stmt))
                             n_add_var += 1;
 
@@ -201,10 +221,14 @@ namespace {
 
                             case GIMPLE_CALL:
                             {
+                                
                                 n_direct_calls += 1;
+
+                                //função que possui ponteiro como argumento
                                 if(gimple_has_mem_ops(stmt))
                                     n_add_fn += 1;
                                 
+                                //numero de argumento da função maior que 4
                                 if(gimple_call_num_args(stmt) > 4)
                                     fn_args_4 += 1;
 
@@ -218,15 +242,19 @@ namespace {
                                         static_extern_ref += 1;
                                 }
 
-                                if(rhs != NULL)
+                                //chamada indireta de uma função
+                                if(rhs != NULL) {
                                     if(TREE_CODE(TREE_TYPE(rhs)) == POINTER_TYPE)
                                         indirect_calls += 1;
+                                }
 
                                 const gcall *call_stmt = as_a <const gcall *> (stmt);
                                 tree call_type = gimple_call_return_type(call_stmt);
+                                //retorno do tipo inteiro
                                 if(TREE_CODE(call_type) == INTEGER_TYPE)
                                     call_int += 1;
                                 else
+                                    //tipo ponteiro
                                     if(TREE_CODE(call_type) == POINTER_TYPE)
                                         call_pointer += 1;
 
@@ -292,16 +320,19 @@ namespace {
                                 break;
                             }
                             
+                            //instruções do tipo condicional
                             case GIMPLE_COND:
                             {
                                 n_cond_branches += 1;
                             }
 
+                            //desvio incondicional
                             case GIMPLE_GOTO:
                             {
                                 n_uncond_branches += 1;
                             }
 
+                            //inst tipo switch
                             case GIMPLE_SWITCH:
                             {
                                 n_switch_insns += 1;
@@ -332,16 +363,12 @@ namespace {
                         n_critical_e += 1;
                     if(e->flags & EDGE_ABNORMAL)
                         n_abnormal_e += 1;
-                    //basic_block dest = e->dest;
-                    //std::cerr << "bb_" << fun << "_" << bb->index << " -> bb_" << fun <<
-                    //    "_" << dest->index << "\n";
                 }
 
             }
 
             std::cerr << "\n\n";
 
-            //std::cerr << "\nTOTAL NUM BRANCHES" << branch_prob() << "\n";
             return 0;
         }
 
