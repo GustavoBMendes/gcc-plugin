@@ -15,7 +15,7 @@
 #include <math.h>
 
 /* Include polybench common header. */
-#include <polybench.h>
+#include "polybench.h"
 
 /* Include benchmark-specific header. */
 #include "correlation.h"

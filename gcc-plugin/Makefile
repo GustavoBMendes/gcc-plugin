@@ -1,11 +1,8 @@
-
 PLUGIN=plugin.so
-SOURCES=\
-        plugin.cc \
-		$(END)
+SOURCES=        plugin.cc 		$(END)
 
 include ../Makefile.common
 
 .PHONY: test
 test: $(PLUGIN)
-	$(CCPLUGIN) -c -o /dev/null test.c
+	$(CCPLUGIN) -c -o /dev/null ./uudecode/uudecode.c

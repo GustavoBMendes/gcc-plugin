@@ -147,7 +147,7 @@ namespace {
                     std::cerr << "#41 - Operações de atribuição "
                               << "em que o operador do lado esquerdo da atribuição é inteiro: " 
                               << lhs_int << "\n";
-                    std::cerr << "#42 - Operações binárias com pelo menor um operador como inteiro: " 
+                    std::cerr << "#42 - Operações binárias com pelo menos um operador como inteiro: " 
                               << bin_op_1int << "\n";
                     std::cerr << "#51 - Referencias a variáveis locais nesta função: " 
                               << ref_local_var << "\n";
@@ -178,7 +178,7 @@ namespace {
                         n_args_phi += static_cast<int>(gimple_phi_num_args(phi));   //nro args para todos BBs
                         bb_nargs_phi += static_cast<int>(gimple_phi_num_args(phi)); //nro args para este BB
                     }
-
+                    
                     //nenhum phi node no bb
                     if(n_phi_nodes == 0)
                         bb_no_phi += 1;
